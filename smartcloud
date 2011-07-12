@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'lib/smartcloud'
-
+require 'pp'
 
 if ARGV.size == 3
   @user=ARGV[0]
@@ -25,4 +25,4 @@ end
 
   # allows us to send arbitrary commands like
   # smartcloud username password describe_instance("122345")
-  eval("puts i.#{@cmd}")
+  eval("puts i.#{@cmd}.pretty_inspect")
