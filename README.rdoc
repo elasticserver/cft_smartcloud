@@ -2,8 +2,6 @@
 
 Provides support for interacting with IBM SmartCloud API and CLI tools
 
-= usage
-
 == from a console
 
   require 'lib/smartcloud'
@@ -22,6 +20,10 @@ examples:
   ./smartcloud [username] [password] display_volumes
   ./smartcloud [username] [password] display_instances
   ./smartcloud [username] [password] "describe_instance('12345')"
+
+you can set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile, and not specify them:
+
+  ./smartcloud display_volumes
 
 = gem
 
