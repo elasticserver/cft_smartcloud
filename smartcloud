@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'lib/smartcloud'
+
+
+if ARGV.size == 3
+  @user=ARGV[0]
+  @pw=ARGV[1]
+  @cmd=ARGV[2]
+  puts "You may set environment variables SMARTCLOUD_PASSWORD and SMARTCLOUD_USERNAME to avoid specifying them every time."
+elsif ARGV.size == 1
+  @user=ENV['SMARTCLOUD_USERNAME']
+  @pw=ENV['SMARTCLOUD_PASSWORD']
+  if !@user || !@pw
+    puts "Please set env variables SMARTCLOUD_PASSWORD and SMARTCLOUD_USERNAME to avoid specifying them every time."
+    exit(1)
+  end
+  @cmd=ARGV[0]
+else
+  puts "Usage: ./smartcloud [username] [password] [command]"
+  exit(0)
+end
+
+  i = IBMSmartCloud.new(@user, @pw)
+
+  # allows us to send arbitrary commands like
+  # smartcloud username password describe_instance("122345")
+  eval("puts i.#{@cmd}")

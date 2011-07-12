@@ -1,0 +1,50 @@
+api_url: https://www-147.ibm.com/computecloud/enterprise/api/rest/20100331/
+states:
+  instance: 
+    0: NEW
+    1: PROVISIONING
+    2: FAILED
+    3: REMOVED
+    4: REJECTED
+    5: ACTIVE
+    6: UNKNOWN
+    7: DEPROVISIONING
+    8: RESTARTING
+    9: STARTING
+    10: STOPPING
+    11: STOPPED
+    12: DEPROVISION_PENDING
+    13: RESTART_PENDING
+    14: ATTACHING
+    15: DETACHING
+  image: 
+    0: NEW
+    1: AVAILABLE
+    2: UNAVAILABLE
+    3: DELETED
+    4: CAPTURING
+  ip:
+    0: NEW
+    1: ALLOCATING
+    2: FREE
+    3: ATTACHED
+    4: RELEASING
+    5: RELEASED
+    6: FAILED
+    7: RELEASE_PENDING
+  storage:
+    0: NEW
+    1: CREATING
+    2: DELETING
+    3: DELETED
+    4: UNMOUNTED
+    5: MOUNTED
+    6: FAILED
+    7: DELETE_PENDING
+    8: BEING_CLONED
+    9: CLONING
+    10: ATTACHING
+    11: DETACHING
+  location:
+    -1: OFFLINE
+    1: ONLINE
