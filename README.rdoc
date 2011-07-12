@@ -4,20 +4,20 @@ Provides support for interacting with IBM SmartCloud API and CLI tools
 
 = usage
 
-  == from a console
+== from a console
 
   require 'lib/smartcloud'
   i = IBMSmartCloud.new(username, password)
   i.[some_api_method]
 
-  Some of the describe_* methods take a filter, so that you can do
-  i.describe_instances(:name => "my_name", :status => :active)
+Some of the describe_* methods take a filter, so that you can do
+i.describe_instances(:name => "my_name", :status => :active)
 
-  == using the commandline helper
+== using the commandline helper
 
   ./smartcloud [username] [password] [method of smartcloud.rb]
 
-  examples:
+examples:
 
   ./smartcloud [username] [password] display_volumes
   ./smartcloud [username] [password] display_instances
