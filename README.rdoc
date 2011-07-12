@@ -21,6 +21,9 @@ examples:
   ./smartcloud [username] [password] display_instances
   ./smartcloud [username] [password] "describe_instance('12345')"
 
+The 'display_*' methods are intended to generate pretty human readable displays, while the describe methods
+will return pretty-formatted hashes, or singular values.
+
 you can set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile, and not specify them:
 
   ./smartcloud display_volumes
