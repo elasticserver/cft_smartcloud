@@ -2,14 +2,15 @@
 
 Provides support for interacting with IBM SmartCloud API and CLI tools
 
-== from a console
+== using the console
 
-  require 'lib/smartcloud'
-  i = IBMSmartCloud.new(username, password)
-  i.[some_api_method]
+  script/console
+  >> @smartcloud.display_instances
+  >> @smartcloud.display_volumes("Location" => 101)
 
-Some of the describe_* methods take a filter, so that you can do
-i.describe_instances(:name => "my_name", :status => :active)
+  The console predefines the @smartcloud instance variable that is set up
+  from the environment variables SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD
+  automatically (it's created at the bottom of smartcloud.rb)
 
 == using the commandline helper
 
@@ -27,6 +28,18 @@ will return pretty-formatted hashes, or singular values.
 you can set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile, and not specify them:
 
   ./smartcloud display_volumes
+
+== get a list of all available methods
+
+console:
+
+ >> @smartcloud.help
+
+commandline
+
+ > smartcloud help
+
+These won't tell you the arguments, you have to look at smartcloud.rb for the args.
 
 = gem
 

@@ -30,12 +30,18 @@ class IBMSmartCloud
     @api_url.gsub!("https://", "https://#{CGI::escape(username)}:#{CGI::escape(password)}@")
 
     RestClient.timeout = 120 # ibm requests can be very slow
+    RestClient.log = @logger
+  end
+
+  def help
+    puts [public_methods - Object.public_methods].join("\n")
   end
 
   # Get a list of data centers
   def describe_locations
     get("/locations").Location
   end
+
   def display_locations
     log = describe_locations.map {|loc| "#{loc.ID} #{loc.Location}"}.join("\n")
     logger.info "\n#{log}"
@@ -117,9 +123,14 @@ class IBMSmartCloud
   end
 
   # Launches a clone request and returns ID of new volume
-  def clone_volume(name, source_disk_id)
-    result = post("/storage/#{source_disk_id}", :name => name)
-    result.Volume.ID
+  # TODO: the API call does not work, we have to use the cli for now
+  def clone_volume(name, source_disk_id, location=nil)
+    # result = post("/storage", :name => name, :SourceDiskID => source_disk_id)
+    # result.Volume.ID
+    create_password_file
+    result = run_ibm_tool("ic-clone-volume.sh -n #{name} -S #{source_disk_id}")
+    result =~ /ID : (.*)/
+    return $1 # grab the id of the created volume
   end
 
   # Delete the volume
@@ -234,9 +245,7 @@ class IBMSmartCloud
   # Optionally takes a filter (currently supports state). i.e. display_volumes(:state => :mounted)
   def display_volumes(filter={})
     vols = describe_volumes
-    if filter[:state]
-      vols=vols.select {|vol| vol.State == filter[:state].to_s.upcase}
-    end
+    vols = filter_and_sort(vols, filter)
 
     log = "\nVolume | State      | Loc  | Name\n"
     volsz = vols.map {|vol| vol.ID.ljust(6) + " | " + (vol.State[0..9].ljust(10) rescue '?'.ljust(10)) + " | " + vol.Location.ljust(4) + " | " + vol.Name }.join("\n")
@@ -245,6 +254,7 @@ class IBMSmartCloud
     true
   end
   
+  alias display_storage display_volumes
 
   # Allows you to poll for a specific storage state
   # ex: storage_state_is?("123456", "UNMOUNTED")
@@ -411,7 +421,7 @@ class IBMSmartCloud
   # display that as the error, otherwise we lose that info
   def raise_restclient_error(e)
     if e.respond_to?(:response) && !e.is_a?(RestClient::RequestTimeout)
-      raise e.response
+      raise "#{e.message} - #{e.response}" 
     else
       raise e
     end
@@ -454,5 +464,42 @@ class IBMSmartCloud
     array_or_object.is_a?(Array) ? array_or_object : [array_or_object]
   end
 
+  # TODO: all methods below here can be nuked once CLI tools are removed
+  def run_ibm_tool(command)
+    cmd = "cd #{IBM_TOOLS_HOME} && ./#{command} -u #{@username} -w #{passphrase} -g #{password_file}"
+    logger.debug cmd
+    output = if @debug
+      IBMMockResponseGenerator.respond(command)
+    else
+      `#{cmd}` 
+    end
+
+    logger.debug output
+
+    if output =~ /ErrorMessage : (.*)/
+      raise $1 # raise the error message matched above
+    else
+      return output
+    end
+  end
+ 
+  def create_password_file
+    # if no passphrase or password file is supplied, we'll generate it
+    run_ibm_tool("ic-create-password.sh -u #{@username} -p #{@password}")
+  end
+
+  def password_file
+    @password_file ||= "/tmp/smrtcloud-pwfile-#{Time.now.to_i.to_s}"
+  end
+
+  def passphrase
+    @passphrase ||= Time.now.to_i.to_s
+  end
+  # End CLI tool helpers 
+  
+  
 
 end
+
+# predefine an instance for convenience
+@smartcloud = IBMSmartCloud.new(ENV['SMARTCLOUD_USERNAME'], ENV['SMARTCLOUD_PASSWORD'])
