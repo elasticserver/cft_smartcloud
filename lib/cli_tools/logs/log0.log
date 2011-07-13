@@ -39,3 +39,5 @@ Jul 13, 2011 12:38:34 PM com.ibm.cloud.cmd.tool.CommandLineHandler execute
 INFO: Input action : CloneVolume
 Jul 13, 2011 12:38:34 PM com.ibm.cloud.cmd.tool.CommandLineHandler execute
 INFO: Start to executing CloneVolume
+Jul 13, 2011 12:40:35 PM com.ibm.cloud.cmd.tool.CommandLineHandler execute
+INFO: Finish executing CloneVolume

@@ -502,4 +502,4 @@ class IBMSmartCloud
 end
 
 # predefine an instance for convenience
-@smartcloud = IBMSmartCloud.new(ENV['SMARTCLOUD_USERNAME'], ENV['SMARTCLOUD_PASSWORD'])
+@smartcloud = IBMSmartCloud.new(ENV['SMARTCLOUD_USERNAME'], ENV['SMARTCLOUD_PASSWORD']) if ENV['SMARTCLOUD_USERNAME'] && ENV['SMARTCLOUD_PASSWORD']
