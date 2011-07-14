@@ -1,4 +1,4 @@
-Dir["lib/**/**"].each {|dir| $LOAD_PATH << dir}
+Dir["#{File.dirname(__FILE__)}/**/**"].each {|dir| $LOAD_PATH << dir }
 $LOAD_PATH << File.dirname(__FILE__)
 
 require 'tempfile'
@@ -30,7 +30,7 @@ class IBMSmartCloud
     @api_url.gsub!("https://", "https://#{CGI::escape(username)}:#{CGI::escape(password)}@")
 
     RestClient.timeout = 120 # ibm requests can be very slow
-    RestClient.log = @logger
+    RestClient.log = @logger if @debug
   end
 
   def help
