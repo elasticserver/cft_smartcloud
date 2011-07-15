@@ -9,6 +9,7 @@ require 'yaml'
 require 'restclient_fix'
 require 'hash_fix'
 require 'xmlsimple'
+require 'smartcloud_logger'
 
 IBM_TOOLS_HOME=File.join(File.dirname(__FILE__), "cli_tools") unless defined?(IBM_TOOLS_HOME)
 
@@ -20,7 +21,7 @@ class IBMSmartCloud
   def initialize(username, password, logger=nil, debug=false)
     @username = username
     @password = password
-    @logger = logger || Logger.new(STDOUT)
+    @logger = logger || SmartcloudLogger.new(STDOUT)
     @debug = debug
 
     @config = YAML.load_file(File.join(File.dirname(__FILE__), "config/config.yml"))
@@ -34,7 +35,8 @@ class IBMSmartCloud
   end
 
   def help
-    puts [public_methods - Object.public_methods].join("\n")
+    methods = public_methods - Object.public_methods - ['post','get','put','delete','logger','logger=','help']
+    puts methods.sort.join("\n")
   end
 
   # Get a list of data centers
@@ -441,7 +443,7 @@ class IBMSmartCloud
     end.compact.join("&")
   end
 
-  protected
+  private
 
   def filter_and_sort(instances=[], filters={})
     order_by = filters.delete(:order) 

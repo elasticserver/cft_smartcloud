@@ -26,7 +26,7 @@ end
   # allows us to send arbitrary commands like
   # smartcloud username password describe_instance("122345")
   result = eval("i.#{@cmd}")
-  if result == true
+  if result == true || result.nil?
     # do nothing, the command already logged
   else
     puts result.pretty_inspect
