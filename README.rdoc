@@ -2,11 +2,20 @@
 
 Provides support for interacting with IBM SmartCloud API and CLI tools
 
+== setup
+
+Please set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile
+and make a path to the smartcloud helper:
+
+  export SMARTCLOUD_USERNAME=[your username]
+  export SMARTCLOUD_PASSWORD=[your password]
+  export PATH=$PATH:/path/to/smartcloud
+
 == using the console
 
   script/console
   >> @smartcloud.display_instances
-  >> @smartcloud.display_volumes("Location" => 101)
+  >> @smartcloud.display_volumes(:Location => 101)
 
   The console predefines the @smartcloud instance variable that is set up
   from the environment variables SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD
@@ -14,18 +23,21 @@ Provides support for interacting with IBM SmartCloud API and CLI tools
 
 == using the commandline helper
 
-  ./smartcloud [username] [password] [method of smartcloud.rb]
+  smartcloud [method of smartcloud.rb]
+
+to see a list of methods:
+
+  smartcloud help
 
 examples:
 
-  ./smartcloud [username] [password] display_volumes
-  ./smartcloud [username] [password] display_instances
-  ./smartcloud [username] [password] "describe_instance('12345')"
+  smartcloud display_volumes
+  smartcloud display_instances
+  smartcloud "describe_instance('12345')"
 
 The 'display_*' methods are intended to generate pretty human readable displays, while the describe methods
 will return pretty-formatted hashes, or singular values.
 
-you can set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile, and not specify them:
 
   ./smartcloud display_volumes
 

@@ -3,29 +3,29 @@
 require File.join(File.dirname(__FILE__), 'lib/smartcloud')
 require 'pp'
 
-if ARGV.size == 3
-  @user=ARGV[0]
-  @pw=ARGV[1]
-  @cmd=ARGV[2]
-  puts "You may set environment variables SMARTCLOUD_PASSWORD and SMARTCLOUD_USERNAME to avoid specifying them every time."
-elsif ARGV.size == 1
-  @user=ENV['SMARTCLOUD_USERNAME']
-  @pw=ENV['SMARTCLOUD_PASSWORD']
-  if !@user || !@pw
-    puts "Please set env variables SMARTCLOUD_PASSWORD and SMARTCLOUD_USERNAME to avoid specifying them every time."
-    exit(1)
-  end
+if !ENV['SMARTCLOUD_USERNAME'] || !ENV['SMARTCLOUD_PASSWORD']
+  puts "Please set environment variables SMARTCLOUD_PASSWORD and SMARTCLOUD_USERNAME in your environment."
+  exit(1)
+end
+
+if ARGV.size == 1
   @cmd=ARGV[0]
+elsif ARGV.size == 2
+  @cmd="#{ARGV[0]}('#{ARGV[1]}')"
 else
-  puts "Usage: ./smartcloud [username] [password] [command]"
+  puts %{
+  Usage: 
+  smartcloud help
+  smartcloud help [command]
+  smartcloud [command]
+}
   exit(0)
 end
 
-  i = IBMSmartCloud.new(@user, @pw)
-
   # allows us to send arbitrary commands like
   # smartcloud username password describe_instance("122345")
-  result = eval("i.#{@cmd}")
+  result = eval("@smartcloud.#{@cmd}")
+
   if result == true || result.nil?
     # do nothing, the command already logged
   else
