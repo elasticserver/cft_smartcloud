@@ -519,7 +519,11 @@ class IBMSmartCloud
 
     filters.each do |filter, value|
       value = value.to_s.upcase if (filter==:status || filter==:state)
-      instances = instances.select {|inst| inst.send(filter.to_s.capitalize) == value.to_s}
+      if filter == :name || filter == :Name
+        instances = instances.select {|inst| inst.send(filter.to_s.capitalize) =~ /#{value}/}
+      else
+        instances = instances.select {|inst| inst.send(filter.to_s.capitalize) == value.to_s}
+      end
     end
 
     instances = instances.sort_by{|ins| ins.has_key?(order_by) ? ins.send(order_by) : 0 }
