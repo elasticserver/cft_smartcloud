@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["yan"]
-  s.date = %q{2011-07-13}
+  s.date = %q{2011-07-20}
   s.description = %q{IBM SmartCloud API Gem}
   s.email = %q{yan.pritzker@cohesiveft.com}
   s.extra_rdoc_files = [
@@ -111,8 +111,6 @@ Gem::Specification.new do |s|
      "lib/cli_tools/lib/commons-lang-2.3.jar",
      "lib/cli_tools/lib/commons-logging-1.1.1.jar",
      "lib/cli_tools/logging.properties",
-     "lib/cli_tools/logs/README",
-     "lib/cli_tools/logs/log0.log",
      "lib/cli_tools/manifest.rmd",
      "lib/config/config.yml",
      "lib/hash_fix.rb",
@@ -147,6 +145,7 @@ Gem::Specification.new do |s|
      "lib/rest-client-1.6.3/lib/restclient/response.rb",
      "lib/restclient_fix.rb",
      "lib/smartcloud.rb",
+     "lib/smartcloud_logger.rb",
      "lib/xml-simple-1.0.12/lib/xmlsimple.rb",
      "script/console",
      "smartcloud",
