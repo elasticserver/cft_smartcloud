@@ -231,6 +231,30 @@ class IBMSmartCloud
     get("/keys").PublicKey
   end
 
+  def describe_unused_keys
+    describe_keys.select {|key| key.Instances == {}}
+  end
+
+  def delete_unused_keys(auto=false)
+    describe_unused_keys.each do |key|
+      if auto
+        remove_keypair(key.KeyName)
+      else
+        puts "Remove key #{key.KeyName}? (type 'y' to continue): "
+        input = gets.strip
+        if input == 'y'
+          remove_keypair(key.KeyName)
+        else
+          puts "Not removing key #{key.KeyName}"
+        end
+      end
+    end
+  end
+
+  def display_keys 
+    logger.info "\nKeyName".ljust(50) + "  | Instance ID's\n" +  describe_keys.map {|key| key.KeyName.strip.ljust(50) + " | " + (key.Instances.empty? ? '[]' : key.Instances.InstanceID.inspect  )}.join("\n")
+  end
+
   args :supported_instance_types, [:image_id]
   def supported_instance_types(image_id)
     img=describe_image(image_id)
