@@ -442,7 +442,7 @@ class IBMSmartCloud
   # in the case of status you can also use symbols like :status => :active
   args :describe_instances, [:filters => :opt]
   def describe_instances(filters={})
-    instances = get("instances").Instance
+    instances = arrayize(get("instances").Instance)
     
     instances.each do |instance|
       instance["Status"] = @states["instance"][instance.Status.to_i]
@@ -477,7 +477,7 @@ class IBMSmartCloud
 
   args :describe_images, [:filters => :opt]
   def describe_images(filters={})
-    images = get("offerings/image/").Image
+    images = arrayize(get("offerings/image/").Image)
     images.each {|img| img["State"] = @states["image"][img.State.to_i]}
     filters[:order] ||= "Location"
     images = filter_and_sort(images, filters)
