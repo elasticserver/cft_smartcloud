@@ -4,14 +4,16 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{smartcloud}
+  s.name = %q{cft_smartcloud}
   s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["yan"]
-  s.date = %q{2011-07-21}
-  s.description = %q{IBM SmartCloud API Gem}
+  s.date = %q{2011-07-22}
+  s.default_executable = %q{smartcloud}
+  s.description = %q{CohesiveFT Ruby Interface for IBM SmartCloud}
   s.email = %q{yan.pritzker@cohesiveft.com}
+  s.executables = ["smartcloud"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -23,6 +25,8 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "bin/smartcloud",
+     "cft_smartcloud.gemspec",
      "lib/cli_tools/README.txt",
      "lib/cli_tools/ic-add-keypair.cmd",
      "lib/cli_tools/ic-add-keypair.sh",
@@ -149,14 +153,13 @@ Gem::Specification.new do |s|
      "lib/xml-simple-1.0.12/lib/xmlsimple.rb",
      "script/console",
      "smartcloud",
-     "smartcloud.gemspec",
      "test/helper.rb"
   ]
   s.homepage = %q{http://github.com/cohesive/smartcloud}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
-  s.summary = %q{IBM SmartCloud API Gem}
+  s.summary = %q{CohesiveFT IBM SmartCloud API Gem}
   s.test_files = [
     "test/helper.rb"
   ]

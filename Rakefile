@@ -4,9 +4,9 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "smartcloud"
-    gem.summary = %Q{IBM SmartCloud API Gem}
-    gem.description = %Q{IBM SmartCloud API Gem}
+    gem.name = "cft_smartcloud"
+    gem.summary = %Q{CohesiveFT IBM SmartCloud API Gem}
+    gem.description = %Q{CohesiveFT Ruby Interface for IBM SmartCloud}
     gem.email = "yan.pritzker@cohesiveft.com"
     gem.homepage = "http://github.com/cohesive/smartcloud"
     gem.authors = ["yan"]
@@ -47,7 +47,7 @@ Rake::RDocTask.new do |rdoc|
   version = File.exist?('VERSION') ? File.read('VERSION') : ""
 
   rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "smartcloud #{version}"
+  rdoc.title = "cft_smartcloud #{version}"
   rdoc.rdoc_files.include('README*')
   rdoc.rdoc_files.include('lib/**/*.rb')
 end
