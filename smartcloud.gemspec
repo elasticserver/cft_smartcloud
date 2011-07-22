@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{smartcloud}
-  s.version = "0.1.2"
+  s.version = "0.1.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["yan"]
-  s.date = %q{2011-07-20}
+  s.date = %q{2011-07-21}
   s.description = %q{IBM SmartCloud API Gem}
   s.email = %q{yan.pritzker@cohesiveft.com}
   s.extra_rdoc_files = [
