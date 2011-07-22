@@ -29,5 +29,9 @@ end
   if result == true || result.nil?
     # do nothing, the command already logged
   else
-    puts result.pretty_inspect
+    if result.is_a?(String)
+      puts result
+    else
+      puts result.pretty_inspect
+    end
   end
