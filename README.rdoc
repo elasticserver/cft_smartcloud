@@ -2,20 +2,31 @@
 
 Provides support for interacting with IBM SmartCloud API and CLI tools
 
+== installation
+
+from rubygems.org:
+
+  gem install cft_smartcloud
+
+locally:
+
+  rake build
+  gem install pkg/[name of generated gem]
+
 == setup
 
 Please set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile
-and make a path to the smartcloud helper:
 
   export SMARTCLOUD_USERNAME=[your username]
   export SMARTCLOUD_PASSWORD=[your password]
-  export PATH=$PATH:/path/to/smartcloud
 
 == using the console
 
   script/console
   >> @smartcloud.display_instances
   >> @smartcloud.display_volumes(:Location => 101)
+  >> @smartcloud.display_instances(:Location => 82, :Name => "namematch")
+  >> @smartcloud.poll_for_volume_state(12345, :unmounted)
 
   The console predefines the @smartcloud instance variable that is set up
   from the environment variables SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD
@@ -34,12 +45,14 @@ examples:
   smartcloud display_volumes
   smartcloud display_instances
   smartcloud "describe_instance('12345')"
+  smartcloud "display_instances(:Location => 82, :Name => 'match_this')"
+
+  smartcloud delete_unused_keys # this one will prompt for every key
 
 The 'display_*' methods are intended to generate pretty human readable displays, while the describe methods
 will return pretty-formatted hashes, or singular values.
 
-
-  ./smartcloud display_volumes
+  smartcloud display_volumes
 
 == get a list of all available methods
 
@@ -52,10 +65,6 @@ commandline
  > smartcloud help
 
 These won't tell you the arguments, you have to look at smartcloud.rb for the args.
-
-= gem
-
-To create the gem, use 'rake build'. See 'rake --tasks' for more options, such as bumping version numbers.
 
 == Copyright
 
