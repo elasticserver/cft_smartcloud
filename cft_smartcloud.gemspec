@@ -5,15 +5,14 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cft_smartcloud}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["yan"]
+  s.authors = ["yan", "cohesive"]
   s.date = %q{2011-07-25}
-  s.default_executable = %q{smartcloud}
-  s.description = %q{CohesiveFT Ruby Interface for IBM SmartCloud}
+  s.description = %q{CohesiveFT Ruby Interface for IBM SmartCloud and 'smartcloud' command line helper.}
   s.email = %q{yan.pritzker@cohesiveft.com}
-  s.executables = ["smartcloud"]
+  s.executables = ["cft_smartcloud", "smartcloud"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.rdoc"
@@ -151,10 +150,91 @@ Gem::Specification.new do |s|
      "lib/smartcloud.rb",
      "lib/smartcloud_logger.rb",
      "lib/xml-simple-1.0.12/lib/xmlsimple.rb",
+     "rdoc/classes/ConfigTable.html",
+     "rdoc/classes/ConfigTable/BoolItem.html",
+     "rdoc/classes/ConfigTable/ExecItem.html",
+     "rdoc/classes/ConfigTable/Item.html",
+     "rdoc/classes/ConfigTable/MetaConfigEnvironment.html",
+     "rdoc/classes/ConfigTable/PackageSelectionItem.html",
+     "rdoc/classes/ConfigTable/PathItem.html",
+     "rdoc/classes/ConfigTable/ProgramItem.html",
+     "rdoc/classes/ConfigTable/SelectItem.html",
+     "rdoc/classes/Enumerable.html",
+     "rdoc/classes/Errno.html",
+     "rdoc/classes/Errno/ENOTEMPTY.html",
+     "rdoc/classes/File.html",
+     "rdoc/classes/FileOperations.html",
+     "rdoc/classes/Hash.html",
+     "rdoc/classes/HookScriptAPI.html",
+     "rdoc/classes/IBMSmartCloud.html",
+     "rdoc/classes/Installer.html",
+     "rdoc/classes/Installer/Shebang.html",
+     "rdoc/classes/MIME.html",
+     "rdoc/classes/MIME/InvalidContentType.html",
+     "rdoc/classes/MIME/Type.html",
+     "rdoc/classes/MIME/Types.html",
+     "rdoc/classes/MockSmartCloud.html",
+     "rdoc/classes/Net.html",
+     "rdoc/classes/Net/HTTP.html",
+     "rdoc/classes/RestClient.html",
+     "rdoc/classes/RestClient/AbstractResponse.html",
+     "rdoc/classes/RestClient/Exception.html",
+     "rdoc/classes/RestClient/ExceptionWithResponse.html",
+     "rdoc/classes/RestClient/Exceptions.html",
+     "rdoc/classes/RestClient/MaxRedirectsReached.html",
+     "rdoc/classes/RestClient/Payload.html",
+     "rdoc/classes/RestClient/Payload/Base.html",
+     "rdoc/classes/RestClient/Payload/Multipart.html",
+     "rdoc/classes/RestClient/Payload/Streamed.html",
+     "rdoc/classes/RestClient/Payload/UrlEncoded.html",
+     "rdoc/classes/RestClient/RawResponse.html",
+     "rdoc/classes/RestClient/Redirect.html",
+     "rdoc/classes/RestClient/Request.html",
+     "rdoc/classes/RestClient/RequestFailed.html",
+     "rdoc/classes/RestClient/Resource.html",
+     "rdoc/classes/RestClient/Response.html",
+     "rdoc/classes/RestClient/ResponseForException.html",
+     "rdoc/classes/RestClient/SSLCertificateNotVerified.html",
+     "rdoc/classes/RestClient/ServerBrokeConnection.html",
+     "rdoc/classes/SetupError.html",
+     "rdoc/classes/SmartcloudLogger.html",
+     "rdoc/classes/TestMIME.html",
+     "rdoc/classes/ToplevelInstaller.html",
+     "rdoc/classes/ToplevelInstallerMulti.html",
+     "rdoc/classes/XmlSimple.html",
+     "rdoc/classes/XmlSimple/Cache.html",
+     "rdoc/created.rid",
+     "rdoc/files/README_rdoc.html",
+     "rdoc/files/lib/hash_fix_rb.html",
+     "rdoc/files/lib/mime-types-1_16/lib/mime/types_rb.html",
+     "rdoc/files/lib/mime-types-1_16/setup_rb.html",
+     "rdoc/files/lib/mime-types-1_16/test/test_mime_type_rb.html",
+     "rdoc/files/lib/mime-types-1_16/test/test_mime_types_rb.html",
+     "rdoc/files/lib/mock_smartcloud_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/rest-client_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/rest_client_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient/abstract_response_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient/exceptions_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient/net_http_ext_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient/payload_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient/raw_response_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient/request_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient/resource_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient/response_rb.html",
+     "rdoc/files/lib/rest-client-1_6_3/lib/restclient_rb.html",
+     "rdoc/files/lib/restclient_fix_rb.html",
+     "rdoc/files/lib/smartcloud_logger_rb.html",
+     "rdoc/files/lib/smartcloud_rb.html",
+     "rdoc/files/lib/xml-simple-1_0_12/lib/xmlsimple_rb.html",
+     "rdoc/fr_class_index.html",
+     "rdoc/fr_file_index.html",
+     "rdoc/fr_method_index.html",
+     "rdoc/index.html",
+     "rdoc/rdoc-style.css",
      "script/console",
      "test/helper.rb"
   ]
-  s.homepage = %q{http://github.com/cohesive/smartcloud}
+  s.homepage = %q{http://github.com/cohesive/cft_smartcloud}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}

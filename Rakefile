@@ -6,10 +6,10 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "cft_smartcloud"
     gem.summary = %Q{CohesiveFT IBM SmartCloud API Gem}
-    gem.description = %Q{CohesiveFT Ruby Interface for IBM SmartCloud}
+    gem.description = %Q{CohesiveFT Ruby Interface for IBM SmartCloud and 'smartcloud' command line helper.}
     gem.email = "yan.pritzker@cohesiveft.com"
-    gem.homepage = "http://github.com/cohesive/smartcloud"
-    gem.authors = ["yan"]
+    gem.homepage = "http://github.com/cohesive/cft_smartcloud"
+    gem.authors = ["yan", "cohesive"]
     #    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
