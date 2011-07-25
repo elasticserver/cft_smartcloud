@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: RestClient::AbstractResponse</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">RestClient::AbstractResponse</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/rest-client-1_6_3/lib/restclient/abstract_response_rb.html">
+                lib/rest-client-1.6.3/lib/restclient/abstract_response.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000315">beautify_headers</a>&nbsp;&nbsp;
+      <a href="#M000307">code</a>&nbsp;&nbsp;
+      <a href="#M000310">cookies</a>&nbsp;&nbsp;
+      <a href="#M000313">description</a>&nbsp;&nbsp;
+      <a href="#M000314">follow_redirection</a>&nbsp;&nbsp;
+      <a href="#M000308">headers</a>&nbsp;&nbsp;
+      <a href="#M000309">raw_headers</a>&nbsp;&nbsp;
+      <a href="#M000311">return!</a>&nbsp;&nbsp;
+      <a href="#M000312">to_i</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">args</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">net_http_res</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000315" class="method-detail">
+        <a name="M000315"></a>
+
+        <div class="method-heading">
+          <a href="#M000315" class="method-signature">
+          <span class="method-name">beautify_headers</span><span class="method-args">(headers)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000315-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000315-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 85</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-constant">AbstractResponse</span>.<span class="ruby-identifier">beautify_headers</span>(<span class="ruby-identifier">headers</span>)
+      <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span>, (<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)<span class="ruby-operator">|</span>
+        <span class="ruby-identifier">out</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/-/</span>, <span class="ruby-value str">'_'</span>).<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-node">%w{ set-cookie }</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">downcase</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>
+        <span class="ruby-identifier">out</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000307" class="method-detail">
+        <a name="M000307"></a>
+
+        <div class="method-heading">
+          <a href="#M000307" class="method-signature">
+          <span class="method-name">code</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+HTTP status <a href="AbstractResponse.html#M000307">code</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000307-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000307-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 10</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">code</span>
+      <span class="ruby-ivar">@code</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@net_http_res</span>.<span class="ruby-identifier">code</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000310" class="method-detail">
+        <a name="M000310"></a>
+
+        <div class="method-heading">
+          <a href="#M000310" class="method-signature">
+          <span class="method-name">cookies</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="../Hash.html">Hash</a> of <a
+href="AbstractResponse.html#M000310">cookies</a> extracted from response <a
+href="AbstractResponse.html#M000308">headers</a>
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000310-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000310-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 26</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">cookies</span>
+      <span class="ruby-ivar">@cookies</span> <span class="ruby-operator">||=</span> (<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-identifier">:set_cookie</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span>, <span class="ruby-identifier">cookie_content</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">out</span>.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">parse_cookie</span>(<span class="ruby-identifier">cookie_content</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000313" class="method-detail">
+        <a name="M000313"></a>
+
+        <div class="method-heading">
+          <a href="#M000313" class="method-signature">
+          <span class="method-name">description</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000313-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000313-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 58</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">description</span>
+      <span class="ruby-node">&quot;#{code} #{STATUSES[code]} | #{(headers[:content_type] || '').gsub(/;.*$/, '')} #{size} bytes\n&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000314" class="method-detail">
+        <a name="M000314"></a>
+
+        <div class="method-heading">
+          <a href="#M000314" class="method-signature">
+          <span class="method-name">follow_redirection</span><span class="method-args">(request = nil, result = nil, &amp; block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Follow a redirection
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000314-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000314-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 63</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">follow_redirection</span> <span class="ruby-identifier">request</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">block</span>
+      <span class="ruby-identifier">url</span> = <span class="ruby-identifier">headers</span>[<span class="ruby-identifier">:location</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">url</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp re">/^http/</span>
+        <span class="ruby-identifier">url</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">args</span>[<span class="ruby-identifier">:url</span>]).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">url</span>).<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:url</span>] = <span class="ruby-identifier">url</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">max_redirects</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">MaxRedirectsReached</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:password</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">password</span>
+        <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:user</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">user</span>
+        <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:headers</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">headers</span>
+        <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:max_redirects</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">max_redirects</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+        <span class="ruby-comment cmt"># pass any cookie set in the result</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">result</span>[<span class="ruby-value str">'set-cookie'</span>]
+          <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:headers</span>][<span class="ruby-identifier">:cookies</span>] = (<span class="ruby-identifier">args</span>[<span class="ruby-identifier">:headers</span>][<span class="ruby-identifier">:cookies</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">parse_cookie</span>(<span class="ruby-identifier">result</span>[<span class="ruby-value str">'set-cookie'</span>]))
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-constant">Request</span>.<span class="ruby-identifier">execute</span> <span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000308" class="method-detail">
+        <a name="M000308"></a>
+
+        <div class="method-heading">
+          <a href="#M000308" class="method-signature">
+          <span class="method-name">headers</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A hash of the <a href="AbstractResponse.html#M000308">headers</a>,
+beautified with symbols and underscores. e.g. &quot;Content-type&quot; will
+become :content_type.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000308-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000308-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 16</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">headers</span>
+      <span class="ruby-ivar">@headers</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">AbstractResponse</span>.<span class="ruby-identifier">beautify_headers</span>(<span class="ruby-ivar">@net_http_res</span>.<span class="ruby-identifier">to_hash</span>)
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000309" class="method-detail">
+        <a name="M000309"></a>
+
+        <div class="method-heading">
+          <a href="#M000309" class="method-signature">
+          <span class="method-name">raw_headers</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The raw <a href="AbstractResponse.html#M000308">headers</a>.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000309-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000309-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 21</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">raw_headers</span>
+      <span class="ruby-ivar">@raw_headers</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@net_http_res</span>.<span class="ruby-identifier">to_hash</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000311" class="method-detail">
+        <a name="M000311"></a>
+
+        <div class="method-heading">
+          <a href="#M000311" class="method-signature">
+          <span class="method-name">return!</span><span class="method-args">(request = nil, result = nil, &amp; block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return the default behavior corresponding to the response <a
+href="AbstractResponse.html#M000307">code</a>: the response itself for <a
+href="AbstractResponse.html#M000307">code</a> in 200..206, redirection for
+301, 302 and 307 in get and head cases, redirection for 303 and an
+exception in other cases
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000311-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000311-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 34</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">return!</span> <span class="ruby-identifier">request</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">result</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">block</span>
+      <span class="ruby-keyword kw">if</span> (<span class="ruby-value">200</span><span class="ruby-operator">..</span><span class="ruby-value">207</span>).<span class="ruby-identifier">include?</span> <span class="ruby-identifier">code</span>
+        <span class="ruby-keyword kw">self</span>
+      <span class="ruby-keyword kw">elsif</span> [<span class="ruby-value">301</span>, <span class="ruby-value">302</span>, <span class="ruby-value">307</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">code</span>
+        <span class="ruby-keyword kw">unless</span> [<span class="ruby-identifier">:get</span>, <span class="ruby-identifier">:head</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:method</span>]
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">EXCEPTIONS_MAP</span>[<span class="ruby-identifier">code</span>].<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">code</span>)
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">follow_redirection</span>(<span class="ruby-identifier">request</span>, <span class="ruby-identifier">result</span>, <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">block</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">code</span> <span class="ruby-operator">==</span> <span class="ruby-value">303</span>
+        <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:method</span>] = <span class="ruby-identifier">:get</span>
+        <span class="ruby-identifier">args</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">:payload</span>
+        <span class="ruby-identifier">follow_redirection</span>(<span class="ruby-identifier">request</span>, <span class="ruby-identifier">result</span>, <span class="ruby-operator">&amp;</span> <span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">EXCEPTIONS_MAP</span>[<span class="ruby-identifier">code</span>]
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Exceptions</span><span class="ruby-operator">::</span><span class="ruby-constant">EXCEPTIONS_MAP</span>[<span class="ruby-identifier">code</span>].<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">code</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">RequestFailed</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">code</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000312" class="method-detail">
+        <a name="M000312"></a>
+
+        <div class="method-heading">
+          <a href="#M000312" class="method-signature">
+          <span class="method-name">to_i</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000312-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000312-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/rest-client-1.6.3/lib/restclient/abstract_response.rb, line 54</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_i</span>
+      <span class="ruby-identifier">code</span>
+    <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

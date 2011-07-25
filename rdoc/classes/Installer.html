@@ -1,0 +1,1660 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Installer</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Installer</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/mime-types-1_16/setup_rb.html">
+                lib/mime-types-1.16/setup.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000218">clean_dir_bin</a>&nbsp;&nbsp;
+      <a href="#M000221">clean_dir_conf</a>&nbsp;&nbsp;
+      <a href="#M000220">clean_dir_data</a>&nbsp;&nbsp;
+      <a href="#M000223">clean_dir_ext</a>&nbsp;&nbsp;
+      <a href="#M000219">clean_dir_lib</a>&nbsp;&nbsp;
+      <a href="#M000222">clean_dir_man</a>&nbsp;&nbsp;
+      <a href="#M000182">config_dir_bin</a>&nbsp;&nbsp;
+      <a href="#M000186">config_dir_conf</a>&nbsp;&nbsp;
+      <a href="#M000185">config_dir_data</a>&nbsp;&nbsp;
+      <a href="#M000184">config_dir_ext</a>&nbsp;&nbsp;
+      <a href="#M000183">config_dir_lib</a>&nbsp;&nbsp;
+      <a href="#M000187">config_dir_man</a>&nbsp;&nbsp;
+      <a href="#M000225">distclean_dir_bin</a>&nbsp;&nbsp;
+      <a href="#M000229">distclean_dir_conf</a>&nbsp;&nbsp;
+      <a href="#M000228">distclean_dir_data</a>&nbsp;&nbsp;
+      <a href="#M000227">distclean_dir_ext</a>&nbsp;&nbsp;
+      <a href="#M000226">distclean_dir_lib</a>&nbsp;&nbsp;
+      <a href="#M000230">distclean_dir_man</a>&nbsp;&nbsp;
+      <a href="#M000233">dive_into</a>&nbsp;&nbsp;
+      <a href="#M000217">exec_clean</a>&nbsp;&nbsp;
+      <a href="#M000181">exec_config</a>&nbsp;&nbsp;
+      <a href="#M000224">exec_distclean</a>&nbsp;&nbsp;
+      <a href="#M000199">exec_install</a>&nbsp;&nbsp;
+      <a href="#M000189">exec_setup</a>&nbsp;&nbsp;
+      <a href="#M000231">exec_task_traverse</a>&nbsp;&nbsp;
+      <a href="#M000216">exec_test</a>&nbsp;&nbsp;
+      <a href="#M000211">existfiles</a>&nbsp;&nbsp;
+      <a href="#M000188">extconf</a>&nbsp;&nbsp;
+      <a href="#M000214">glob_reject</a>&nbsp;&nbsp;
+      <a href="#M000213">glob_select</a>&nbsp;&nbsp;
+      <a href="#M000215">globs2re</a>&nbsp;&nbsp;
+      <a href="#M000212">hookfiles</a>&nbsp;&nbsp;
+      <a href="#M000173">inspect</a>&nbsp;&nbsp;
+      <a href="#M000200">install_dir_bin</a>&nbsp;&nbsp;
+      <a href="#M000204">install_dir_conf</a>&nbsp;&nbsp;
+      <a href="#M000203">install_dir_data</a>&nbsp;&nbsp;
+      <a href="#M000202">install_dir_ext</a>&nbsp;&nbsp;
+      <a href="#M000201">install_dir_lib</a>&nbsp;&nbsp;
+      <a href="#M000205">install_dir_man</a>&nbsp;&nbsp;
+      <a href="#M000206">install_files</a>&nbsp;&nbsp;
+      <a href="#M000207">libfiles</a>&nbsp;&nbsp;
+      <a href="#M000210">mapdir</a>&nbsp;&nbsp;
+      <a href="#M000172">new</a>&nbsp;&nbsp;
+      <a href="#M000197">new_shebang</a>&nbsp;&nbsp;
+      <a href="#M000179">no_harm?</a>&nbsp;&nbsp;
+      <a href="#M000174">noop</a>&nbsp;&nbsp;
+      <a href="#M000176">objdir_root</a>&nbsp;&nbsp;
+      <a href="#M000198">open_atomic_writer</a>&nbsp;&nbsp;
+      <a href="#M000177">relpath</a>&nbsp;&nbsp;
+      <a href="#M000208">rubyextentions</a>&nbsp;&nbsp;
+      <a href="#M000234">run_hook</a>&nbsp;&nbsp;
+      <a href="#M000190">setup_dir_bin</a>&nbsp;&nbsp;
+      <a href="#M000194">setup_dir_conf</a>&nbsp;&nbsp;
+      <a href="#M000193">setup_dir_data</a>&nbsp;&nbsp;
+      <a href="#M000192">setup_dir_ext</a>&nbsp;&nbsp;
+      <a href="#M000191">setup_dir_lib</a>&nbsp;&nbsp;
+      <a href="#M000195">setup_dir_man</a>&nbsp;&nbsp;
+      <a href="#M000175">srcdir_root</a>&nbsp;&nbsp;
+      <a href="#M000209">targetfiles</a>&nbsp;&nbsp;
+      <a href="#M000232">traverse</a>&nbsp;&nbsp;
+      <a href="#M000196">update_shebang_line</a>&nbsp;&nbsp;
+      <a href="#M000178">verbose?</a>&nbsp;&nbsp;
+      <a href="#M000180">verbose_off</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="FileOperations.html">FileOperations</a></span>
+        <span class="include-name"><a href="HookScriptAPI.html">HookScriptAPI</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Installer/Shebang.html" class="link">Installer::Shebang</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">FILETYPES</td>
+          <td>=</td>
+          <td class="context-item-value">%w( bin lib ext data conf man )</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">JUNK_FILES</td>
+          <td>=</td>
+          <td class="context-item-value">%w(      core RCSLOG tags TAGS .make.state     .nse_depinfo #* .#* cvslog.* ,* .del-* *.olb     *~ *.old *.bak *.BAK *.orig *.rej _$* *$      *.org *.in .*   )</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+picked up many entries from cvs-1.11.1/src/ignore.c
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GLOB2REGEX</td>
+          <td>=</td>
+          <td class="context-item-value">{     '.' =&gt; '\.',     '$' =&gt; '\$',     '#' =&gt; '\#',     '*' =&gt; '.*'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TESTDIR</td>
+          <td>=</td>
+          <td class="context-item-value">'test'</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+TASK test
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000172" class="method-detail">
+        <a name="M000172"></a>
+
+        <div class="method-heading">
+          <a href="#M000172" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(config, srcroot, objroot)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000172-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000172-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1165</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">config</span>, <span class="ruby-identifier">srcroot</span>, <span class="ruby-identifier">objroot</span>)
+    <span class="ruby-ivar">@config</span> = <span class="ruby-identifier">config</span>
+    <span class="ruby-ivar">@srcdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">srcroot</span>)
+    <span class="ruby-ivar">@objdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">objroot</span>)
+    <span class="ruby-ivar">@currdir</span> = <span class="ruby-value str">'.'</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000218" class="method-detail">
+        <a name="M000218"></a>
+
+        <div class="method-heading">
+          <span class="method-name">clean_dir_bin</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000221" class="method-detail">
+        <a name="M000221"></a>
+
+        <div class="method-heading">
+          <span class="method-name">clean_dir_conf</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000220" class="method-detail">
+        <a name="M000220"></a>
+
+        <div class="method-heading">
+          <span class="method-name">clean_dir_data</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000223" class="method-detail">
+        <a name="M000223"></a>
+
+        <div class="method-heading">
+          <a href="#M000223" class="method-signature">
+          <span class="method-name">clean_dir_ext</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000223-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1486</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clean_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+    <span class="ruby-identifier">make</span> <span class="ruby-value str">'clean'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-value str">'Makefile'</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000219" class="method-detail">
+        <a name="M000219"></a>
+
+        <div class="method-heading">
+          <span class="method-name">clean_dir_lib</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000222" class="method-detail">
+        <a name="M000222"></a>
+
+        <div class="method-heading">
+          <span class="method-name">clean_dir_man</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000182" class="method-detail">
+        <a name="M000182"></a>
+
+        <div class="method-heading">
+          <span class="method-name">config_dir_bin</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000186" class="method-detail">
+        <a name="M000186"></a>
+
+        <div class="method-heading">
+          <span class="method-name">config_dir_conf</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000185" class="method-detail">
+        <a name="M000185"></a>
+
+        <div class="method-heading">
+          <span class="method-name">config_dir_data</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000184" class="method-detail">
+        <a name="M000184"></a>
+
+        <div class="method-heading">
+          <a href="#M000184" class="method-signature">
+          <span class="method-name">config_dir_ext</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000184-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000184-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1229</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-identifier">extconf</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000183" class="method-detail">
+        <a name="M000183"></a>
+
+        <div class="method-heading">
+          <span class="method-name">config_dir_lib</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000187" class="method-detail">
+        <a name="M000187"></a>
+
+        <div class="method-heading">
+          <span class="method-name">config_dir_man</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000225" class="method-detail">
+        <a name="M000225"></a>
+
+        <div class="method-heading">
+          <span class="method-name">distclean_dir_bin</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000229" class="method-detail">
+        <a name="M000229"></a>
+
+        <div class="method-heading">
+          <span class="method-name">distclean_dir_conf</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000228" class="method-detail">
+        <a name="M000228"></a>
+
+        <div class="method-heading">
+          <span class="method-name">distclean_dir_data</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000227" class="method-detail">
+        <a name="M000227"></a>
+
+        <div class="method-heading">
+          <a href="#M000227" class="method-signature">
+          <span class="method-name">distclean_dir_ext</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000227-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1504</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">distclean_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+    <span class="ruby-identifier">make</span> <span class="ruby-value str">'distclean'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-value str">'Makefile'</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000226" class="method-detail">
+        <a name="M000226"></a>
+
+        <div class="method-heading">
+          <span class="method-name">distclean_dir_lib</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
+
+        <div class="method-heading">
+          <span class="method-name">distclean_dir_man</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000233" class="method-detail">
+        <a name="M000233"></a>
+
+        <div class="method-heading">
+          <a href="#M000233" class="method-signature">
+          <span class="method-name">dive_into</span><span class="method-args">(rel) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000233-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000233-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1540</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">dive_into</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-node">&quot;#{@srcdir}/#{rel}&quot;</span>)
+
+    <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-identifier">dir</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-identifier">dir</span>)
+    <span class="ruby-identifier">prevdir</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">dir</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'---&gt; '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rel</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose?</span>
+    <span class="ruby-ivar">@currdir</span> = <span class="ruby-identifier">rel</span>
+    <span class="ruby-keyword kw">yield</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">prevdir</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'&lt;--- '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rel</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose?</span>
+    <span class="ruby-ivar">@currdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000217" class="method-detail">
+        <a name="M000217"></a>
+
+        <div class="method-heading">
+          <a href="#M000217" class="method-signature">
+          <span class="method-name">exec_clean</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TASK clean
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000217-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000217-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1474</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_clean</span>
+    <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-value str">'clean'</span>
+    <span class="ruby-identifier">rm_f</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">savefile</span>
+    <span class="ruby-identifier">rm_f</span> <span class="ruby-value str">'InstalledFiles'</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000181" class="method-detail">
+        <a name="M000181"></a>
+
+        <div class="method-heading">
+          <a href="#M000181" class="method-signature">
+          <span class="method-name">exec_config</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TASK config
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000181-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000181-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1222</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_config</span>
+    <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-value str">'config'</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000224" class="method-detail">
+        <a name="M000224"></a>
+
+        <div class="method-heading">
+          <a href="#M000224" class="method-signature">
+          <span class="method-name">exec_distclean</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TASK distclean
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000224-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1495</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_distclean</span>
+    <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-value str">'distclean'</span>
+    <span class="ruby-identifier">rm_f</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">savefile</span>
+    <span class="ruby-identifier">rm_f</span> <span class="ruby-value str">'InstalledFiles'</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000199" class="method-detail">
+        <a name="M000199"></a>
+
+        <div class="method-heading">
+          <a href="#M000199" class="method-signature">
+          <span class="method-name">exec_install</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TASK install
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000199-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000199-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1340</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_install</span>
+    <span class="ruby-identifier">rm_f</span> <span class="ruby-value str">'InstalledFiles'</span>
+    <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-value str">'install'</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000189" class="method-detail">
+        <a name="M000189"></a>
+
+        <div class="method-heading">
+          <a href="#M000189" class="method-signature">
+          <span class="method-name">exec_setup</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+TASK setup
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000189-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000189-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1245</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_setup</span>
+    <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-value str">'setup'</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000231" class="method-detail">
+        <a name="M000231"></a>
+
+        <div class="method-heading">
+          <a href="#M000231" class="method-signature">
+          <span class="method-name">exec_task_traverse</span><span class="method-args">(task)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Traversing
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000231-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000231-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1517</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_task_traverse</span>(<span class="ruby-identifier">task</span>)
+    <span class="ruby-identifier">run_hook</span> <span class="ruby-node">&quot;pre-#{task}&quot;</span>
+    <span class="ruby-constant">FILETYPES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'ext'</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">config</span>(<span class="ruby-value str">'without-ext'</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'yes'</span>
+        <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'skipping ext/* by user option'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose?</span>
+        <span class="ruby-keyword kw">next</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">traverse</span> <span class="ruby-identifier">task</span>, <span class="ruby-identifier">type</span>, <span class="ruby-node">&quot;#{task}_dir_#{type}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">run_hook</span> <span class="ruby-node">&quot;post-#{task}&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000216" class="method-detail">
+        <a name="M000216"></a>
+
+        <div class="method-heading">
+          <a href="#M000216" class="method-signature">
+          <span class="method-name">exec_test</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000216-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000216-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1454</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_test</span>
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-value str">'test'</span>)
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'no test in this package'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose?</span>
+      <span class="ruby-keyword kw">return</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'Running tests...'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose?</span>
+    <span class="ruby-keyword kw">begin</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-value str">'test/unit'</span>
+    <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">LoadError</span>
+      <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-value str">'test/unit cannot loaded.  You need Ruby 1.8 or later to invoke this task.'</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">runner</span> = <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoRunner</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">true</span>)
+    <span class="ruby-identifier">runner</span>.<span class="ruby-identifier">to_run</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">TESTDIR</span>
+    <span class="ruby-identifier">runner</span>.<span class="ruby-identifier">run</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000211" class="method-detail">
+        <a name="M000211"></a>
+
+        <div class="method-heading">
+          <a href="#M000211" class="method-signature">
+          <span class="method-name">existfiles</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000211-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000211-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1415</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">existfiles</span>
+    <span class="ruby-identifier">glob_reject</span>(<span class="ruby-constant">JUNK_FILES</span>, (<span class="ruby-identifier">files_of</span>(<span class="ruby-identifier">curr_srcdir</span>()) <span class="ruby-operator">|</span> <span class="ruby-identifier">files_of</span>(<span class="ruby-value str">'.'</span>)))
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000188" class="method-detail">
+        <a name="M000188"></a>
+
+        <div class="method-heading">
+          <a href="#M000188" class="method-signature">
+          <span class="method-name">extconf</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000188-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000188-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1237</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extconf</span>
+    <span class="ruby-identifier">ruby</span> <span class="ruby-node">&quot;#{curr_srcdir()}/extconf.rb&quot;</span>, <span class="ruby-operator">*</span><span class="ruby-ivar">@config</span>.<span class="ruby-identifier">config_opt</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000214" class="method-detail">
+        <a name="M000214"></a>
+
+        <div class="method-heading">
+          <a href="#M000214" class="method-signature">
+          <span class="method-name">glob_reject</span><span class="method-args">(pats, ents)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000214-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000214-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1430</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">glob_reject</span>(<span class="ruby-identifier">pats</span>, <span class="ruby-identifier">ents</span>)
+    <span class="ruby-identifier">re</span> = <span class="ruby-identifier">globs2re</span>(<span class="ruby-identifier">pats</span>)
+    <span class="ruby-identifier">ents</span>.<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">re</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">ent</span> }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000213" class="method-detail">
+        <a name="M000213"></a>
+
+        <div class="method-heading">
+          <a href="#M000213" class="method-signature">
+          <span class="method-name">glob_select</span><span class="method-args">(pat, ents)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000213-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000213-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1425</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">glob_select</span>(<span class="ruby-identifier">pat</span>, <span class="ruby-identifier">ents</span>)
+    <span class="ruby-identifier">re</span> = <span class="ruby-identifier">globs2re</span>([<span class="ruby-identifier">pat</span>])
+    <span class="ruby-identifier">ents</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ent</span><span class="ruby-operator">|</span> <span class="ruby-identifier">re</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">ent</span> }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000215" class="method-detail">
+        <a name="M000215"></a>
+
+        <div class="method-heading">
+          <a href="#M000215" class="method-signature">
+          <span class="method-name">globs2re</span><span class="method-args">(pats)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000215-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000215-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1442</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">globs2re</span>(<span class="ruby-identifier">pats</span>)
+    <span class="ruby-node">/\A(?:#{
+      pats.map {|pat| pat.gsub(/[\.\$\#\*]/) {|ch| GLOB2REGEX[ch] } }.join('|')
+    })\z/</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000212" class="method-detail">
+        <a name="M000212"></a>
+
+        <div class="method-heading">
+          <a href="#M000212" class="method-signature">
+          <span class="method-name">hookfiles</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000212-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000212-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1419</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">hookfiles</span>
+    <span class="ruby-node">%w( pre-%s post-%s pre-%s.rb post-%s.rb )</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">fmt</span><span class="ruby-operator">|</span>
+      <span class="ruby-node">%w( config setup install clean )</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-identifier">fmt</span>, <span class="ruby-identifier">t</span>) }
+    }.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000173" class="method-detail">
+        <a name="M000173"></a>
+
+        <div class="method-heading">
+          <a href="#M000173" class="method-signature">
+          <span class="method-name">inspect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000173-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000173-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1172</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+    <span class="ruby-node">&quot;#&lt;#{self.class} #{File.basename(@srcdir)}&gt;&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000200" class="method-detail">
+        <a name="M000200"></a>
+
+        <div class="method-heading">
+          <a href="#M000200" class="method-signature">
+          <span class="method-name">install_dir_bin</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000200-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000200-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1345</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_dir_bin</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">targetfiles</span>(), <span class="ruby-node">&quot;#{config('bindir')}/#{rel}&quot;</span>, <span class="ruby-value">0755</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000204" class="method-detail">
+        <a name="M000204"></a>
+
+        <div class="method-heading">
+          <a href="#M000204" class="method-signature">
+          <span class="method-name">install_dir_conf</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000204-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000204-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1364</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_dir_conf</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-comment cmt"># FIXME: should not remove current config files</span>
+    <span class="ruby-comment cmt"># (rename previous file to .old/.org)</span>
+    <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">targetfiles</span>(), <span class="ruby-node">&quot;#{config('sysconfdir')}/#{rel}&quot;</span>, <span class="ruby-value">0644</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000203" class="method-detail">
+        <a name="M000203"></a>
+
+        <div class="method-heading">
+          <a href="#M000203" class="method-signature">
+          <span class="method-name">install_dir_data</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000203-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000203-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1360</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_dir_data</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">targetfiles</span>(), <span class="ruby-node">&quot;#{config('datadir')}/#{rel}&quot;</span>, <span class="ruby-value">0644</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000202" class="method-detail">
+        <a name="M000202"></a>
+
+        <div class="method-heading">
+          <a href="#M000202" class="method-signature">
+          <span class="method-name">install_dir_ext</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000202-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000202-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1353</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+    <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">rubyextentions</span>(<span class="ruby-value str">'.'</span>),
+                  <span class="ruby-node">&quot;#{config('sodir')}/#{File.dirname(rel)}&quot;</span>,
+                  <span class="ruby-value">0555</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000201" class="method-detail">
+        <a name="M000201"></a>
+
+        <div class="method-heading">
+          <a href="#M000201" class="method-signature">
+          <span class="method-name">install_dir_lib</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000201-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000201-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1349</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_dir_lib</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">libfiles</span>(), <span class="ruby-node">&quot;#{config('rbdir')}/#{rel}&quot;</span>, <span class="ruby-value">0644</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000205" class="method-detail">
+        <a name="M000205"></a>
+
+        <div class="method-heading">
+          <a href="#M000205" class="method-signature">
+          <span class="method-name">install_dir_man</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000205-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000205-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1370</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_dir_man</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">targetfiles</span>(), <span class="ruby-node">&quot;#{config('mandir')}/#{rel}&quot;</span>, <span class="ruby-value">0644</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000206" class="method-detail">
+        <a name="M000206"></a>
+
+        <div class="method-heading">
+          <a href="#M000206" class="method-signature">
+          <span class="method-name">install_files</span><span class="method-args">(list, dest, mode)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000206-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000206-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1374</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">install_files</span>(<span class="ruby-identifier">list</span>, <span class="ruby-identifier">dest</span>, <span class="ruby-identifier">mode</span>)
+    <span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dest</span>, <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">install_prefix</span>
+    <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">install</span> <span class="ruby-identifier">fname</span>, <span class="ruby-identifier">dest</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">install_prefix</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000207" class="method-detail">
+        <a name="M000207"></a>
+
+        <div class="method-heading">
+          <a href="#M000207" class="method-signature">
+          <span class="method-name">libfiles</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000207-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000207-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1381</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">libfiles</span>
+    <span class="ruby-identifier">glob_reject</span>(<span class="ruby-node">%w(*.y *.output)</span>, <span class="ruby-identifier">targetfiles</span>())
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000210" class="method-detail">
+        <a name="M000210"></a>
+
+        <div class="method-heading">
+          <a href="#M000210" class="method-signature">
+          <span class="method-name">mapdir</span><span class="method-args">(ents)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000210-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000210-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1397</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mapdir</span>(<span class="ruby-identifier">ents</span>)
+    <span class="ruby-identifier">ents</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">ent</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">ent</span>)
+      <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">ent</span>                         <span class="ruby-comment cmt"># objdir</span>
+      <span class="ruby-keyword kw">else</span> <span class="ruby-node">&quot;#{curr_srcdir()}/#{ent}&quot;</span>   <span class="ruby-comment cmt"># srcdir</span>
+      <span class="ruby-keyword kw">end</span>
+    }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000197" class="method-detail">
+        <a name="M000197"></a>
+
+        <div class="method-heading">
+          <a href="#M000197" class="method-signature">
+          <span class="method-name">new_shebang</span><span class="method-args">(old)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000197-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000197-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1287</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_shebang</span>(<span class="ruby-identifier">old</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\Aruby/</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">old</span>.<span class="ruby-identifier">cmd</span>)
+      <span class="ruby-constant">Shebang</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>(<span class="ruby-value str">'rubypath'</span>), <span class="ruby-identifier">old</span>.<span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">old</span>.<span class="ruby-identifier">cmd</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'env'</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">old</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'ruby'</span>
+      <span class="ruby-constant">Shebang</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>(<span class="ruby-value str">'rubypath'</span>), <span class="ruby-identifier">old</span>.<span class="ruby-identifier">args</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>])
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">old</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">config</span>(<span class="ruby-value str">'shebang'</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'all'</span>
+      <span class="ruby-constant">Shebang</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>(<span class="ruby-value str">'rubypath'</span>))
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000179" class="method-detail">
+        <a name="M000179"></a>
+
+        <div class="method-heading">
+          <a href="#M000179" class="method-signature">
+          <span class="method-name">no_harm?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+module <a href="FileOperations.html">FileOperations</a> requires this
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000179-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000179-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1205</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">no_harm?</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">no_harm?</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000174" class="method-detail">
+        <a name="M000174"></a>
+
+        <div class="method-heading">
+          <a href="#M000174" class="method-signature">
+          <span class="method-name">noop</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000174-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000174-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1176</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">noop</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000176" class="method-detail">
+        <a name="M000176"></a>
+
+        <div class="method-heading">
+          <a href="#M000176" class="method-signature">
+          <span class="method-name">objdir_root</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000176-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000176-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1187</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">objdir_root</span>
+    <span class="ruby-ivar">@objdir</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000198" class="method-detail">
+        <a name="M000198"></a>
+
+        <div class="method-heading">
+          <a href="#M000198" class="method-signature">
+          <span class="method-name">open_atomic_writer</span><span class="method-args">(path, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000198-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000198-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1298</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">open_atomic_writer</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">tmpfile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">'.tmp'</span>
+    <span class="ruby-keyword kw">begin</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">tmpfile</span>, <span class="ruby-value str">'wb'</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">rename</span> <span class="ruby-identifier">tmpfile</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword kw">ensure</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span> <span class="ruby-identifier">tmpfile</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">tmpfile</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000177" class="method-detail">
+        <a name="M000177"></a>
+
+        <div class="method-heading">
+          <a href="#M000177" class="method-signature">
+          <span class="method-name">relpath</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000177-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000177-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1191</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">relpath</span>
+    <span class="ruby-ivar">@currdir</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000208" class="method-detail">
+        <a name="M000208"></a>
+
+        <div class="method-heading">
+          <a href="#M000208" class="method-signature">
+          <span class="method-name">rubyextentions</span><span class="method-args">(dir)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000208-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000208-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1385</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">rubyextentions</span>(<span class="ruby-identifier">dir</span>)
+    <span class="ruby-identifier">ents</span> = <span class="ruby-identifier">glob_select</span>(<span class="ruby-node">&quot;*.#{@config.dllext}&quot;</span>, <span class="ruby-identifier">targetfiles</span>())
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">ents</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-node">&quot;no ruby extention exists: 'ruby #{$0} setup' first&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">ents</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000234" class="method-detail">
+        <a name="M000234"></a>
+
+        <div class="method-heading">
+          <a href="#M000234" class="method-signature">
+          <span class="method-name">run_hook</span><span class="method-args">(id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000234-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000234-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1555</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run_hook</span>(<span class="ruby-identifier">id</span>)
+    <span class="ruby-identifier">path</span> = [ <span class="ruby-node">&quot;#{curr_srcdir()}/#{id}&quot;</span>,
+             <span class="ruby-node">&quot;#{curr_srcdir()}/#{id}.rb&quot;</span> ].<span class="ruby-identifier">detect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">cand</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">cand</span>) }
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword kw">begin</span>
+      <span class="ruby-identifier">instance_eval</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">path</span>), <span class="ruby-identifier">path</span>, <span class="ruby-value">1</span>
+    <span class="ruby-keyword kw">rescue</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$DEBUG</span>
+      <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-node">&quot;hook #{path} failed:\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">$!</span>.<span class="ruby-identifier">message</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000190" class="method-detail">
+        <a name="M000190"></a>
+
+        <div class="method-heading">
+          <a href="#M000190" class="method-signature">
+          <span class="method-name">setup_dir_bin</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000190-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000190-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1249</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup_dir_bin</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-identifier">files_of</span>(<span class="ruby-identifier">curr_srcdir</span>()).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">update_shebang_line</span> <span class="ruby-node">&quot;#{curr_srcdir()}/#{fname}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000194" class="method-detail">
+        <a name="M000194"></a>
+
+        <div class="method-heading">
+          <span class="method-name">setup_dir_conf</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000193" class="method-detail">
+        <a name="M000193"></a>
+
+        <div class="method-heading">
+          <span class="method-name">setup_dir_data</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000192" class="method-detail">
+        <a name="M000192"></a>
+
+        <div class="method-heading">
+          <a href="#M000192" class="method-signature">
+          <span class="method-name">setup_dir_ext</span><span class="method-args">(rel)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000192-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000192-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1257</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setup_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+    <span class="ruby-identifier">make</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000191" class="method-detail">
+        <a name="M000191"></a>
+
+        <div class="method-heading">
+          <span class="method-name">setup_dir_lib</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000195" class="method-detail">
+        <a name="M000195"></a>
+
+        <div class="method-heading">
+          <span class="method-name">setup_dir_man</span><span class="method-args">(rel)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Installer.html#M000174">noop</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000175" class="method-detail">
+        <a name="M000175"></a>
+
+        <div class="method-heading">
+          <a href="#M000175" class="method-signature">
+          <span class="method-name">srcdir_root</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Hook Script API base methods
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000175-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000175-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1183</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">srcdir_root</span>
+    <span class="ruby-ivar">@srcdir</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000209" class="method-detail">
+        <a name="M000209"></a>
+
+        <div class="method-heading">
+          <a href="#M000209" class="method-signature">
+          <span class="method-name">targetfiles</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000209-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000209-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1393</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">targetfiles</span>
+    <span class="ruby-identifier">mapdir</span>(<span class="ruby-identifier">existfiles</span>() <span class="ruby-operator">-</span> <span class="ruby-identifier">hookfiles</span>())
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000232" class="method-detail">
+        <a name="M000232"></a>
+
+        <div class="method-heading">
+          <a href="#M000232" class="method-signature">
+          <span class="method-name">traverse</span><span class="method-args">(task, rel, mid)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000232-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000232-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1529</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">traverse</span>(<span class="ruby-identifier">task</span>, <span class="ruby-identifier">rel</span>, <span class="ruby-identifier">mid</span>)
+    <span class="ruby-identifier">dive_into</span>(<span class="ruby-identifier">rel</span>) {
+      <span class="ruby-identifier">run_hook</span> <span class="ruby-node">&quot;pre-#{task}&quot;</span>
+      <span class="ruby-identifier">__send__</span> <span class="ruby-identifier">mid</span>, <span class="ruby-identifier">rel</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">%r[\A.*?(?:/|\z)]</span>, <span class="ruby-value str">''</span>)
+      <span class="ruby-identifier">directories_of</span>(<span class="ruby-identifier">curr_srcdir</span>()).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">traverse</span> <span class="ruby-identifier">task</span>, <span class="ruby-node">&quot;#{rel}/#{d}&quot;</span>, <span class="ruby-identifier">mid</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">run_hook</span> <span class="ruby-node">&quot;post-#{task}&quot;</span>
+    }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000196" class="method-detail">
+        <a name="M000196"></a>
+
+        <div class="method-heading">
+          <a href="#M000196" class="method-signature">
+          <span class="method-name">update_shebang_line</span><span class="method-args">(path)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000196-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000196-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1265</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update_shebang_line</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">no_harm?</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">config</span>(<span class="ruby-value str">'shebang'</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'never'</span>
+    <span class="ruby-identifier">old</span> = <span class="ruby-constant">Shebang</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;warning: #{path}: Shebang line includes too many args.  It is not portable and your program may not work.&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">new</span> = <span class="ruby-identifier">new_shebang</span>(<span class="ruby-identifier">old</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">old</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">config</span>(<span class="ruby-value str">'shebang'</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'all'</span>
+      <span class="ruby-identifier">new</span> = <span class="ruby-constant">Shebang</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">config</span>(<span class="ruby-value str">'rubypath'</span>))
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;updating shebang: #{File.basename(path)}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">verbose?</span>
+    <span class="ruby-identifier">open_atomic_writer</span>(<span class="ruby-identifier">path</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">'rb'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">gets</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">old</span>   <span class="ruby-comment cmt"># discard</span>
+        <span class="ruby-identifier">output</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-identifier">output</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>
+      }
+    }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000178" class="method-detail">
+        <a name="M000178"></a>
+
+        <div class="method-heading">
+          <a href="#M000178" class="method-signature">
+          <span class="method-name">verbose?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+module <a href="FileOperations.html">FileOperations</a> requires this
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000178-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000178-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1200</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verbose?</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">verbose?</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000180" class="method-detail">
+        <a name="M000180"></a>
+
+        <div class="method-heading">
+          <a href="#M000180" class="method-signature">
+          <span class="method-name">verbose_off</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000180-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000180-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1209</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">verbose_off</span>
+    <span class="ruby-keyword kw">begin</span>
+      <span class="ruby-identifier">save</span>, <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">verbose?</span>, <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">yield</span>
+    <span class="ruby-keyword kw">ensure</span>
+      <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-identifier">save</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

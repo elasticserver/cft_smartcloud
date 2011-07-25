@@ -1,0 +1,1484 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: IBMSmartCloud</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">IBMSmartCloud</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/smartcloud_rb.html">
+                lib/smartcloud.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Encapsulates communications with IBM SmartCloud via REST
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000125">address_state_is?</a>&nbsp;&nbsp;
+      <a href="#M000116">allocate_address</a>&nbsp;&nbsp;
+      <a href="#M000109">args</a>&nbsp;&nbsp;
+      <a href="#M000118">clone_image</a>&nbsp;&nbsp;
+      <a href="#M000119">clone_volume</a>&nbsp;&nbsp;
+      <a href="#M000113">create_instance</a>&nbsp;&nbsp;
+      <a href="#M000132">create_volume</a>&nbsp;&nbsp;
+      <a href="#M000151">delete</a>&nbsp;&nbsp;
+      <a href="#M000143">delete_instance</a>&nbsp;&nbsp;
+      <a href="#M000142">delete_instances</a>&nbsp;&nbsp;
+      <a href="#M000128">delete_unused_keys</a>&nbsp;&nbsp;
+      <a href="#M000120">delete_volume</a>&nbsp;&nbsp;
+      <a href="#M000117">describe_address</a>&nbsp;&nbsp;
+      <a href="#M000115">describe_address_offerings</a>&nbsp;&nbsp;
+      <a href="#M000124">describe_addresses</a>&nbsp;&nbsp;
+      <a href="#M000148">describe_image</a>&nbsp;&nbsp;
+      <a href="#M000149">describe_images</a>&nbsp;&nbsp;
+      <a href="#M000145">describe_instance</a>&nbsp;&nbsp;
+      <a href="#M000146">describe_instances</a>&nbsp;&nbsp;
+      <a href="#M000123">describe_key</a>&nbsp;&nbsp;
+      <a href="#M000126">describe_keys</a>&nbsp;&nbsp;
+      <a href="#M000111">describe_locations</a>&nbsp;&nbsp;
+      <a href="#M000133">describe_storage</a>&nbsp;&nbsp;
+      <a href="#M000127">describe_unused_keys</a>&nbsp;&nbsp;
+      <a href="#M000135">describe_volume</a>&nbsp;&nbsp;
+      <a href="#M000131">describe_volume_offerings</a>&nbsp;&nbsp;
+      <a href="#M000134">describe_volumes</a>&nbsp;&nbsp;
+      <a href="#M000150">display_images</a>&nbsp;&nbsp;
+      <a href="#M000147">display_instances</a>&nbsp;&nbsp;
+      <a href="#M000129">display_keys</a>&nbsp;&nbsp;
+      <a href="#M000112">display_locations</a>&nbsp;&nbsp;
+      <a href="#M000137">display_storage</a>&nbsp;&nbsp;
+      <a href="#M000136">display_volumes</a>&nbsp;&nbsp;
+      <a href="#M000121">generate_keypair</a>&nbsp;&nbsp;
+      <a href="#M000153">get</a>&nbsp;&nbsp;
+      <a href="#M000114">get_location_by_name</a>&nbsp;&nbsp;
+      <a href="#M000110">help</a>&nbsp;&nbsp;
+      <a href="#M000139">instance_state_is?</a>&nbsp;&nbsp;
+      <a href="#M000108">new</a>&nbsp;&nbsp;
+      <a href="#M000141">poll_for_instance_state</a>&nbsp;&nbsp;
+      <a href="#M000140">poll_for_volume_state</a>&nbsp;&nbsp;
+      <a href="#M000154">post</a>&nbsp;&nbsp;
+      <a href="#M000152">put</a>&nbsp;&nbsp;
+      <a href="#M000122">remove_keypair</a>&nbsp;&nbsp;
+      <a href="#M000144">restart_instance</a>&nbsp;&nbsp;
+      <a href="#M000138">storage_state_is?</a>&nbsp;&nbsp;
+      <a href="#M000130">supported_instance_types</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">config</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">logger</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">method_help</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
+
+        <div class="method-heading">
+          <a href="#M000109" class="method-signature">
+          <span class="method-name">args</span><span class="method-args">(method, args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000109-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000109-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 55</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">args</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">args</span>)
+    <span class="ruby-ivar">@method_help</span><span class="ruby-operator">||=</span>{}
+    <span class="ruby-ivar">@method_help</span>[<span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
+
+        <div class="method-heading">
+          <a href="#M000108" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(username, password, logger=nil, debug=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000108-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000108-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 33</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">username</span>, <span class="ruby-identifier">password</span>, <span class="ruby-identifier">logger</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">debug</span>=<span class="ruby-keyword kw">false</span>)
+    <span class="ruby-ivar">@username</span> = <span class="ruby-identifier">username</span>
+    <span class="ruby-ivar">@password</span> = <span class="ruby-identifier">password</span>
+    <span class="ruby-ivar">@logger</span> = <span class="ruby-identifier">logger</span> <span class="ruby-operator">||</span> <span class="ruby-constant">SmartcloudLogger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDOUT</span>)
+    <span class="ruby-ivar">@debug</span> = <span class="ruby-identifier">debug</span>
+
+    <span class="ruby-ivar">@config</span> = <span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load_file</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword kw">__FILE__</span>), <span class="ruby-value str">&quot;config/config.yml&quot;</span>))
+    <span class="ruby-ivar">@states</span> = <span class="ruby-ivar">@config</span>[<span class="ruby-value str">&quot;states&quot;</span>]
+
+    <span class="ruby-ivar">@api_url</span> = <span class="ruby-ivar">@config</span>[<span class="ruby-value str">&quot;api_url&quot;</span>]
+    <span class="ruby-ivar">@api_url</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-value str">&quot;https://&quot;</span>, <span class="ruby-node">&quot;https://#{CGI::escape(username)}:#{CGI::escape(password)}@&quot;</span>)
+
+    <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">timeout</span> = <span class="ruby-value">120</span> <span class="ruby-comment cmt"># ibm requests can be very slow</span>
+    <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">log</span> = <span class="ruby-ivar">@logger</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@debug</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
+
+        <div class="method-heading">
+          <a href="#M000125" class="method-signature">
+          <span class="method-name">address_state_is?</span><span class="method-args">(address_id, state_string)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000125-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000125-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 237</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">address_state_is?</span>(<span class="ruby-identifier">address_id</span>, <span class="ruby-identifier">state_string</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-identifier">describe_addresses</span>(<span class="ruby-identifier">address_id</span>)
+    <span class="ruby-identifier">v</span>.<span class="ruby-constant">State</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">state_string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="#M000116" class="method-signature">
+          <span class="method-name">allocate_address</span><span class="method-args">(location, offering_id=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000116-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000116-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 162</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">allocate_address</span>(<span class="ruby-identifier">location</span>, <span class="ruby-identifier">offering_id</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">offering_id</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">offering_id</span> = <span class="ruby-identifier">describe_address_offerings</span>(<span class="ruby-identifier">location</span>).<span class="ruby-constant">ID</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">post</span>(<span class="ruby-value str">&quot;/addresses&quot;</span>, <span class="ruby-identifier">:offeringID</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">offering_id</span>, <span class="ruby-identifier">:location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">location</span>).<span class="ruby-constant">Address</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <a href="#M000118" class="method-signature">
+          <span class="method-name">clone_image</span><span class="method-args">(name, description, image_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000118-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000118-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 179</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clone_image</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">description</span>, <span class="ruby-identifier">image_id</span>)
+    <span class="ruby-identifier">post</span>(<span class="ruby-node">&quot;/offerings/image/#{image_id}&quot;</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">description</span>).<span class="ruby-constant">ImageID</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <a href="#M000119" class="method-signature">
+          <span class="method-name">clone_volume</span><span class="method-args">(name, source_disk_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000119-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000119-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 186</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clone_volume</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">source_disk_id</span>)
+    <span class="ruby-comment cmt"># result = post(&quot;/storage&quot;, :name =&gt; name, :SourceDiskID =&gt; source_disk_id)</span>
+    <span class="ruby-comment cmt"># result.Volume.ID</span>
+    <span class="ruby-identifier">create_password_file</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">run_ibm_tool</span>(<span class="ruby-node">&quot;ic-clone-volume.sh -n #{name} -S #{source_disk_id}&quot;</span>)
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/ID : (.*)/</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">$1</span> <span class="ruby-comment cmt"># grab the id of the created volume</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
+
+        <div class="method-heading">
+          <a href="#M000113" class="method-signature">
+          <span class="method-name">create_instance</span><span class="method-args">(instance_params)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000113-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000113-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 106</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_instance</span>(<span class="ruby-identifier">instance_params</span>)
+    <span class="ruby-identifier">param_remap</span> = { <span class="ruby-value str">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;name&quot;</span>,
+      <span class="ruby-value str">&quot;image-id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;imageID&quot;</span>,
+      <span class="ruby-value str">&quot;instance-type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;instanceType&quot;</span>,
+      <span class="ruby-value str">&quot;data-center&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;location&quot;</span>,
+      <span class="ruby-value str">&quot;key-name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;publicKey&quot;</span>,
+      <span class="ruby-value str">&quot;ip-address-id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;ip&quot;</span>,
+      <span class="ruby-value str">&quot;volume-id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;volumeID&quot;</span>,
+      <span class="ruby-value str">&quot;configuration&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;ConfigurationData&quot;</span>,
+      <span class="ruby-value str">&quot;vlan-id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;vlanID&quot;</span>,
+      <span class="ruby-value str">&quot;antiCollocationInstance&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;antiCollocationInstance&quot;</span>,
+      <span class="ruby-value str">&quot;isMiniEphemeral&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;isMiniEphemeral&quot;</span>
+    }
+
+    <span class="ruby-comment cmt"># api does not take description</span>
+    <span class="ruby-identifier">instance_params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value str">&quot;description&quot;</span>)
+
+    <span class="ruby-comment cmt"># configuration data has to be changed from a string like</span>
+    <span class="ruby-comment cmt"># &lt;configuration&gt;{contextmanager:baml-c3-master.cohesiveft.com,clustername:BAML_poc_pk0515,role:[nfs-client-setup|newyork_master_refdata_member|install-luci|rhel-openlikewise-client-setup|join-domain],hostname:r550n107}&lt;/configuration&gt; </span>
+    <span class="ruby-comment cmt"># to a standard list of POST params like</span>
+    <span class="ruby-comment cmt"># contextmanager=baml-c3-mager&amp;clustername=BAML...</span>
+    <span class="ruby-identifier">configuration_data</span> = <span class="ruby-identifier">instance_params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value str">&quot;configuration&quot;</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">instance_params</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value str">&quot;ConfigurationData&quot;</span>) 
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">configuration_data</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">configuration_data</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\s+/</span>
+        <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">warn</span> <span class="ruby-value str">&quot;&lt;configuration&gt; tag should not contain spaces! Correct format looks like: &lt;configuration&gt;{foo:bar,baz:quux}&lt;/configuration&gt;. Spaces will be removed.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">configuration_data</span>.<span class="ruby-identifier">delete!</span>(<span class="ruby-value str">&quot;{}&quot;</span>) <span class="ruby-comment cmt"># get rid of curly braces</span>
+      <span class="ruby-identifier">config_data_params</span> = <span class="ruby-identifier">configuration_data</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;,&quot;</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">param</span><span class="ruby-operator">|</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">&quot;:&quot;</span>)} <span class="ruby-comment cmt"># split each foo:bar into key and value</span>
+      <span class="ruby-identifier">config_data_params</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">instance_params</span>[<span class="ruby-identifier">k</span>]=<span class="ruby-identifier">v</span>} <span class="ruby-comment cmt"># add it into the standard instance params array</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">post</span> <span class="ruby-value str">&quot;/instances&quot;</span>, <span class="ruby-identifier">instance_params</span>, <span class="ruby-identifier">param_remap</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000132" class="method-detail">
+        <a name="M000132"></a>
+
+        <div class="method-heading">
+          <a href="#M000132" class="method-signature">
+          <span class="method-name">create_volume</span><span class="method-args">(name, location, size, offering_id=nil, format=&quot;EXT3&quot;)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000132-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000132-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 304</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_volume</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">location</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">offering_id</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">format</span>=<span class="ruby-value str">&quot;EXT3&quot;</span>)
+
+    <span class="ruby-comment cmt"># figure out the offering ID automatically based on location and size</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">offering_id</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Looking up volume offerings based on location: #{location} and size: #{size}&quot;</span>
+      <span class="ruby-identifier">offering_id</span> = <span class="ruby-identifier">describe_volume_offerings</span>(<span class="ruby-identifier">location</span>, <span class="ruby-identifier">size</span>).<span class="ruby-constant">ID</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-value str">&quot;Creating volume...please wait.&quot;</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">post</span>(<span class="ruby-value str">&quot;/storage&quot;</span>, <span class="ruby-identifier">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">format</span>, <span class="ruby-identifier">:location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">location</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">:size</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">size</span>, <span class="ruby-identifier">:offeringID</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">offering_id</span>)
+    <span class="ruby-identifier">result</span>.<span class="ruby-constant">Volume</span>.<span class="ruby-constant">ID</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000151" class="method-detail">
+        <a name="M000151"></a>
+
+        <div class="method-heading">
+          <a href="#M000151" class="method-signature">
+          <span class="method-name">delete</span><span class="method-args">(path)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000151-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000151-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 497</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">output</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">delete</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@api_url</span>, <span class="ruby-identifier">path</span>), <span class="ruby-identifier">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:response</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">XmlSimple</span>.<span class="ruby-identifier">xml_in</span>(<span class="ruby-identifier">output</span>, {<span class="ruby-value str">'ForceArray'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">nil</span>})
+  <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise_restclient_error</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000143" class="method-detail">
+        <a name="M000143"></a>
+
+        <div class="method-heading">
+          <a href="#M000143" class="method-signature">
+          <span class="method-name">delete_instance</span><span class="method-args">(instance_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000143-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000143-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 422</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_instance</span>(<span class="ruby-identifier">instance_id</span>)
+    <span class="ruby-identifier">delete</span>(<span class="ruby-node">&quot;/instances/#{instance_id}&quot;</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000142" class="method-detail">
+        <a name="M000142"></a>
+
+        <div class="method-heading">
+          <a href="#M000142" class="method-signature">
+          <span class="method-name">delete_instances</span><span class="method-args">(instance_ids)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000142-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000142-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 416</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_instances</span>(<span class="ruby-identifier">instance_ids</span>)
+    <span class="ruby-identifier">instance_ids</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete_instance</span>(<span class="ruby-identifier">id</span>) }
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
+
+        <div class="method-heading">
+          <a href="#M000128" class="method-signature">
+          <span class="method-name">delete_unused_keys</span><span class="method-args">(auto=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000128-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 250</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_unused_keys</span>(<span class="ruby-identifier">auto</span>=<span class="ruby-keyword kw">false</span>)
+    <span class="ruby-identifier">describe_unused_keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">auto</span>
+        <span class="ruby-identifier">remove_keypair</span>(<span class="ruby-identifier">key</span>.<span class="ruby-constant">KeyName</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Remove key #{key.KeyName}? (type 'y' to continue): &quot;</span>
+        <span class="ruby-identifier">input</span> = <span class="ruby-identifier">gets</span>.<span class="ruby-identifier">strip</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">input</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'y'</span>
+          <span class="ruby-identifier">remove_keypair</span>(<span class="ruby-identifier">key</span>.<span class="ruby-constant">KeyName</span>)
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Not removing key #{key.KeyName}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
+
+        <div class="method-heading">
+          <a href="#M000120" class="method-signature">
+          <span class="method-name">delete_volume</span><span class="method-args">(vol_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000120-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000120-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 197</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_volume</span>(<span class="ruby-identifier">vol_id</span>)
+    <span class="ruby-identifier">delete</span>(<span class="ruby-node">&quot;/storage/#{vol_id}&quot;</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="#M000117" class="method-signature">
+          <span class="method-name">describe_address</span><span class="method-args">(address_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000117-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000117-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 171</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_address</span>(<span class="ruby-identifier">address_id</span>)
+    <span class="ruby-identifier">address</span> = <span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;/addresses/#{address_id}&quot;</span>).<span class="ruby-constant">Address</span>
+    <span class="ruby-identifier">address</span>[<span class="ruby-value str">&quot;State&quot;</span>] = <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">states</span>.<span class="ruby-identifier">ip</span>[<span class="ruby-identifier">address</span>.<span class="ruby-constant">State</span>]
+    <span class="ruby-identifier">address</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="#M000115" class="method-signature">
+          <span class="method-name">describe_address_offerings</span><span class="method-args">(location=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000115-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000115-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 150</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_address_offerings</span>(<span class="ruby-identifier">location</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">response</span>=<span class="ruby-identifier">get</span>(<span class="ruby-value str">&quot;/offerings/address&quot;</span>).<span class="ruby-constant">Offerings</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">location</span>
+      <span class="ruby-identifier">response</span>.<span class="ruby-identifier">detect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">offering</span><span class="ruby-operator">|</span> <span class="ruby-identifier">offering</span>.<span class="ruby-constant">Location</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">to_s</span>}
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">response</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
+
+        <div class="method-heading">
+          <a href="#M000124" class="method-signature">
+          <span class="method-name">describe_addresses</span><span class="method-args">(address_id=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000124-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 222</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_addresses</span>(<span class="ruby-identifier">address_id</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">get</span>(<span class="ruby-value str">&quot;/addresses&quot;</span>).<span class="ruby-constant">Address</span>
+    <span class="ruby-identifier">response</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">a</span>[<span class="ruby-value str">&quot;State&quot;</span>] = <span class="ruby-ivar">@states</span>[<span class="ruby-value str">&quot;ip&quot;</span>][<span class="ruby-identifier">a</span>.<span class="ruby-constant">State</span>.<span class="ruby-identifier">to_i</span>]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">address_id</span>
+      <span class="ruby-identifier">response</span> = <span class="ruby-identifier">response</span>.<span class="ruby-identifier">detect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">address</span><span class="ruby-operator">|</span> <span class="ruby-identifier">address</span>.<span class="ruby-constant">ID</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">address_id</span>.<span class="ruby-identifier">to_s</span>}
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">response</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000148" class="method-detail">
+        <a name="M000148"></a>
+
+        <div class="method-heading">
+          <a href="#M000148" class="method-signature">
+          <span class="method-name">describe_image</span><span class="method-args">(image_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000148-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000148-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 472</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_image</span>(<span class="ruby-identifier">image_id</span>)
+    <span class="ruby-identifier">image</span> = <span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;offerings/image/#{image_id}&quot;</span>).<span class="ruby-constant">Image</span>
+    <span class="ruby-identifier">image</span>[<span class="ruby-value str">&quot;State&quot;</span>] = <span class="ruby-ivar">@states</span>[<span class="ruby-value str">&quot;image&quot;</span>][<span class="ruby-identifier">image</span>.<span class="ruby-constant">State</span>.<span class="ruby-identifier">to_i</span>]
+    <span class="ruby-identifier">image</span> 
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000149" class="method-detail">
+        <a name="M000149"></a>
+
+        <div class="method-heading">
+          <a href="#M000149" class="method-signature">
+          <span class="method-name">describe_images</span><span class="method-args">(filters={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000149-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000149-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 479</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_images</span>(<span class="ruby-identifier">filters</span>={})
+    <span class="ruby-identifier">images</span> = <span class="ruby-identifier">arrayize</span>(<span class="ruby-identifier">get</span>(<span class="ruby-value str">&quot;offerings/image/&quot;</span>).<span class="ruby-constant">Image</span>)
+    <span class="ruby-identifier">images</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">img</span><span class="ruby-operator">|</span> <span class="ruby-identifier">img</span>[<span class="ruby-value str">&quot;State&quot;</span>] = <span class="ruby-ivar">@states</span>[<span class="ruby-value str">&quot;image&quot;</span>][<span class="ruby-identifier">img</span>.<span class="ruby-constant">State</span>.<span class="ruby-identifier">to_i</span>]}
+    <span class="ruby-identifier">filters</span>[<span class="ruby-identifier">:order</span>] <span class="ruby-operator">||=</span> <span class="ruby-value str">&quot;Location&quot;</span>
+    <span class="ruby-identifier">images</span> = <span class="ruby-identifier">filter_and_sort</span>(<span class="ruby-identifier">images</span>, <span class="ruby-identifier">filters</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000145" class="method-detail">
+        <a name="M000145"></a>
+
+        <div class="method-heading">
+          <a href="#M000145" class="method-signature">
+          <span class="method-name">describe_instance</span><span class="method-args">(instance_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000145-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000145-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 434</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_instance</span>(<span class="ruby-identifier">instance_id</span>)
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;instances/#{instance_id}&quot;</span>).<span class="ruby-constant">Instance</span>
+    <span class="ruby-identifier">response</span>[<span class="ruby-value str">&quot;Status&quot;</span>] = <span class="ruby-ivar">@states</span>[<span class="ruby-value str">&quot;instance&quot;</span>][<span class="ruby-identifier">response</span>.<span class="ruby-constant">Status</span>.<span class="ruby-identifier">to_i</span>]
+    <span class="ruby-identifier">response</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000146" class="method-detail">
+        <a name="M000146"></a>
+
+        <div class="method-heading">
+          <a href="#M000146" class="method-signature">
+          <span class="method-name">describe_instances</span><span class="method-args">(filters={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000146-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000146-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 444</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_instances</span>(<span class="ruby-identifier">filters</span>={})
+    <span class="ruby-identifier">instances</span> = <span class="ruby-identifier">arrayize</span>(<span class="ruby-identifier">get</span>(<span class="ruby-value str">&quot;instances&quot;</span>).<span class="ruby-constant">Instance</span>)
+    
+    <span class="ruby-identifier">instances</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">instance</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">instance</span>[<span class="ruby-value str">&quot;Status&quot;</span>] = <span class="ruby-ivar">@states</span>[<span class="ruby-value str">&quot;instance&quot;</span>][<span class="ruby-identifier">instance</span>.<span class="ruby-constant">Status</span>.<span class="ruby-identifier">to_i</span>]
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">filters</span>[<span class="ruby-identifier">:order</span>] <span class="ruby-operator">||=</span> <span class="ruby-value str">&quot;LaunchTime&quot;</span>
+    <span class="ruby-identifier">instances</span> = <span class="ruby-identifier">filter_and_sort</span>(<span class="ruby-identifier">instances</span>, <span class="ruby-identifier">filters</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
+
+        <div class="method-heading">
+          <a href="#M000123" class="method-signature">
+          <span class="method-name">describe_key</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000123-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000123-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 216</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_key</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;/keys/#{name}&quot;</span>).<span class="ruby-constant">PublicKey</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
+
+        <div class="method-heading">
+          <a href="#M000126" class="method-signature">
+          <span class="method-name">describe_keys</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000126-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000126-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 242</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_keys</span>
+    <span class="ruby-identifier">get</span>(<span class="ruby-value str">&quot;/keys&quot;</span>).<span class="ruby-constant">PublicKey</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
+
+        <div class="method-heading">
+          <a href="#M000111" class="method-signature">
+          <span class="method-name">describe_locations</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get a list of data centers
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000111-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000111-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 92</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_locations</span>
+    <span class="ruby-identifier">get</span>(<span class="ruby-value str">&quot;/locations&quot;</span>).<span class="ruby-constant">Location</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000133" class="method-detail">
+        <a name="M000133"></a>
+
+        <div class="method-heading">
+          <a href="#M000133" class="method-signature">
+          <span class="method-name">describe_storage</span><span class="method-args">(volume_id=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000133-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000133-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 319</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_storage</span>(<span class="ruby-identifier">volume_id</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">volume_id</span> <span class="ruby-value">? </span><span class="ruby-identifier">get</span>(<span class="ruby-node">&quot;/storage/#{volume_id}&quot;</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">get</span>(<span class="ruby-value str">&quot;/storage&quot;</span>)
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">response</span>.<span class="ruby-constant">Volume</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-identifier">response</span>.<span class="ruby-constant">Volume</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">v</span>[<span class="ruby-value str">&quot;State&quot;</span>] = <span class="ruby-ivar">@states</span>[<span class="ruby-value str">&quot;storage&quot;</span>][<span class="ruby-identifier">v</span>.<span class="ruby-constant">State</span>.<span class="ruby-identifier">to_i</span>]
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">response</span>.<span class="ruby-constant">Volume</span>
+      <span class="ruby-identifier">response</span>.<span class="ruby-constant">Volume</span>[<span class="ruby-value str">&quot;State&quot;</span>] = <span class="ruby-ivar">@states</span>[<span class="ruby-value str">&quot;storage&quot;</span>][<span class="ruby-identifier">response</span>.<span class="ruby-constant">Volume</span>.<span class="ruby-constant">State</span>.<span class="ruby-identifier">to_i</span>]
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">return</span> []
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">response</span>.<span class="ruby-constant">Volume</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
+
+        <div class="method-heading">
+          <a href="#M000127" class="method-signature">
+          <span class="method-name">describe_unused_keys</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000127-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000127-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 246</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_unused_keys</span>
+    <span class="ruby-identifier">describe_keys</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>.<span class="ruby-constant">Instances</span> <span class="ruby-operator">==</span> {}}
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000135" class="method-detail">
+        <a name="M000135"></a>
+
+        <div class="method-heading">
+          <span class="method-name">describe_volume</span><span class="method-args">(volume_id=nil)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="IBMSmartCloud.html#M000133">describe_storage</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000131" class="method-detail">
+        <a name="M000131"></a>
+
+        <div class="method-heading">
+          <a href="#M000131" class="method-signature">
+          <span class="method-name">describe_volume_offerings</span><span class="method-args">(location=nil, name=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000131-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000131-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 283</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_volume_offerings</span>(<span class="ruby-identifier">location</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">name</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">get</span>(<span class="ruby-value str">&quot;/offerings/storage&quot;</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">location</span>
+      <span class="ruby-identifier">filtered_by_location</span> = <span class="ruby-identifier">response</span>.<span class="ruby-constant">Offerings</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-constant">Location</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">location</span>.<span class="ruby-identifier">to_s</span>}
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">filtered_by_location</span>.<span class="ruby-identifier">detect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-constant">Name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>}
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">filtered_by_location</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">response</span>.<span class="ruby-constant">Offerings</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000134" class="method-detail">
+        <a name="M000134"></a>
+
+        <div class="method-heading">
+          <span class="method-name">describe_volumes</span><span class="method-args">(volume_id=nil)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="IBMSmartCloud.html#M000133">describe_storage</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000150" class="method-detail">
+        <a name="M000150"></a>
+
+        <div class="method-heading">
+          <a href="#M000150" class="method-signature">
+          <span class="method-name">display_images</span><span class="method-args">(filters={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000150-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000150-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 487</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display_images</span>(<span class="ruby-identifier">filters</span>={})
+    <span class="ruby-identifier">images</span> = <span class="ruby-identifier">describe_images</span>(<span class="ruby-identifier">filters</span>)
+
+    <span class="ruby-identifier">log</span> = <span class="ruby-identifier">images</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">types</span> = <span class="ruby-identifier">arrayize</span>(<span class="ruby-identifier">i</span>.<span class="ruby-constant">SupportedInstanceTypes</span>.<span class="ruby-constant">InstanceType</span>).<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:ID</span>).<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;, &quot;</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-value str">&quot;[INSTANCE TYPE UNKNOWN]&quot;</span>
+      <span class="ruby-node">&quot;#{i.ID} | #{i.Location} | #{i.Name} | #{types}&quot;</span> 
+    <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;\n#{log}&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000147" class="method-detail">
+        <a name="M000147"></a>
+
+        <div class="method-heading">
+          <a href="#M000147" class="method-signature">
+          <span class="method-name">display_instances</span><span class="method-args">(filters={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000147-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000147-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 460</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display_instances</span>(<span class="ruby-identifier">filters</span>={})
+    <span class="ruby-identifier">instances</span> = <span class="ruby-identifier">describe_instances</span>(<span class="ruby-identifier">filters</span>)
+
+    <span class="ruby-identifier">log</span> = <span class="ruby-node">%{#{&quot;Started&quot;.ljust(18)} | #{&quot;Instance&quot;.ljust(8)} | #{&quot;Image&quot;.ljust(9)} | #{&quot;Loc&quot;.ljust(3)} | #{&quot;Status&quot;.ljust(10)} | #{&quot;KeyName&quot;.ljust(15)} | #{&quot;IP&quot;.ljust(15)} | Name\n}</span> 
+    <span class="ruby-identifier">log</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">instances</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ins</span><span class="ruby-operator">|</span>
+      <span class="ruby-node">&quot;#{DateTime.parse(ins.LaunchTime).strftime(&quot;%Y-%m-%d %I:%M%p&quot;)} | #{ins.ID.ljust(8)} | #{ins.ImageID.ljust(9)} | #{ins.Location.ljust(3)} | #{ins.Status[0..9].ljust(10)} | #{(ins.KeyName || &quot;&quot;).strip[0..14].ljust(15)} | #{(ins.IP.strip==&quot;&quot; ? '[NONE]' : ins.IP.strip).to_s.ljust(15)} | #{ins.Name}&quot;</span>
+    <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;\n#{log}&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
+
+        <div class="method-heading">
+          <a href="#M000129" class="method-signature">
+          <span class="method-name">display_keys</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000129-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000129-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 266</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display_keys</span> 
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-value str">&quot;\nKeyName&quot;</span>.<span class="ruby-identifier">ljust</span>(<span class="ruby-value">50</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;  | Instance ID's\n&quot;</span> <span class="ruby-operator">+</span>  <span class="ruby-identifier">describe_keys</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">key</span>.<span class="ruby-constant">KeyName</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">ljust</span>(<span class="ruby-value">50</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; | &quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">key</span>.<span class="ruby-constant">Instances</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-value">? </span><span class="ruby-value str">'[]'</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">key</span>.<span class="ruby-constant">Instances</span>.<span class="ruby-constant">InstanceID</span>.<span class="ruby-identifier">inspect</span>  )}.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="#M000112" class="method-signature">
+          <span class="method-name">display_locations</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000112-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000112-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 96</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display_locations</span>
+    <span class="ruby-identifier">log</span> = <span class="ruby-identifier">describe_locations</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">loc</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{loc.ID} #{loc.Location}&quot;</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-node">&quot;\n#{log}&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000137" class="method-detail">
+        <a name="M000137"></a>
+
+        <div class="method-heading">
+          <span class="method-name">display_storage</span><span class="method-args">(filter={})</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="IBMSmartCloud.html#M000136">display_volumes</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000136" class="method-detail">
+        <a name="M000136"></a>
+
+        <div class="method-heading">
+          <a href="#M000136" class="method-signature">
+          <span class="method-name">display_volumes</span><span class="method-args">(filter={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000136-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000136-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 341</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">display_volumes</span>(<span class="ruby-identifier">filter</span>={})
+    <span class="ruby-identifier">vols</span> = <span class="ruby-identifier">describe_volumes</span>
+    <span class="ruby-identifier">vols</span> = <span class="ruby-identifier">filter_and_sort</span>(<span class="ruby-identifier">vols</span>, <span class="ruby-identifier">filter</span>)
+
+    <span class="ruby-identifier">log</span> = <span class="ruby-value str">&quot;\nVolume | State      | Loc  | Name\n&quot;</span>
+    <span class="ruby-identifier">volsz</span> = <span class="ruby-identifier">vols</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">vol</span><span class="ruby-operator">|</span> <span class="ruby-identifier">vol</span>.<span class="ruby-constant">ID</span>.<span class="ruby-identifier">ljust</span>(<span class="ruby-value">6</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; | &quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">vol</span>.<span class="ruby-constant">State</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>].<span class="ruby-identifier">ljust</span>(<span class="ruby-value">10</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-value str">'?'</span>.<span class="ruby-identifier">ljust</span>(<span class="ruby-value">10</span>)) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; | &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">vol</span>.<span class="ruby-constant">Location</span>.<span class="ruby-identifier">ljust</span>(<span class="ruby-value">4</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot; | &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">vol</span>.<span class="ruby-constant">Name</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+    <span class="ruby-identifier">log</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">volsz</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-identifier">log</span>
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
+
+        <div class="method-heading">
+          <a href="#M000121" class="method-signature">
+          <span class="method-name">generate_keypair</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000121-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000121-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 204</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate_keypair</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">response</span> = <span class="ruby-identifier">post</span>(<span class="ruby-value str">&quot;/keys&quot;</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">response</span>.<span class="ruby-constant">PrivateKey</span>.<span class="ruby-constant">KeyMaterial</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000153" class="method-detail">
+        <a name="M000153"></a>
+
+        <div class="method-heading">
+          <a href="#M000153" class="method-signature">
+          <span class="method-name">get</span><span class="method-args">(path)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000153-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000153-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 512</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">output</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">get</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@api_url</span>, <span class="ruby-identifier">path</span>), <span class="ruby-identifier">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:response</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">XmlSimple</span>.<span class="ruby-identifier">xml_in</span>(<span class="ruby-identifier">output</span>, {<span class="ruby-value str">'ForceArray'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">nil</span>})
+  <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise_restclient_error</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
+
+        <div class="method-heading">
+          <a href="#M000114" class="method-signature">
+          <span class="method-name">get_location_by_name</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000114-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000114-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 142</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_location_by_name</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">locations</span> = <span class="ruby-identifier">describe_locations</span>
+    <span class="ruby-identifier">locations</span>.<span class="ruby-identifier">detect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">loc</span><span class="ruby-operator">|</span> <span class="ruby-identifier">loc</span>.<span class="ruby-constant">Name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>}
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
+
+        <div class="method-heading">
+          <a href="#M000110" class="method-signature">
+          <span class="method-name">help</span><span class="method-args">(method=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000110-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000110-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 60</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">help</span>(<span class="ruby-identifier">method</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method</span>
+      <span class="ruby-identifier">args</span> = (<span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">method_help</span>[<span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>]) 
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">args</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+            <span class="ruby-comment cmt"># If an argument is required, just list it</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span><span class="ruby-operator">==</span><span class="ruby-identifier">:req</span>
+              <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span> 
+            <span class="ruby-comment cmt"># If it's optional, list it in brackets</span>
+            <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span><span class="ruby-operator">==</span><span class="ruby-identifier">:opt</span>
+              <span class="ruby-node">&quot;[#{arg.keys.first.to_s}]&quot;</span>
+            <span class="ruby-comment cmt"># If there is an array of options, list them</span>
+            <span class="ruby-keyword kw">else</span> 
+              <span class="ruby-node">&quot;#{arg.keys.first.to_s}=&gt;#{arg.values.first.inspect}&quot;</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">arg</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;, &quot;</span>)
+
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{method.to_s}(#{args})&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">methods</span> = <span class="ruby-identifier">public_methods</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">public_methods</span> <span class="ruby-operator">-</span> [<span class="ruby-value str">'post'</span>,<span class="ruby-value str">'get'</span>,<span class="ruby-value str">'put'</span>,<span class="ruby-value str">'delete'</span>,<span class="ruby-value str">'logger'</span>,<span class="ruby-value str">'logger='</span>,<span class="ruby-value str">'help'</span>]
+      <span class="ruby-identifier">puts</span> <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;\n&quot;</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000139" class="method-detail">
+        <a name="M000139"></a>
+
+        <div class="method-heading">
+          <a href="#M000139" class="method-signature">
+          <span class="method-name">instance_state_is?</span><span class="method-args">(instance_id, state_string)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000139-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000139-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 376</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">instance_state_is?</span>(<span class="ruby-identifier">instance_id</span>, <span class="ruby-identifier">state_string</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-identifier">describe_instance</span>(<span class="ruby-identifier">instance_id</span>)
+
+    <span class="ruby-ivar">@last_instance_state</span><span class="ruby-operator">||=</span>{}
+    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_instance_state</span>[<span class="ruby-identifier">instance_id</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-constant">Status</span>
+      <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Instance: #{instance_id}; Current State: #{v.Status}; Waiting for: #{state_string.to_s.upcase}&quot;</span> <span class="ruby-comment cmt"># log it every time it changes</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-ivar">@last_instance_state</span>[<span class="ruby-identifier">instance_id</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-constant">Status</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-constant">Status</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">state_string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>
+      <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">false</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000141" class="method-detail">
+        <a name="M000141"></a>
+
+        <div class="method-heading">
+          <a href="#M000141" class="method-signature">
+          <span class="method-name">poll_for_instance_state</span><span class="method-args">(instance_id, state_string, polling_interval=5)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000141-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000141-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 405</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll_for_instance_state</span>(<span class="ruby-identifier">instance_id</span>, <span class="ruby-identifier">state_string</span>, <span class="ruby-identifier">polling_interval</span>=<span class="ruby-value">5</span>)
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Polling for instance #{instance_id} to acquire state #{state_string} (interval: #{polling_interval})...&quot;</span>
+    <span class="ruby-keyword kw">while</span>(<span class="ruby-keyword kw">true</span>)
+      <span class="ruby-identifier">descriptor</span> = <span class="ruby-identifier">instance_state_is?</span>(<span class="ruby-identifier">instance_id</span>, <span class="ruby-identifier">state_string</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">descriptor</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">descriptor</span>
+      <span class="ruby-identifier">sleep</span>(<span class="ruby-identifier">polling_interval</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000140" class="method-detail">
+        <a name="M000140"></a>
+
+        <div class="method-heading">
+          <a href="#M000140" class="method-signature">
+          <span class="method-name">poll_for_volume_state</span><span class="method-args">(volume_id, state_string, polling_interval=5)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000140-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000140-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 394</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll_for_volume_state</span>(<span class="ruby-identifier">volume_id</span>, <span class="ruby-identifier">state_string</span>, <span class="ruby-identifier">polling_interval</span>=<span class="ruby-value">5</span>)
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Polling for volume #{volume_id} to acquire state #{state_string} (interval: #{polling_interval})...&quot;</span>
+    <span class="ruby-keyword kw">while</span>(<span class="ruby-keyword kw">true</span>)
+      <span class="ruby-identifier">descriptor</span> = <span class="ruby-identifier">storage_state_is?</span>(<span class="ruby-identifier">volume_id</span>, <span class="ruby-identifier">state_string</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">descriptor</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">descriptor</span>
+      <span class="ruby-identifier">sleep</span>(<span class="ruby-identifier">polling_interval</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000154" class="method-detail">
+        <a name="M000154"></a>
+
+        <div class="method-heading">
+          <a href="#M000154" class="method-signature">
+          <span class="method-name">post</span><span class="method-args">(path, params={}, param_remap=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000154-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000154-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 519</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">post</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">params</span>={}, <span class="ruby-identifier">param_remap</span>=<span class="ruby-keyword kw">nil</span>)
+    <span class="ruby-identifier">param_string</span> = <span class="ruby-identifier">make_param_string</span>(<span class="ruby-identifier">params</span>, <span class="ruby-identifier">param_remap</span>)
+    <span class="ruby-identifier">output</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">post</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@api_url</span>, <span class="ruby-identifier">path</span>), <span class="ruby-identifier">param_string</span>, <span class="ruby-identifier">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:response</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">XmlSimple</span>.<span class="ruby-identifier">xml_in</span>(<span class="ruby-identifier">output</span>, {<span class="ruby-value str">'ForceArray'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">nil</span>})
+    <span class="ruby-identifier">response</span>
+  <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise_restclient_error</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000152" class="method-detail">
+        <a name="M000152"></a>
+
+        <div class="method-heading">
+          <a href="#M000152" class="method-signature">
+          <span class="method-name">put</span><span class="method-args">(path, params={}, param_remap={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000152-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000152-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 504</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">put</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">params</span>={}, <span class="ruby-identifier">param_remap</span>={})
+    <span class="ruby-identifier">param_string</span> = <span class="ruby-identifier">make_param_string</span>(<span class="ruby-identifier">params</span>, <span class="ruby-identifier">param_remap</span>)
+    <span class="ruby-identifier">output</span> = <span class="ruby-constant">RestClient</span>.<span class="ruby-identifier">put</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@api_url</span>, <span class="ruby-identifier">path</span>), <span class="ruby-identifier">param_string</span>, <span class="ruby-identifier">:accept</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">:response</span>
+    <span class="ruby-identifier">response</span> = <span class="ruby-constant">XmlSimple</span>.<span class="ruby-identifier">xml_in</span>(<span class="ruby-identifier">output</span>, {<span class="ruby-value str">'ForceArray'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword kw">nil</span>})
+  <span class="ruby-keyword kw">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise_restclient_error</span>(<span class="ruby-identifier">e</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
+
+        <div class="method-heading">
+          <a href="#M000122" class="method-signature">
+          <span class="method-name">remove_keypair</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000122-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 210</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">remove_keypair</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">delete</span>(<span class="ruby-node">&quot;/keys/#{name}&quot;</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000144" class="method-detail">
+        <a name="M000144"></a>
+
+        <div class="method-heading">
+          <a href="#M000144" class="method-signature">
+          <span class="method-name">restart_instance</span><span class="method-args">(instance_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000144-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000144-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 428</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restart_instance</span>(<span class="ruby-identifier">instance_id</span>)
+    <span class="ruby-identifier">put</span>(<span class="ruby-node">&quot;/instances/#{instance_id}&quot;</span>, <span class="ruby-identifier">:state</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;restart&quot;</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000138" class="method-detail">
+        <a name="M000138"></a>
+
+        <div class="method-heading">
+          <a href="#M000138" class="method-signature">
+          <span class="method-name">storage_state_is?</span><span class="method-args">(volume_id, state_string)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000138-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000138-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 358</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">storage_state_is?</span>(<span class="ruby-identifier">volume_id</span>, <span class="ruby-identifier">state_string</span>)
+    <span class="ruby-identifier">v</span> = <span class="ruby-identifier">describe_storage</span>(<span class="ruby-identifier">volume_id</span>)
+
+    <span class="ruby-ivar">@last_storage_state</span><span class="ruby-operator">||=</span>{}
+    <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@last_storage_state</span>[<span class="ruby-identifier">volume_id</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">!=</span> <span class="ruby-identifier">v</span>.<span class="ruby-constant">State</span>
+      <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-node">&quot;Volume: #{volume_id}; Current State: #{v.State}; Waiting for: #{state_string.to_s.upcase} &quot;</span> <span class="ruby-comment cmt"># log it every time it changes</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-ivar">@last_storage_state</span>[<span class="ruby-identifier">volume_id</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-constant">State</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-constant">State</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">state_string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>
+      <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">false</span>
+    <span class="ruby-keyword kw">end</span>
+
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
+
+        <div class="method-heading">
+          <a href="#M000130" class="method-signature">
+          <span class="method-name">supported_instance_types</span><span class="method-args">(image_id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000130-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000130-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/smartcloud.rb, line 271</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">supported_instance_types</span>(<span class="ruby-identifier">image_id</span>)
+    <span class="ruby-identifier">img</span>=<span class="ruby-identifier">describe_image</span>(<span class="ruby-identifier">image_id</span>)
+    <span class="ruby-identifier">arrayize</span>(<span class="ruby-identifier">img</span>.<span class="ruby-constant">SupportedInstanceTypes</span>.<span class="ruby-constant">InstanceType</span>).<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:ID</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

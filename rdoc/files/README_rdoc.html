@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Mon Jul 25 13:09:22 -0700 2011</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>smartcloud</h1>
+<p>
+Provides support for interacting with IBM SmartCloud API and CLI tools
+</p>
+<h2>installation</h2>
+<p>
+from rubygems.org:
+</p>
+<pre>
+  gem install cft_smartcloud
+</pre>
+<p>
+locally:
+</p>
+<pre>
+  rake build
+  gem install pkg/[name of generated gem]
+</pre>
+<h2>setup</h2>
+<p>
+Please set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your
+.bash_profile
+</p>
+<pre>
+  export SMARTCLOUD_USERNAME=[your username]
+  export SMARTCLOUD_PASSWORD=[your password]
+</pre>
+<h2>screencast</h2>
+<p>
+<a
+href="http://www.youtube.com/cohesiveft#p/u/0/-WdSHP2iwDM">www.youtube.com/cohesiveft#p/u/0/-WdSHP2iwDM</a>
+</p>
+<h2>using the console</h2>
+<pre>
+  script/console
+  &gt;&gt; @smartcloud.display_instances
+  &gt;&gt; @smartcloud.display_volumes(:Location =&gt; 101)
+  &gt;&gt; @smartcloud.display_instances(:Location =&gt; 82, :Name =&gt; &quot;namematch&quot;)
+  &gt;&gt; @smartcloud.poll_for_volume_state(12345, :unmounted)
+
+  The console predefines the @smartcloud instance variable that is set up
+  from the environment variables SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD
+  automatically (it's created at the bottom of smartcloud.rb)
+</pre>
+<h2>using the commandline helper</h2>
+<pre>
+  smartcloud [method of smartcloud.rb]
+</pre>
+<p>
+to see a list of methods:
+</p>
+<pre>
+  smartcloud help
+</pre>
+<p>
+examples:
+</p>
+<pre>
+  smartcloud display_volumes
+  smartcloud display_instances
+  smartcloud &quot;describe_instance('12345')&quot;
+  smartcloud &quot;display_instances(:Location =&gt; 82, :Name =&gt; 'match_this')&quot;
+
+  smartcloud delete_unused_keys # this one will prompt for every key
+</pre>
+<p>
+The &#8216;display_*&#8217; methods are intended to generate pretty human
+readable displays, while the describe methods will return pretty-formatted
+hashes, or singular values.
+</p>
+<pre>
+  smartcloud display_volumes
+</pre>
+<h2>get a list of all available methods</h2>
+<p>
+console:
+</p>
+<pre>
+ &gt;&gt; @smartcloud.help
+</pre>
+<p>
+commandline
+</p>
+<pre>
+ &gt; smartcloud help
+</pre>
+<p>
+These won&#8216;t tell you the arguments, you have to look at smartcloud.rb
+for the args.
+</p>
+<h2>Copyright</h2>
+<p>
+Copyright (c) 2011 CohesiveFT. See LICENSE for details.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

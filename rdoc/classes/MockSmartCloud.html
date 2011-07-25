@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: MockSmartCloud</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">MockSmartCloud</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/mock_smartcloud_rb.html">
+                lib/mock_smartcloud.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Copyright (c) 2011, Cohesive Flexible Technologies, Inc. This copyrighted
+material is the property of Cohesive Flexible Technologies and is subject
+to the license terms of the product it is contained within, whether in text
+or compiled form. It is licensed under the terms expressed in the
+accompanying README and LICENSE files.
+</p>
+<p>
+This program is AS IS and WITHOUT ANY WARRANTY; without even the implied
+warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000019">clone_volume</a>&nbsp;&nbsp;
+      <a href="#M000014">create_instance</a>&nbsp;&nbsp;
+      <a href="#M000017">create_volume</a>&nbsp;&nbsp;
+      <a href="#M000021">delete_instance</a>&nbsp;&nbsp;
+      <a href="#M000015">describe_image</a>&nbsp;&nbsp;
+      <a href="#M000016">describe_instance</a>&nbsp;&nbsp;
+      <a href="#M000018">describe_volume</a>&nbsp;&nbsp;
+      <a href="#M000023">poll_for_instance_state</a>&nbsp;&nbsp;
+      <a href="#M000022">poll_for_volume_state</a>&nbsp;&nbsp;
+      <a href="#M000020">restart_instance</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="#M000019" class="method-signature">
+          <span class="method-name">clone_volume</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000019-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000019-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 34</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clone_volume</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="#M000014" class="method-signature">
+          <span class="method-name">create_instance</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000014-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000014-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 14</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_instance</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-identifier">describe_instance</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="#M000017" class="method-signature">
+          <span class="method-name">create_volume</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000017-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000017-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 26</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create_volume</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="#M000021" class="method-signature">
+          <span class="method-name">delete_instance</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 42</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">delete_instance</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="#M000015" class="method-signature">
+          <span class="method-name">describe_image</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000015-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000015-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 18</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_image</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    {<span class="ruby-value str">&quot;CreatedTime&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;2011-02-25T01:22:57.000Z&quot;</span>, <span class="ruby-value str">&quot;Owner&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;SYSTEM&quot;</span>, <span class="ruby-value str">&quot;SupportedInstanceTypes&quot;</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-value str">&quot;InstanceType&quot;</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-value str">&quot;Label&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;Bronze 32 bit&quot;</span>, <span class="ruby-value str">&quot;ID&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;BRZ32.1/2048/60*175&quot;</span>, <span class="ruby-value str">&quot;Price&quot;</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-value str">&quot;Rate&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;0.21&quot;</span>, <span class="ruby-value str">&quot;PricePerQuantity&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;1&quot;</span>, <span class="ruby-value str">&quot;UnitOfMeasure&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;UHR  &quot;</span>, <span class="ruby-value str">&quot;CountryCode&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;897&quot;</span>, <span class="ruby-value str">&quot;CurrencyCode&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;USD&quot;</span>}}}, <span class="ruby-value str">&quot;Name&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;CohesiveFT VPN-Cubed Datacenter Connect V2.0.0 - BYOL (TOR)&quot;</span>, <span class="ruby-value str">&quot;Location&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;101&quot;</span>, <span class="ruby-value str">&quot;ProductCodes&quot;</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-value str">&quot;ProductCode&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;caondc13bV97Kg5TLyGNodD9or7gA&quot;</span>}, <span class="ruby-value str">&quot;Documentation&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;https://www-147.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{974E595E-566E-87E3-A483-AC0FC468C4D9}/1.0/GettingStarted.html&quot;</span>, <span class="ruby-value str">&quot;ID&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;20016530&quot;</span>, <span class="ruby-value str">&quot;Manifest&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;https://www-147.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{974E595E-566E-87E3-A483-AC0FC468C4D9}/1.0/parameters.xml&quot;</span>, <span class="ruby-value str">&quot;Description&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;CohesiveFT VPN-Cubed 2.0.0 UL - for TOR datacenter&quot;</span>, <span class="ruby-value str">&quot;State&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;AVAILABLE&quot;</span>, <span class="ruby-value str">&quot;Visibility&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;PUBLIC&quot;</span>, <span class="ruby-value str">&quot;Platform&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;Red Hat Enterprise Linux/5.4&quot;</span>}
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="#M000016" class="method-signature">
+          <span class="method-name">describe_instance</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000016-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000016-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 22</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_instance</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    {<span class="ruby-value str">&quot;Instance&quot;</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value str">&quot;Status&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;NEW&quot;</span>, <span class="ruby-value str">&quot;PrimaryIP&quot;</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-value str">&quot;IP&quot;</span>=<span class="ruby-operator">&gt;</span>{}, <span class="ruby-value str">&quot;Hostname&quot;</span>=<span class="ruby-operator">&gt;</span>{}, <span class="ruby-value str">&quot;Type&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;DYNAMIC&quot;</span>}, <span class="ruby-value str">&quot;ImageID&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;20015391&quot;</span>, <span class="ruby-value str">&quot;DiskSize&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;60&quot;</span>, <span class="ruby-value str">&quot;Owner&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;smartes@cohesiveft.com&quot;</span>, <span class="ruby-value str">&quot;RequestID&quot;</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-value str">&quot;name&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;sir_19_rhel5532-bit-1zGS&quot;</span>, <span class="ruby-value str">&quot;content&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;102271&quot;</span>}, <span class="ruby-value str">&quot;Name&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;DELETEsir_19_rhel5532-bit-1zGS&quot;</span>, <span class="ruby-value str">&quot;ProductCodes&quot;</span>=<span class="ruby-operator">&gt;</span>{}, <span class="ruby-value str">&quot;KeyName&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;si-tempkey-rhel5532-bit-1zGS-eDY4T&quot;</span>, <span class="ruby-value str">&quot;Location&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;101&quot;</span>, <span class="ruby-value str">&quot;LaunchTime&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;2011-07-07T22:13:49.891Z&quot;</span>, <span class="ruby-value str">&quot;Volumes&quot;</span>=<span class="ruby-operator">&gt;</span>{}, <span class="ruby-value str">&quot;ID&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;101971&quot;</span>, <span class="ruby-value str">&quot;MiniEphemeral&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;false&quot;</span>, <span class="ruby-value str">&quot;Software&quot;</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-value str">&quot;Application&quot;</span>=<span class="ruby-operator">&gt;</span>{<span class="ruby-value str">&quot;Version&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;5.5&quot;</span>, <span class="ruby-value str">&quot;Name&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;Red Hat Enterprise Linux&quot;</span>, <span class="ruby-value str">&quot;Type&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;OS&quot;</span>}}, <span class="ruby-value str">&quot;IP&quot;</span>=<span class="ruby-operator">&gt;</span>{}, <span class="ruby-value str">&quot;InstanceType&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;COP32.1/2048/60&quot;</span>, <span class="ruby-value str">&quot;Hostname&quot;</span>=<span class="ruby-operator">&gt;</span>{}}}
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <a href="#M000018" class="method-signature">
+          <span class="method-name">describe_volume</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000018-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000018-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 30</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">describe_volume</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    {<span class="ruby-identifier">:ID</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;12345&quot;</span>, <span class="ruby-identifier">:State</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;5&quot;</span>, <span class="ruby-identifier">:Name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;foobar&quot;</span>}
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <a href="#M000023" class="method-signature">
+          <span class="method-name">poll_for_instance_state</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 50</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll_for_instance_state</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="#M000022" class="method-signature">
+          <span class="method-name">poll_for_volume_state</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 46</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">poll_for_volume_state</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="#M000020" class="method-signature">
+          <span class="method-name">restart_instance</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mock_smartcloud.rb, line 38</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">restart_instance</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword kw">true</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

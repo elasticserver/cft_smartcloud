@@ -1,0 +1,987 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ToplevelInstaller</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ToplevelInstaller</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/mime-types-1_16/setup_rb.html">
+                lib/mime-types-1.16/setup.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000028">config</a>&nbsp;&nbsp;
+      <a href="#M000053">exec_clean</a>&nbsp;&nbsp;
+      <a href="#M000048">exec_config</a>&nbsp;&nbsp;
+      <a href="#M000054">exec_distclean</a>&nbsp;&nbsp;
+      <a href="#M000050">exec_install</a>&nbsp;&nbsp;
+      <a href="#M000049">exec_setup</a>&nbsp;&nbsp;
+      <a href="#M000052">exec_show</a>&nbsp;&nbsp;
+      <a href="#M000051">exec_test</a>&nbsp;&nbsp;
+      <a href="#M000032">init_installers</a>&nbsp;&nbsp;
+      <a href="#M000029">inspect</a>&nbsp;&nbsp;
+      <a href="#M000030">invoke</a>&nbsp;&nbsp;
+      <a href="#M000024">invoke</a>&nbsp;&nbsp;
+      <a href="#M000026">load_rbconfig</a>&nbsp;&nbsp;
+      <a href="#M000025">multipackage?</a>&nbsp;&nbsp;
+      <a href="#M000027">new</a>&nbsp;&nbsp;
+      <a href="#M000034">objdir_root</a>&nbsp;&nbsp;
+      <a href="#M000043">parsearg_clean</a>&nbsp;&nbsp;
+      <a href="#M000045">parsearg_config</a>&nbsp;&nbsp;
+      <a href="#M000044">parsearg_distclean</a>&nbsp;&nbsp;
+      <a href="#M000036">parsearg_global</a>&nbsp;&nbsp;
+      <a href="#M000046">parsearg_install</a>&nbsp;&nbsp;
+      <a href="#M000039">parsearg_no_options</a>&nbsp;&nbsp;
+      <a href="#M000041">parsearg_setup</a>&nbsp;&nbsp;
+      <a href="#M000040">parsearg_show</a>&nbsp;&nbsp;
+      <a href="#M000042">parsearg_test</a>&nbsp;&nbsp;
+      <a href="#M000047">print_usage</a>&nbsp;&nbsp;
+      <a href="#M000035">relpath</a>&nbsp;&nbsp;
+      <a href="#M000031">run_metaconfigs</a>&nbsp;&nbsp;
+      <a href="#M000033">srcdir_root</a>&nbsp;&nbsp;
+      <a href="#M000037">valid_task?</a>&nbsp;&nbsp;
+      <a href="#M000038">valid_task_re</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Version</td>
+          <td>=</td>
+          <td class="context-item-value">'3.4.1'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Copyright</td>
+          <td>=</td>
+          <td class="context-item-value">'Copyright (c) 2000-2005 Minero Aoki'</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TASKS</td>
+          <td>=</td>
+          <td class="context-item-value">[     [ 'all',      'do config, setup, then install' ],     [ 'config',   'saves your configurations' ],     [ 'show',     'shows current configuration' ],     [ 'setup',    'compiles ruby extentions and others' ],     [ 'install',  'installs files' ],     [ 'test',     'run all tests in test/' ],     [ 'clean',    &quot;does `make clean' for each extention&quot; ],     [ 'distclean',&quot;does `make distclean' for each extention&quot; ]</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <a href="#M000024" class="method-signature">
+          <span class="method-name">invoke</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000024-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 767</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-constant">ToplevelInstaller</span>.<span class="ruby-identifier">invoke</span>
+    <span class="ruby-identifier">config</span> = <span class="ruby-constant">ConfigTable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">load_rbconfig</span>())
+    <span class="ruby-identifier">config</span>.<span class="ruby-identifier">load_standard_entries</span>
+    <span class="ruby-identifier">config</span>.<span class="ruby-identifier">load_multipackage_entries</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">multipackage?</span>
+    <span class="ruby-identifier">config</span>.<span class="ruby-identifier">fixup</span>
+    <span class="ruby-identifier">klass</span> = (<span class="ruby-identifier">multipackage?</span>() <span class="ruby-operator">?</span> <span class="ruby-constant">ToplevelInstallerMulti</span> <span class="ruby-operator">:</span> <span class="ruby-constant">ToplevelInstaller</span>)
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">$0</span>), <span class="ruby-identifier">config</span>).<span class="ruby-identifier">invoke</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <a href="#M000026" class="method-signature">
+          <span class="method-name">load_rbconfig</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 780</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-constant">ToplevelInstaller</span>.<span class="ruby-identifier">load_rbconfig</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">arg</span> = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">detect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-regexp re">/\A--rbconfig=/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">arg</span> }
+      <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">arg</span>)
+      <span class="ruby-identifier">load</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">arg</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/=/</span>, <span class="ruby-value">2</span>)[<span class="ruby-value">1</span>])
+      <span class="ruby-identifier">$&quot;</span>.<span class="ruby-identifier">push</span> <span class="ruby-value str">'rbconfig.rb'</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-value str">'rbconfig'</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-operator">::</span><span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <a href="#M000025" class="method-signature">
+          <span class="method-name">multipackage?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 776</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-constant">ToplevelInstaller</span>.<span class="ruby-identifier">multipackage?</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">$0</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">'/packages'</span>)
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(ardir_root, config)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 791</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">ardir_root</span>, <span class="ruby-identifier">config</span>)
+    <span class="ruby-ivar">@ardir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">ardir_root</span>)
+    <span class="ruby-ivar">@config</span> = <span class="ruby-identifier">config</span>
+    <span class="ruby-comment cmt"># cache</span>
+    <span class="ruby-ivar">@valid_task_re</span> = <span class="ruby-keyword kw">nil</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+          <a href="#M000028" class="method-signature">
+          <span class="method-name">config</span><span class="method-args">(key)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 798</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">config</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000053" class="method-detail">
+        <a name="M000053"></a>
+
+        <div class="method-heading">
+          <a href="#M000053" class="method-signature">
+          <span class="method-name">exec_clean</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000053-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000053-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1013</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_clean</span>
+    <span class="ruby-ivar">@installer</span>.<span class="ruby-identifier">exec_clean</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="#M000048" class="method-signature">
+          <span class="method-name">exec_config</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Task Handlers
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000048-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000048-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 990</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_config</span>
+    <span class="ruby-ivar">@installer</span>.<span class="ruby-identifier">exec_config</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">save</span>   <span class="ruby-comment cmt"># must be final</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000054" class="method-detail">
+        <a name="M000054"></a>
+
+        <div class="method-heading">
+          <a href="#M000054" class="method-signature">
+          <span class="method-name">exec_distclean</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000054-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000054-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1017</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_distclean</span>
+    <span class="ruby-ivar">@installer</span>.<span class="ruby-identifier">exec_distclean</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="#M000050" class="method-signature">
+          <span class="method-name">exec_install</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000050-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000050-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 999</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_install</span>
+    <span class="ruby-ivar">@installer</span>.<span class="ruby-identifier">exec_install</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <a href="#M000049" class="method-signature">
+          <span class="method-name">exec_setup</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000049-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000049-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 995</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_setup</span>
+    <span class="ruby-ivar">@installer</span>.<span class="ruby-identifier">exec_setup</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000052" class="method-detail">
+        <a name="M000052"></a>
+
+        <div class="method-heading">
+          <a href="#M000052" class="method-signature">
+          <span class="method-name">exec_show</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000052-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000052-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1007</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_show</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">printf</span> <span class="ruby-value str">&quot;%-20s %s\n&quot;</span>, <span class="ruby-identifier">i</span>.<span class="ruby-identifier">name</span>, <span class="ruby-identifier">i</span>.<span class="ruby-identifier">value</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">value?</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
+
+        <div class="method-heading">
+          <a href="#M000051" class="method-signature">
+          <span class="method-name">exec_test</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000051-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 1003</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">exec_test</span>
+    <span class="ruby-ivar">@installer</span>.<span class="ruby-identifier">exec_test</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+          <a href="#M000032" class="method-signature">
+          <span class="method-name">init_installers</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000032-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 834</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">init_installers</span>
+    <span class="ruby-ivar">@installer</span> = <span class="ruby-constant">Installer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@config</span>, <span class="ruby-ivar">@ardir</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-value str">'.'</span>))
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+          <a href="#M000029" class="method-signature">
+          <span class="method-name">inspect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 802</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>
+    <span class="ruby-node">&quot;#&lt;#{self.class} #{__id__()}&gt;&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+          <a href="#M000030" class="method-signature">
+          <span class="method-name">invoke</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000030-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 806</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">invoke</span>
+    <span class="ruby-identifier">run_metaconfigs</span>
+    <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">task</span> = <span class="ruby-identifier">parsearg_global</span>()
+    <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">nil</span>, <span class="ruby-value str">'all'</span>
+      <span class="ruby-identifier">parsearg_config</span>
+      <span class="ruby-identifier">init_installers</span>
+      <span class="ruby-identifier">exec_config</span>
+      <span class="ruby-identifier">exec_setup</span>
+      <span class="ruby-identifier">exec_install</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">task</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'config'</span>, <span class="ruby-value str">'test'</span>
+        ;
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'clean'</span>, <span class="ruby-value str">'distclean'</span>
+        <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">load_savefile</span> <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-ivar">@config</span>.<span class="ruby-identifier">savefile</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">load_savefile</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">__send__</span> <span class="ruby-node">&quot;parsearg_#{task}&quot;</span>
+      <span class="ruby-identifier">init_installers</span>
+      <span class="ruby-identifier">__send__</span> <span class="ruby-node">&quot;exec_#{task}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+          <a href="#M000034" class="method-signature">
+          <span class="method-name">objdir_root</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000034-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000034-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 846</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">objdir_root</span>
+    <span class="ruby-value str">'.'</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <span class="method-name">parsearg_clean</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="ToplevelInstaller.html#M000039">parsearg_no_options</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <a href="#M000045" class="method-signature">
+          <span class="method-name">parsearg_config</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000045-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 905</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parsearg_config</span>
+    <span class="ruby-identifier">evalopt</span> = []
+    <span class="ruby-identifier">set</span> = []
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">config_opt</span> = []
+    <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">i</span> = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-regexp re">/\A--?\z/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">config_opt</span> = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">dup</span>
+        <span class="ruby-keyword kw">break</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-operator">*</span><span class="ruby-ivar">@config</span>.<span class="ruby-identifier">parse_opt</span>(<span class="ruby-identifier">i</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">value_config?</span>(<span class="ruby-identifier">name</span>)
+        <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">evalopt</span>.<span class="ruby-identifier">push</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>]
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">set</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">evalopt</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">lookup</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">evaluate</span> <span class="ruby-identifier">value</span>, <span class="ruby-ivar">@config</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt"># Check if configuration is valid</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">n</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">value_config?</span>(<span class="ruby-identifier">n</span>)
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <span class="method-name">parsearg_distclean</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="ToplevelInstaller.html#M000039">parsearg_no_options</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+          <a href="#M000036" class="method-signature">
+          <span class="method-name">parsearg_global</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Option Parsing
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 858</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parsearg_global</span>
+    <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">arg</span> = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">arg</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A\w+\z/</span>
+        <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-node">&quot;invalid task: #{arg}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">valid_task?</span>(<span class="ruby-identifier">arg</span>)
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">arg</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'-q'</span>, <span class="ruby-value str">'--quiet'</span>
+        <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--verbose'</span>
+        <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--help'</span>
+        <span class="ruby-identifier">print_usage</span> <span class="ruby-identifier">$stdout</span>
+        <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--version'</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{File.basename($0)} version #{Version}&quot;</span>
+        <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--copyright'</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-constant">Copyright</span>
+        <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-node">&quot;unknown global option '#{arg}'&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">nil</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="#M000046" class="method-signature">
+          <span class="method-name">parsearg_install</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000046-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 931</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parsearg_install</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">no_harm</span> = <span class="ruby-keyword kw">false</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">install_prefix</span> = <span class="ruby-value str">''</span>
+    <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">a</span> = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">a</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'--no-harm'</span>
+        <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">no_harm</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/\A--prefix=/</span>
+        <span class="ruby-identifier">path</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/=/</span>, <span class="ruby-value">2</span>)[<span class="ruby-value">1</span>]
+        <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">path</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">path</span>[<span class="ruby-value">0</span>,<span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'/'</span>
+        <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">install_prefix</span> = <span class="ruby-identifier">path</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-node">&quot;install: unknown option #{a}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <a href="#M000039" class="method-signature">
+          <span class="method-name">parsearg_no_options</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000039-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000039-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 892</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">parsearg_no_options</span>
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">task</span> = <span class="ruby-identifier">caller</span>(<span class="ruby-value">0</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-regexp re">%r&lt;`parsearg_(\w+)'&gt;</span>, <span class="ruby-value">1</span>)
+      <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-node">&quot;#{task}: unknown options: #{ARGV.join(' ')}&quot;</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <span class="method-name">parsearg_setup</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="ToplevelInstaller.html#M000039">parsearg_no_options</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <span class="method-name">parsearg_show</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="ToplevelInstaller.html#M000039">parsearg_no_options</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <span class="method-name">parsearg_test</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="ToplevelInstaller.html#M000039">parsearg_no_options</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <a href="#M000047" class="method-signature">
+          <span class="method-name">print_usage</span><span class="method-args">(out)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000047-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000047-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 948</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">print_usage</span>(<span class="ruby-identifier">out</span>)
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'Typical Installation Procedure:'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  $ ruby #{File.basename $0} config&quot;</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  $ ruby #{File.basename $0} setup&quot;</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  # ruby #{File.basename $0} install (may require root privilege)&quot;</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'Detailed Usage:'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  ruby #{File.basename $0} &lt;global option&gt;&quot;</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  ruby #{File.basename $0} [&lt;global options&gt;] &lt;task&gt; [&lt;task options&gt;]&quot;</span>
+
+    <span class="ruby-identifier">fmt</span> = <span class="ruby-value str">&quot;  %-24s %s\n&quot;</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'Global options:'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-value str">'-q,--quiet'</span>,   <span class="ruby-value str">'suppress message outputs'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-value str">'   --verbose'</span>, <span class="ruby-value str">'output messages verbosely'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-value str">'   --help'</span>,    <span class="ruby-value str">'print this message'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-value str">'   --version'</span>, <span class="ruby-value str">'print version and quit'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-value str">'   --copyright'</span>,  <span class="ruby-value str">'print copyright and quit'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'Tasks:'</span>
+    <span class="ruby-constant">TASKS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">desc</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">desc</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">fmt</span> = <span class="ruby-value str">&quot;  %-24s %s [%s]\n&quot;</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'Options for CONFIG or ALL:'</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-identifier">item</span>.<span class="ruby-identifier">help_opt</span>, <span class="ruby-identifier">item</span>.<span class="ruby-identifier">description</span>, <span class="ruby-identifier">item</span>.<span class="ruby-identifier">help_default</span>
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-value str">'--rbconfig=path'</span>, <span class="ruby-value str">'rbconfig.rb to load'</span>,<span class="ruby-value str">&quot;running ruby's&quot;</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-value str">'Options for INSTALL:'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-value str">'--no-harm'</span>, <span class="ruby-value str">'only display what to do if given'</span>, <span class="ruby-value str">'off'</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">printf</span> <span class="ruby-identifier">fmt</span>, <span class="ruby-value str">'--prefix=path'</span>,  <span class="ruby-value str">'install path prefix'</span>, <span class="ruby-value str">''</span>
+    <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+          <a href="#M000035" class="method-signature">
+          <span class="method-name">relpath</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 850</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">relpath</span>
+    <span class="ruby-value str">'.'</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+          <a href="#M000031" class="method-signature">
+          <span class="method-name">run_metaconfigs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000031-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 830</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">run_metaconfigs</span>
+    <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">load_script</span> <span class="ruby-node">&quot;#{@ardir}/metaconfig&quot;</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+          <a href="#M000033" class="method-signature">
+          <span class="method-name">srcdir_root</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Hook Script API bases
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000033-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 842</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">srcdir_root</span>
+    <span class="ruby-ivar">@ardir</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+          <a href="#M000037" class="method-signature">
+          <span class="method-name">valid_task?</span><span class="method-args">(t)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 884</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid_task?</span>(<span class="ruby-identifier">t</span>)
+    <span class="ruby-identifier">valid_task_re</span>() <span class="ruby-operator">=~</span> <span class="ruby-identifier">t</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="#M000038" class="method-signature">
+          <span class="method-name">valid_task_re</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/mime-types-1.16/setup.rb, line 888</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">valid_task_re</span>
+    <span class="ruby-ivar">@valid_task_re</span> <span class="ruby-operator">||=</span> <span class="ruby-node">/\A(?:#{TASKS.map {|task,desc| task }.join('|')})\z/</span>
+  <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
