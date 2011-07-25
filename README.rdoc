@@ -20,6 +20,10 @@ Please set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile
   export SMARTCLOUD_USERNAME=[your username]
   export SMARTCLOUD_PASSWORD=[your password]
 
+== screencast
+
+http://www.youtube.com/cohesiveft#p/u/0/-WdSHP2iwDM
+
 == using the console
 
   script/console
