@@ -1,4 +1,4 @@
-2011-07-21 0.1.3:
+2011-07-25 0.1.4:
  * Better display of launch times
  * delete_unused_keys function deletes all unused keys, prompting for each one
  * ability to find images by name display_images(:Name => "foo"), with fuzzy

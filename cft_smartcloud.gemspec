@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cft_smartcloud}
-  s.version = "0.1.3"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["yan"]
-  s.date = %q{2011-07-22}
+  s.date = %q{2011-07-25}
   s.default_executable = %q{smartcloud}
   s.description = %q{CohesiveFT Ruby Interface for IBM SmartCloud}
   s.email = %q{yan.pritzker@cohesiveft.com}
@@ -152,7 +152,6 @@ Gem::Specification.new do |s|
      "lib/smartcloud_logger.rb",
      "lib/xml-simple-1.0.12/lib/xmlsimple.rb",
      "script/console",
-     "smartcloud",
      "test/helper.rb"
   ]
   s.homepage = %q{http://github.com/cohesive/smartcloud}
