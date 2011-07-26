@@ -94,7 +94,7 @@ class IBMSmartCloud
   end
 
   def display_locations
-    log = describe_locations.map {|loc| "#{loc.ID} #{loc.Location}"}.join("\n")
+    log = describe_locations.map {|loc| "#{loc.ID.ljust(4)} | #{loc.Location.ljust(15)} | #{loc.Name}"}.join("\n")
     logger.info "\n#{log}"
   end
 
@@ -562,7 +562,17 @@ class IBMSmartCloud
       end
     end
 
-    instances = instances.sort_by{|ins| ins.has_key?(order_by) ? ins.send(order_by) : 0 }
+    instances = instances.sort_by{|ins| 
+      if ins.has_key?(order_by) 
+        order_by_value = ins.send(order_by) 
+        integer_sort = order_by_value.to_i
+        # If we are trying to sort by an integer field, i.e. 41.to_s=="41" then sort by the integer
+        # version of it, otherwise sort by the original string
+        order_by_value = (order_by_value == integer_sort.to_s) ? integer_sort : order_by_value
+      else
+        0 
+      end
+    }
     if order_by == "LaunchTime"
       instances = instances.reverse
     end
