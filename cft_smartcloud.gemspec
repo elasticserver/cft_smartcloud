@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["yan", "cohesive"]
-  s.date = %q{2011-07-25}
+  s.date = %q{2011-07-26}
   s.description = %q{CohesiveFT Ruby Interface for IBM SmartCloud and 'smartcloud' command line helper.}
   s.email = %q{yan.pritzker@cohesiveft.com}
   s.executables = ["cft_smartcloud", "smartcloud"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "bin/cft_smartcloud",
      "bin/smartcloud",
      "cft_smartcloud.gemspec",
      "lib/cli_tools/README.txt",
