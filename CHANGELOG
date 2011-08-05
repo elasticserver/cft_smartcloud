@@ -1,3 +1,7 @@
+2011-08-05 0.1.6:
+ * clone volume changed to api call instead of CLI
+ * support for deleting multiple volumes at once (delete_volumes)
+
 2011-07-25 0.1.4:
  * Better display of launch times
  * delete_unused_keys function deletes all unused keys, prompting for each one

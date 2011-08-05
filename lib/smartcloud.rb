@@ -23,8 +23,6 @@ require 'hash_fix'
 require 'xmlsimple'
 require 'smartcloud_logger'
 
-IBM_TOOLS_HOME=File.join(File.dirname(__FILE__), "cli_tools") unless defined?(IBM_TOOLS_HOME)
-
 # Encapsulates communications with IBM SmartCloud via REST
 class IBMSmartCloud
 
@@ -184,12 +182,12 @@ class IBMSmartCloud
   # TODO: the API call does not work, we have to use the cli for now
   args :clone_volume, [:name, :source_disk_id]
   def clone_volume(name, source_disk_id)
-    # result = post("/storage", :name => name, :SourceDiskID => source_disk_id)
-    # result.Volume.ID
-    create_password_file
-    result = run_ibm_tool("ic-clone-volume.sh -n #{name} -S #{source_disk_id}")
-    result =~ /ID : (.*)/
-    return $1 # grab the id of the created volume
+    original_disk = describe_volume(source_disk_id)
+    logger.info "Looking up volume #{source_disk_id} to prepare for cloning..."
+    offering = describe_volume_offerings(original_disk.Location).detect {|offer| offer.ID == original_disk.OfferingID}
+    logger.info "Original volume size: #{offering.Name}"
+    result = post("/storage", :name => name, :SourceDiskID => source_disk_id, :format => original_disk.Format.upcase, :location => original_disk.Location, :size => offering.Name, :offeringID => original_disk.OfferingID )
+    result.Volume.ID
   end
 
   # Delete the volume
@@ -197,6 +195,11 @@ class IBMSmartCloud
   def delete_volume(vol_id)
     delete("/storage/#{vol_id}")
     true
+  end
+
+  args :delete_volumes, [:array_of_vol_ids]
+  def delete_volumes(vol_id_list)
+    vol_id_list.each {|vol| delete_volume(vol)}
   end
 
   # generates a keypair and returns the private key
@@ -584,41 +587,6 @@ class IBMSmartCloud
     return [] unless array_or_object
     array_or_object.is_a?(Array) ? array_or_object : [array_or_object]
   end
-
-  # TODO: all methods below here can be nuked once CLI tools are removed
-  def run_ibm_tool(command)
-    cmd = "cd #{IBM_TOOLS_HOME} && ./#{command} -u #{@username} -w #{passphrase} -g #{password_file}"
-    logger.debug cmd
-    output = if @debug
-      IBMMockResponseGenerator.respond(command)
-    else
-      `#{cmd}` 
-    end
-
-    logger.debug output
-
-    if output =~ /ErrorMessage : (.*)/
-      raise $1 # raise the error message matched above
-    else
-      return output
-    end
-  end
- 
-  def create_password_file
-    # if no passphrase or password file is supplied, we'll generate it
-    run_ibm_tool("ic-create-password.sh -u #{@username} -p #{@password}")
-  end
-
-  def password_file
-    @password_file ||= "/tmp/smrtcloud-pwfile-#{Time.now.to_i.to_s}"
-  end
-
-  def passphrase
-    @passphrase ||= Time.now.to_i.to_s
-  end
-  # End CLI tool helpers 
-  
-  
 
 end
 
