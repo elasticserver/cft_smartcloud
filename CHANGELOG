@@ -1,3 +1,7 @@
+2011-08-09 0.1.7:
+ * Updated create_instance to return the Instance object rather 
+   than the xml request, for consistency with describe_instance
+
 2011-08-05 0.1.6:
  * clone volume changed to api call instead of CLI
  * support for deleting multiple volumes at once (delete_volumes)

@@ -132,7 +132,8 @@ class IBMSmartCloud
       config_data_params.each {|k,v| instance_params[k]=v} # add it into the standard instance params array
     end
 
-    post "/instances", instance_params, param_remap
+    result = post "/instances", instance_params, param_remap
+    result.Instance
   end
 
   # Find a location by its name. Assumes locations have unique names (not verified by ibm docs)
