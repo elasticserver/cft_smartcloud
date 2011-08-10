@@ -205,6 +205,16 @@ class IBMSmartCloud
     result.Volume.ID
   end
 
+  args :attach_volume, [:instance_id, :volume_id]
+  def attach_volume(instance_id, volume_id)
+    put("/instances/#{instance_id}", :volumeID => volume_id, :attach => true)
+  end
+
+  args :detach_volume, [:instance_id, :volume_id]
+  def detach_volume(instance_id, volume_id)
+    put("/instances/#{instance_id}", :volumeID => volume_id, :detach => true)
+  end
+
   # Delete the volume
   args :delete_volume, [:vol_id]
   def delete_volume(vol_id)
@@ -212,9 +222,14 @@ class IBMSmartCloud
     true
   end
 
-  args :delete_volumes, [:array_of_vol_ids]
-  def delete_volumes(vol_id_list)
-    vol_id_list.each {|vol| delete_volume(vol)}
+  args :delete_volumes, [:volume_ids], %{Example: smartcloud "delete_volumes(12345,12346,12347)"}
+  def delete_volumes(*vol_id_list)
+    threads=[]
+    vol_id_list.each {|vol| 
+      threads << Thread.new { logger.info "Sending delete request for: #{vol}..."; delete_volume(vol); logger.info "Finished delete request for #{vol}" }
+    }
+    threads.each(&:join)
+    true
   end
 
   # generates a keypair and returns the private key
@@ -430,9 +445,12 @@ class IBMSmartCloud
   end
 
   # Deletes many instances in a thread
-  args :delete_instances, [:instance_ids => [12345,12346,12347, '...']]
-  def delete_instances(instance_ids)
-    instance_ids.each {|id| delete_instance(id) }
+  args :delete_instances, [:instance_ids], %{Example: smartcloud "delete_instances(12345,12346,12347)"}
+  def delete_instances(*instance_ids)
+    threads=[]
+    instance_ids.each {|id| logger.info "Sending delete request for: #{id}..."; threads << Thread.new { delete_instance(id) }; logger.info "Finished delete request for #{id}" }
+    threads.each(&:join)
+    true
   end
 
 
@@ -478,9 +496,9 @@ class IBMSmartCloud
   def display_instances(filters={})
     instances = describe_instances(filters)
 
-    log = %{#{"Started".ljust(18)} | #{"Instance".ljust(8)} | #{"Image".ljust(9)} | #{"Loc".ljust(3)} | #{"Status".ljust(10)} | #{"KeyName".ljust(15)} | #{"IP".ljust(15)} | Name\n} 
+    log = %{#{"Started".ljust(18)} | #{"Instance".ljust(8)} | #{"Image".ljust(9)} | #{"Loc".ljust(3)} | #{"Status".ljust(10)} | #{"KeyName".ljust(15)} | #{"IP".ljust(15)} | #{"Volume".ljust(6)} | Name\n}
     log << instances.map do |ins|
-      "#{DateTime.parse(ins.LaunchTime).strftime("%Y-%m-%d %I:%M%p")} | #{ins.ID.ljust(8)} | #{ins.ImageID.ljust(9)} | #{ins.Location.ljust(3)} | #{ins.Status[0..9].ljust(10)} | #{(ins.KeyName || "").strip[0..14].ljust(15)} | #{(ins.IP.strip=="" ? '[NONE]' : ins.IP.strip).to_s.ljust(15)} | #{ins.Name}"
+      "#{DateTime.parse(ins.LaunchTime).strftime("%Y-%m-%d %I:%M%p")} | #{ins.ID.ljust(8)} | #{ins.ImageID.ljust(9)} | #{ins.Location.ljust(3)} | #{ins.Status[0..9].ljust(10)} | #{(ins.KeyName || "").strip[0..14].ljust(15)} | #{(ins.IP.strip=="" ? '[NONE]' : ins.IP.strip).to_s.ljust(15)} | #{(ins.Volume && ins.Volume || "").ljust(6)} | #{ins.Name}" 
     end.join("\n")
     logger.info "\n#{log}"
   end
