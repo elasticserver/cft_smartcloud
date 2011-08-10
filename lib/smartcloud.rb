@@ -47,17 +47,24 @@ class IBMSmartCloud
   class << self
     @config = YAML.load_file(File.join(File.dirname(__FILE__), "config/config.yml"))
     attr_reader :method_help
+    attr_reader :method_help_supplemental
     attr_reader :config
   end
 
-  def self.args(method, args)
+  def self.args(method, args, extra_help={})
     @method_help||={}
+    @method_help_supplemental||={}
     @method_help[method.to_s] = args
+    @method_help_supplemental[method.to_s] = extra_help
   end
 
   def help(method=nil)
     if method
       args = (self.class.method_help[method.to_s]) 
+      if !(self.respond_to?(method))
+        return "Sorry, I don't know method: #{method}"
+      end
+
       if args.nil?
         puts method.to_s
       else
@@ -78,7 +85,9 @@ class IBMSmartCloud
           end
         end.join(", ")
 
-        puts "#{method.to_s}(#{args})"
+        extra_help = self.class.method_help_supplemental[method.to_s] || ""
+
+        puts "#{method.to_s}(#{args})\n#{extra_help}"
       end
     else
       methods = public_methods - Object.public_methods - ['post','get','put','delete','logger','logger=','help']
@@ -100,7 +109,12 @@ class IBMSmartCloud
   # CLI-style attribute naming. I.e. "image-id" or "data-center"
   # or API-style (imageID, location). If the CLI-style params are
   # provided, they will be remapped to the correct API params.
-  args :create_instance, [:instance_params_hash]
+  args :create_instance, [:instance_params_hash], %{
+    Available hash keys: :name, :imageID, :instanceType, :location, :publicKey, :ip, :volumeID, 
+                         :ConfigurationData, :vlanID, :antiCollocationInstance, :isMiniEphemeral
+
+    Example: smartcloud "create_instance(:name => 'MyTest', :instanceType=>'COP32.1/2048/60', ...)"
+  }
   def create_instance(instance_params)
     param_remap = { "name" => "name",
       "image-id" => "imageID",
