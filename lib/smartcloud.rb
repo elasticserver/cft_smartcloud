@@ -100,6 +100,10 @@ class IBMSmartCloud
     get("/locations").Location
   end
 
+  def describe_location(location_id)
+    get("/locations/#{location_id}").Location
+  end
+
   def display_locations
     log = describe_locations.map {|loc| "#{loc.ID.ljust(4)} | #{loc.Location.ljust(15)} | #{loc.Name}"}.join("\n")
     logger.info "\n#{log}"
@@ -502,7 +506,8 @@ class IBMSmartCloud
 
     log = %{#{"Started".ljust(18)} | #{"Instance".ljust(8)} | #{"Image".ljust(9)} | #{"Loc".ljust(3)} | #{"Status".ljust(10)} | #{"KeyName".ljust(15)} | #{"IP".ljust(15)} | #{"Volume".ljust(6)} | Name\n}
     log << instances.map do |ins|
-      ip = ins.IP.nil? ? "[NONE]" : (ins.IP.strip == "") ? "[NONE]" : ins.IP.strip
+      ip = (ins.IP && ins.IP.to_s) || ""
+      ip = (ip.strip == "") ? "[NONE]" : ip.strip
       "#{DateTime.parse(ins.LaunchTime).strftime("%Y-%m-%d %I:%M%p")} | #{ins.ID.ljust(8)} | #{ins.ImageID.ljust(9)} | #{ins.Location.ljust(3)} | #{ins.Status[0..9].ljust(10)} | #{(ins.KeyName || "").strip[0..14].ljust(15)} | #{ip.ljust(15)} | #{(ins.Volume && ins.Volume || "").ljust(6)} | #{ins.Name}" 
     end.join("\n")
     logger.info "\n#{log}"
