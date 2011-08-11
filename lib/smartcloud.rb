@@ -453,6 +453,10 @@ class IBMSmartCloud
     true
   end
 
+  args :rename_instance, [:instance_id, :new_name]
+  def rename_instance(instance_id, new_name)
+    put("/instances/#{instance_id}", :name => new_name)
+  end
 
   args :delete_instance, [:instance_id]
   def delete_instance(instance_id)
