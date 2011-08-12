@@ -267,6 +267,14 @@ class IBMSmartCloud
     response
   end
 
+  def display_addresses
+    addresses = describe_addresses
+
+    logger.info "\nID     | Loc  | State      | IP \n" + addresses.map {|a| 
+      a.ID.ljust(6) + " | " + a.Location.ljust(4) + " | " + (a.State[0..9].ljust(10) rescue '?'.ljust(10)) + " | " + (a.IP.to_s || "")
+    }.join("\n")
+  end
+
   # Allows you to poll for a specific storage state
   # ex: storage_state_is?("123456", "UNMOUNTED")
   # storage state string can be given as a string or symbol
@@ -317,7 +325,8 @@ class IBMSmartCloud
   # Optionally supply a location to get offerings filtered to a particular location
   # Optionally supply a name (Small, Medium, Large) to get the specific offering
   args :describe_volume_offerings, [{:location => :opt}, {:name => :opt}]
-  def describe_volume_offerings(location=nil, name=nil)
+  args :describe_storage_offerings, [{:location => :opt}, {:name => :opt}]
+  def describe_storage_offerings(location=nil, name=nil)
     response = get("/offerings/storage")
     if location
       filtered_by_location = response.Offerings.select {|o| o.Location.to_s == location.to_s}
@@ -330,6 +339,8 @@ class IBMSmartCloud
       response.Offerings
     end
   end
+
+  alias describe_volume_offerings describe_storage_offerings
 
   # Create a volume. offering_id is optional and will be determined automatically
   # for you based on the location and volume size.
@@ -527,6 +538,10 @@ class IBMSmartCloud
     images.each {|img| img["State"] = @states["image"][img.State.to_i]}
     filters[:order] ||= "Location"
     images = filter_and_sort(images, filters)
+  end
+
+  def describe_manifest(image_id)
+    get("offerings/image/#{image_id}/manifest").Manifest
   end
 
   args :display_images, [:filters => :opt]
