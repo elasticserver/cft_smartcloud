@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaultprofile:Asset xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:defaultprofile="http:///defaultprofile22.ecore" name="Command Line Tool Reference and Binaries"
+    id="{F1466F46-A4AB-3879-D883-1A26A43BF046}" date="2011-05-13" state="Approved" version="1.4" shortDescription="Cloud API Reference of Command Line Tool">
+  <classification>
+    <descriptorGroup name="AssetType">
+      <nodeDescriptor href="https://www-147.ibm.com/cloud/enterprise/ram/classif/assetTypesSchema.xmi#documentation"/>
+    </descriptorGroup>
+    <descriptorGroup name="StandardInfo">
+      <freeFormValue value="31" freeFormDescriptor="//@classification/@descriptorGroup.1/@freeFormDescriptor.0"/>
+      <freeFormDescriptor name="revisionCount"/>
+    </descriptorGroup>
+  </classification>
+  <solution>
+    <artifact name="GA_CommandLine.pdf" type="application/pdf">
+      <reference value="GA_CommandLine.pdf"/>
+    </artifact>
+    <artifact name="README.txt" type="text/plain">
+      <reference value="README.txt"/>
+    </artifact>
+    <artifact name="DeveloperCloud_CMD_Tool.zip" type="multipart/x-zip">
+      <reference value="DeveloperCloud_CMD_Tool.zip"/>
+    </artifact>
+  </solution>
+  <description value="&lt;p style=&quot;margin: 0px;&quot;>You can retrieve the command line tool and its documentation by clicking the &quot;Content&quot; tab above. &lt;/p>"/>
+</defaultprofile:Asset>

@@ -4,7 +4,6 @@
  * Improved help system, especially for create_instance
 
 2011-08-05 0.1.6:
- * clone volume changed to api call instead of CLI
  * support for deleting multiple volumes at once (delete_volumes)
 
 2011-07-25 0.1.4:
