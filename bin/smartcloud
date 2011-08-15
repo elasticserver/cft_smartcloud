@@ -12,14 +12,24 @@ if ARGV.size == 1
   @cmd=ARGV[0]
 elsif ARGV.size == 2
   @cmd="#{ARGV[0]}('#{ARGV[1]}')"
-else
+elsif ARGV.size == 0 
   puts %{
   Usage: 
   smartcloud help
   smartcloud help [command]
   smartcloud [command]
+  smartcloud [command] [argument]
+
+  Examples:
+  smartcloud "delete_instance(12345)"
+  smartcloud delete_instance 12345
+  smartcloud delete_instances 12345 12346 12347
+  smartcloud "delete_instances(12345,12346,12347)"
+  smartcloud display_instances
 }
   exit(0)
+else
+  @cmd="#{ARGV[0]}(#{ARGV[1..-1].map {|item| "'#{item}'"}.join(',')})"
 end
 
   # allows us to send arbitrary commands like

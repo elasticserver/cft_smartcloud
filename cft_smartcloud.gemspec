@@ -5,19 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cft_smartcloud}
-<<<<<<< HEAD
-  s.version = "0.1.8"
+  s.version = "0.1.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["yan", "cohesive"]
-  s.date = %q{2011-08-10}
-=======
-  s.version = "0.1.5"
-
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["yan", "cohesive"]
-  s.date = %q{2011-07-26}
->>>>>>> e8e56bd... Changed clone volume to an API call. Version bump to 0.1.6
+  s.date = %q{2011-08-15}
   s.description = %q{CohesiveFT Ruby Interface for IBM SmartCloud and 'smartcloud' command line helper.}
   s.email = %q{yan.pritzker@cohesiveft.com}
   s.executables = ["cft_smartcloud", "smartcloud"]

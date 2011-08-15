@@ -655,6 +655,7 @@ class IBMSmartCloud
 
   # TODO: all methods below here can be nuked once CLI tools are removed
   def run_ibm_tool(command)
+    FileUtils.mkdir_p(File.join(IBM_TOOLS_HOME, 'logs'))
     cmd = "cd #{IBM_TOOLS_HOME} && ./#{command} -u #{@username} -w #{passphrase} -g #{password_file}"
     logger.debug cmd
     output = if @debug
