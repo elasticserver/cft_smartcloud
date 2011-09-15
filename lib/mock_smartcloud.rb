@@ -22,6 +22,8 @@ class MockSmartCloud
             "Price"=>{"Rate"=>"0.21", "PricePerQuantity"=>"1", "UnitOfMeasure"=>"UHR  ", "CountryCode"=>"897", "CurrencyCode"=>"USD"}}, 
           {"Label"=>"Copper 32 bit", "ID"=>"COP32.1/2048/60", 
             "Price"=>{"Rate"=>"0.21", "PricePerQuantity"=>"1", "UnitOfMeasure"=>"UHR  ", "CountryCode"=>"897", "CurrencyCode"=>"USD"}}, 
+          {"Label"=>"Silver 32 bit", "ID"=>"SLV32.2/4096/60*350", 
+            "Price"=>{"Rate"=>"0.21", "PricePerQuantity"=>"1", "UnitOfMeasure"=>"UHR  ", "CountryCode"=>"897", "CurrencyCode"=>"USD"}}, 
         ]
       }, 
       "Name"=>"CohesiveFT VPN-Cubed Datacenter Connect V2.0.0 - BYOL (TOR)", "Location"=>"101", "ProductCodes"=>{"ProductCode"=>"caondc13bV97Kg5TLyGNodD9or7gA"}, "Documentation"=>"https://www-147.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{974E595E-566E-87E3-A483-AC0FC468C4D9}/1.0/GettingStarted.html", "ID"=>"20016530", "Manifest"=>"https://www-147.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{974E595E-566E-87E3-A483-AC0FC468C4D9}/1.0/parameters.xml", "Description"=>"CohesiveFT VPN-Cubed 2.0.0 UL - for TOR datacenter", "State"=>"AVAILABLE", "Visibility"=>"PUBLIC", "Platform"=>"Red Hat Enterprise Linux/5.4"}
@@ -32,7 +34,7 @@ class MockSmartCloud
   end
 
   def create_volume(*args)
-    true
+    "12345"
   end
 
   def describe_volume(*args)
@@ -40,7 +42,7 @@ class MockSmartCloud
   end
 
   def clone_volume(*args)
-    true
+    "555555"
   end
 
   def restart_instance(*args)
