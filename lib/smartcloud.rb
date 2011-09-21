@@ -31,6 +31,10 @@ class IBMSmartCloud
   attr_accessor :logger
 
   def initialize(username, password, logger=nil, debug=false)
+    # For handling errors
+    @retries = 120
+    @sleep_interval = 30
+    
     @username = username
     @password = password
     @logger = logger || SmartcloudLogger.new(STDOUT)
@@ -139,9 +143,9 @@ class IBMSmartCloud
     instance_params.delete("description")
 
     # configuration data has to be changed from a string like
-    # <configuration>{contextmanager:baml-c3-master.cohesiveft.com,clustername:BAML_poc_pk0515,role:[nfs-client-setup|newyork_master_refdata_member|install-luci|rhel-openlikewise-client-setup|join-domain],hostname:r550n107}</configuration> 
+    # <configuration>{contextmanager:test-c3-master.cohesiveft.com,clustername:TEST_poc_pk0515,role:[nfs-client-setup|newyork_master_refdata_member|install-luci|rhel-openlikewise-client-setup|join-domain],hostname:r550n107}</configuration> 
     # to a standard list of POST params like
-    # contextmanager=baml-c3-mager&clustername=BAML...
+    # contextmanager=test-c3-mager&clustername=TEST...
     configuration_data = instance_params.delete("configuration") || instance_params.delete("ConfigurationData") 
     if configuration_data
       if configuration_data =~ /\s+/
@@ -554,41 +558,68 @@ class IBMSmartCloud
   end
 
   def delete(path)
-    output = RestClient.delete File.join(@api_url, path), :accept => :response
-    response = XmlSimple.xml_in(output, {'ForceArray' => nil})
-  rescue => e
-    raise_restclient_error(e)
+    rescue_and_retry_errors do
+      output = RestClient.delete File.join(@api_url, path), :accept => :response
+      response = XmlSimple.xml_in(output, {'ForceArray' => nil})
+    end
   end
 
   def put(path, params={}, param_remap={})
-    param_string = make_param_string(params, param_remap)
-    output = RestClient.put File.join(@api_url, path), param_string, :accept => :response
-    response = XmlSimple.xml_in(output, {'ForceArray' => nil})
-  rescue => e
-    raise_restclient_error(e)
+    rescue_and_retry_errors do
+      param_string = make_param_string(params, param_remap)
+      output = RestClient.put File.join(@api_url, path), param_string, :accept => :response
+      response = XmlSimple.xml_in(output, {'ForceArray' => nil})
+    end
   end
 
   def get(path)
-    output = RestClient.get File.join(@api_url, path), :accept => :response
-    response = XmlSimple.xml_in(output, {'ForceArray' => nil})
-  rescue => e
-    raise_restclient_error(e)
+    rescue_and_retry_errors do
+      output = RestClient.get File.join(@api_url, path), :accept => :response
+      response = XmlSimple.xml_in(output, {'ForceArray' => nil})
+    end
   end
 
   def post(path, params={}, param_remap=nil)
-    param_string = make_param_string(params, param_remap)
-    output = RestClient.post File.join(@api_url, path), param_string, :accept => :response
-    response = XmlSimple.xml_in(output, {'ForceArray' => nil})
-    response
-  rescue => e
-    raise_restclient_error(e)
+    rescue_and_retry_errors do
+      param_string = make_param_string(params, param_remap)
+      output = RestClient.post File.join(@api_url, path), param_string, :accept => :response
+      response = XmlSimple.xml_in(output, {'ForceArray' => nil})
+    end
   end
 
   private
+
+  # Custom exception matcher
+  def timeouts_and_500s
+    m = Module.new 
+    (class << m; self; end).instance_eval do
+      define_method(:===) do |e|
+        [RestClient::RequestTimeout, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, Errno::ETIMEDOUT, 
+        EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError].include?(e.class)|| e.message =~ /500/
+      end
+    end
+    m
+  end
+  
   # rest client error details are in the response so we want to
   # display that as the error, otherwise we lose that info
-  def raise_restclient_error(e)
-    if e.respond_to?(:response) && !e.is_a?(RestClient::RequestTimeout)
+  def rescue_and_retry_errors(&block)
+    block.call
+  rescue timeouts_and_500s => e
+      is_500 = e.message =~ /500/
+
+      @retries -= 1
+      if @retries >= 0
+        logger.warn e.message
+        logger.warn "Caught #{is_500 ? "500" : "Timeout"} Error from cloud API server. Server is down or malfunctioning. Will sleep #{@sleep_interval}s and retry. Retries remaining: #{@retries}..."
+        sleep(@sleep_interval)
+        retry
+      else
+        logger.warn "Reached maximum retry limit for this error. Aborting."
+        raise e
+      end
+  rescue => e
+    if e.respond_to?(:response) 
       raise "#{e.message} - #{e.response}" 
     else
       raise e
