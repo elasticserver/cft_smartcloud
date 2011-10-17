@@ -239,10 +239,16 @@ class IBMSmartCloud
   end
 
   # generates a keypair and returns the private key
-  args :generate_keypair, [:name]
-  def generate_keypair(name)
-    response = post("/keys", :name => name)
-    response.PrivateKey.KeyMaterial
+  args :generate_keypair, [{:name=>:req}, {:publicKey=>:opt}], %{ If publicKey parameter is given, creates a key with that public key, and returns nothing. If public key is omitted, generates a new key and returns the pirvate key.}
+  def generate_keypair(name, publicKey=nil)
+    options = {:name => name}
+    options[:publicKey] = publicKey if publicKey
+    response = post("/keys", options)
+    if publicKey
+      true
+    else
+      response.PrivateKey.KeyMaterial
+    end
   end
 
   args :remove_keypair, [:name]
@@ -254,6 +260,11 @@ class IBMSmartCloud
   args :describe_key, [:name]
   def describe_key(name)
     get("/keys/#{name}").PublicKey
+  end
+
+  args :update_key, [:name, :publicKey]
+  def update_key(name, key)
+    put("/keys/#{name}", :publicKey => key)
   end
 
   # If address_id is supplied, will return info on that address only
@@ -513,7 +524,8 @@ class IBMSmartCloud
   # Also takes an :order param, examples:
   # display_instances(:order => "Name") or :order => "LaunchTime"
   #
-  args :display_instances, [:filters => :opt]
+
+  args :display_instances, [:filters => :opt], %{example: smartcloud "display_instances(:name=>'matchMe')"}
   def display_instances(filters={})
     instances = describe_instances(filters)
 
