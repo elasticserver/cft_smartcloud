@@ -270,7 +270,7 @@ class IBMSmartCloud
   # If address_id is supplied, will return info on that address only
   args :describe_addresses, [{:address_id=>:opt}]
   def describe_addresses(address_id=nil)
-    response = get("/addresses").Address
+    response = arrayize(get("/addresses").Address)
     response.each do |a|
       a["State"] = @states["ip"][a.State.to_i]
     end
@@ -298,7 +298,7 @@ class IBMSmartCloud
   end
 
   def describe_keys
-    get("/keys").PublicKey
+    arrayize(get("/keys").PublicKey)
   end
 
   def describe_unused_keys
@@ -380,17 +380,9 @@ class IBMSmartCloud
   def describe_storage(volume_id=nil)
     response = volume_id ? get("/storage/#{volume_id}") : get("/storage")
 
-    if response.Volume.is_a?(Array)
-      response.Volume.each do |v|
-        v["State"] = @states["storage"][v.State.to_i]
-      end
-    elsif response.Volume
-      response.Volume["State"] = @states["storage"][response.Volume.State.to_i]
-    else
-      return []
+    arrayize(response.Volume).each do |v|
+      v["State"] = @states["storage"][v.State.to_i]
     end
-
-    response.Volume
   end
 
   alias describe_volumes describe_storage
