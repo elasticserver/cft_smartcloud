@@ -410,6 +410,7 @@ class IBMSmartCloud
   args :storage_state_is?, [{:volume_id => :req}, {:state_string => %w(mounted unmounted etc...)}]
   def storage_state_is?(volume_id, state_string)
     v = describe_storage(volume_id)
+    v = v.first if v.is_a?(Array)
 
     @last_storage_state||={}
     if @last_storage_state[volume_id.to_s] != v.State
