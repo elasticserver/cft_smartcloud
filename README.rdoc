@@ -70,6 +70,13 @@ commandline
 
 These won't tell you the arguments, you have to look at smartcloud.rb for the args.
 
+== Versioning
+
+This project uses the jeweler gem for packaging. See the tasks:
+
+  rake version:bump:...
+  rake build
+
 == Copyright
 
 Copyright (c) 2011 CohesiveFT. See LICENSE for details.
