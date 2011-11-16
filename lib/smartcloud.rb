@@ -22,15 +22,18 @@ require 'restclient_fix'
 require 'hash_fix'
 require 'xmlsimple'
 require 'smartcloud_logger'
+require 'curl_client'
 
 IBM_TOOLS_HOME=File.join(File.dirname(__FILE__), "cli_tools") unless defined?(IBM_TOOLS_HOME)
 
 # Encapsulates communications with IBM SmartCloud via REST
-class IBMSmartCloud
 
+class IBMSmartCloud
+ 
   attr_accessor :logger
 
   def initialize(opts={})
+
     # For handling errors
     @retries = (opts[:retries] || 120).to_i
     @sleep_interval = (opts[:sleep_interval] || 30).to_i
@@ -45,9 +48,10 @@ class IBMSmartCloud
 
     @api_url = (opts[:api_url] || @config["api_url"]).to_s.dup # gotta dup it because the option string is frozen
     @api_url.gsub!("https://", "https://#{CGI::escape(@username)}:#{CGI::escape(@password)}@")
-
-    RestClient.timeout = 120 # ibm requests can be very slow
-    RestClient.log = @logger if @debug
+    
+    @http_client = Kernel.const_get(@config["http_client"]) 
+    @http_client.timeout = 120 # ibm requests can be very slow
+    @http_client.log = @logger if @debug
   end
 
   class << self
@@ -270,6 +274,8 @@ class IBMSmartCloud
     delete("/keys/#{name}")
     true
   end
+  alias remove_key remove_keypair
+  alias delete_key remove_keypair
 
   args :describe_key, [:name]
   def describe_key(name)
@@ -365,7 +371,12 @@ class IBMSmartCloud
     # figure out the offering ID automatically based on location and size
     if offering_id.nil?
       logger.debug "Looking up volume offerings based on location: #{location} and size: #{size}"
-      offering_id = describe_volume_offerings(location, size).ID
+      offering = describe_volume_offerings(location, size)
+      offering_id = if offering
+        offering.ID
+      else
+        raise "Unable to locate offering with location #{location}, size #{size}."
+      end
     end
 
     logger.debug "Creating volume...please wait."
@@ -479,6 +490,7 @@ class IBMSmartCloud
   args :rename_instance, [:instance_id, :new_name]
   def rename_instance(instance_id, new_name)
     put("/instances/#{instance_id}", :name => new_name)
+    true
   end
 
   args :delete_instance, [:instance_id]
@@ -545,7 +557,7 @@ class IBMSmartCloud
 
   args :describe_images, [:filters => :opt]
   def describe_images(filters={})
-    images = arrayize(get("offerings/image/").Image)
+    images = arrayize(get("offerings/image").Image)
     images.each {|img| img["State"] = @states["image"][img.State.to_i]}
     filters[:order] ||= "Location"
     images = filter_and_sort(images, filters)
@@ -568,7 +580,7 @@ class IBMSmartCloud
 
   def delete(path)
     rescue_and_retry_errors do
-      output = RestClient.delete File.join(@api_url, path), :accept => :response
+      output = @http_client.delete File.join(@api_url, path), :accept => :response
       response = XmlSimple.xml_in(output, {'ForceArray' => nil})
     end
   end
@@ -576,14 +588,14 @@ class IBMSmartCloud
   def put(path, params={}, param_remap={})
     rescue_and_retry_errors do
       param_string = make_param_string(params, param_remap)
-      output = RestClient.put File.join(@api_url, path), param_string, :accept => :response
+      output = @http_client.put File.join(@api_url, path), param_string, :accept => :response
       response = XmlSimple.xml_in(output, {'ForceArray' => nil})
     end
   end
 
   def get(path)
     rescue_and_retry_errors do
-      output = RestClient.get File.join(@api_url, path), :accept => :response
+      output = @http_client.get File.join(@api_url, path)
       response = XmlSimple.xml_in(output, {'ForceArray' => nil})
     end
   end
@@ -591,7 +603,7 @@ class IBMSmartCloud
   def post(path, params={}, param_remap=nil)
     rescue_and_retry_errors do
       param_string = make_param_string(params, param_remap)
-      output = RestClient.post File.join(@api_url, path), param_string, :accept => :response
+      output = @http_client.post File.join(@api_url, path), param_string, :accept => :response
       response = XmlSimple.xml_in(output, {'ForceArray' => nil})
     end
   end
@@ -615,6 +627,8 @@ class IBMSmartCloud
   def rescue_and_retry_errors(&block)
     block.call
   rescue timeouts_and_500s => e
+      logger.warn e.inspect
+
       is_500 = e.message =~ /500/
 
       @retries -= 1

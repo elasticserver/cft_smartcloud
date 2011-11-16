@@ -16,6 +16,7 @@ opts = Slop.new do
   on :r, :retries, :optional => true
   on :s, :sleep_interval, :optional => true
   on :U, :api_url, :optional => true
+  on :d, :debug, :optional => true
 end
 
 # These are the actual commands appearing after the script name,
@@ -25,7 +26,7 @@ opts.parse do |nonarg|
   commands << nonarg
 end
 
-@smartcloud = IBMSmartCloud.new(opts)
+@sc = IBMSmartCloud.new(opts)
 
 if commands.size == 1
   if commands[0] == 'help'
@@ -58,7 +59,7 @@ end
 
   # allows us to send arbitrary commands like
   # smartcloud username password describe_instance("122345")
-  result = eval("@smartcloud.#{@cmd}")
+  result = eval("@sc.#{@cmd}")
 
   if result == true || result.nil?
     # do nothing, the command already logged

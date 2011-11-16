@@ -82,6 +82,16 @@ commandline
 
 These won't tell you the arguments, you have to look at smartcloud.rb for the args.
 
+RestClient vs CurlHttpClient
+===
+Sometimes RestClient and friends have trouble communicating with certain API's such as 
+IBM SmartCloud, returning 500 errors. We found in some cases the only thing that truly
+works is pure curl (not even libcurl ruby wrappers). Therefore there is a provided 
+simple CurlHttpClient library which emulates the RestClient interface, and wraps 
+command line calls to curl.
+
+The choice of client is determined inside of config.yml
+
 Versioning
 == 
 
