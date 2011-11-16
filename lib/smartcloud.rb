@@ -30,21 +30,21 @@ class IBMSmartCloud
 
   attr_accessor :logger
 
-  def initialize(username, password, logger=nil, debug=false)
+  def initialize(opts={})
     # For handling errors
-    @retries = 120
-    @sleep_interval = 30
+    @retries = opts[:retries] || 120
+    @sleep_interval = opts[:sleep_interval] || 30
     
-    @username = username
-    @password = password
-    @logger = logger || SmartcloudLogger.new(STDOUT)
-    @debug = debug
+    @username = opts[:username] || ENV['SMARTCLOUD_USERNAME'] || raise(RuntimeError, "Please specify username in an option or as ENV variable SMARTCLOUD_USERNAME")
+    @password = opts[:password]|| ENV['SMARTCLOUD_PASSWORD'] || raise(RuntimeError, "Please specify password in an option or as ENV variable SMARTCLOUD_PASSWORD")
+    @logger = opts[:logger] || SmartcloudLogger.new(STDOUT)
+    @debug = opts[:debug] || false
 
     @config = YAML.load_file(File.join(File.dirname(__FILE__), "config/config.yml"))
     @states = @config["states"]
 
-    @api_url = @config["api_url"]
-    @api_url.gsub!("https://", "https://#{CGI::escape(username)}:#{CGI::escape(password)}@")
+    @api_url = (opts[:api_url] || @config["api_url"]).to_s.dup # gotta dup it because the option string is frozen
+    @api_url.gsub!("https://", "https://#{CGI::escape(@username)}:#{CGI::escape(@password)}@")
 
     RestClient.timeout = 120 # ibm requests can be very slow
     RestClient.log = @logger if @debug
@@ -71,10 +71,7 @@ class IBMSmartCloud
         return "Sorry, I don't know method: #{method}"
       end
 
-      if args.nil?
-        puts method.to_s
-      else
-        args = args.map do |arg|
+        args = args && args.map do |arg|
           if arg.is_a?(Hash)
             # If an argument is required, just list it
             if arg.values.first==:req
@@ -93,11 +90,11 @@ class IBMSmartCloud
 
         extra_help = self.class.method_help_supplemental[method.to_s] || ""
 
-        puts "#{method.to_s}(#{args})\n#{extra_help}"
-      end
+        puts %{=== #{method.to_s}#{'(' + args + ')' if args}#{extra_help + "\n" if extra_help}}
     else
       methods = public_methods - Object.public_methods - ['post','get','put','delete','logger','logger=','help']
-      puts methods.sort.join("\n")
+      methods.each {|m| help(m)}
+      nil
     end
   end
 
@@ -203,6 +200,18 @@ class IBMSmartCloud
     post("/offerings/image/#{image_id}", :name => name, :description => description).ImageID
   end
 
+  # Export an image to a volume
+  # NOTE: This is THEORETICAL and has not been tested - because the api server throws 500
+  # on all requests
+  args :export_image, [{:name=>:req}, {:size => ['Small','Medium','Large']}, {:image_id => :req}]
+  def export_image(name, size, image_id, location)
+    # Note we figure out the correct size based on the name and location
+    storage_offering=describe_storage_offerings(location, size)
+
+    response = post("/storage", :name => name, :description => description, :size => storage_offering.Capacity, :offeringID => storage_offering.ID, :imageID => image_id)
+    response.Volume.ID
+  end
+
   # Launches a clone request and returns ID of new volume
   # TODO: the API call does not work, we have to use the cli for now
   args :clone_volume, [:name, :source_disk_id]
@@ -228,7 +237,9 @@ class IBMSmartCloud
     true
   end
 
-  args :delete_volumes, [:volume_ids], %{Example: smartcloud "delete_volumes(12345,12346,12347)"}
+  args :delete_volumes, [:volume_ids], %{
+    Example: smartcloud "delete_volumes(12345,12346,12347)"
+  }
   def delete_volumes(*vol_id_list)
     threads=[]
     vol_id_list.each {|vol| 
@@ -239,7 +250,10 @@ class IBMSmartCloud
   end
 
   # generates a keypair and returns the private key
-  args :generate_keypair, [{:name=>:req}, {:publicKey=>:opt}], %{ If publicKey parameter is given, creates a key with that public key, and returns nothing. If public key is omitted, generates a new key and returns the pirvate key.}
+  args :generate_keypair, [{:name=>:req}, {:publicKey=>:opt}], %{ 
+    If publicKey parameter is given, creates a key with that public key, and returns nothing. 
+    If public key is omitted, generates a new key and returns the pirvate key.
+  }
   def generate_keypair(name, publicKey=nil)
     options = {:name => name}
     options[:publicKey] = publicKey if publicKey
@@ -303,22 +317,6 @@ class IBMSmartCloud
 
   def describe_unused_keys
     describe_keys.select {|key| key.Instances == {}}
-  end
-
-  def delete_unused_keys(auto=false)
-    describe_unused_keys.each do |key|
-      if auto
-        remove_keypair(key.KeyName)
-      else
-        puts "Remove key #{key.KeyName}? (type 'y' to continue): "
-        input = gets.strip
-        if input == 'y'
-          remove_keypair(key.KeyName)
-        else
-          puts "Not removing key #{key.KeyName}"
-        end
-      end
-    end
   end
 
   def display_keys 
@@ -390,7 +388,9 @@ class IBMSmartCloud
 
   # This does a human-usable version of describe_volumes with the critical info (name, id, state)
   # Optionally takes a filter (currently supports state). i.e. display_volumes(:state => :mounted)
-  args :display_volumes, [{:filter => :opt}]
+  args :display_volumes, [{:filters => :opt}], %{
+    Example filters: {:Name => "match-name", :Location => 101}
+  }
   def display_volumes(filter={})
     vols = describe_volumes
     vols = filter_and_sort(vols, filter)
@@ -466,7 +466,9 @@ class IBMSmartCloud
   end
 
   # Deletes many instances in a thread
-  args :delete_instances, [:instance_ids], %{Example: smartcloud "delete_instances(12345,12346,12347)"}
+  args :delete_instances, [:instance_ids], %{
+    Example: smartcloud "delete_instances(12345,12346,12347)"
+  }
   def delete_instances(*instance_ids)
     threads=[]
     instance_ids.each {|id| logger.info "Sending delete request for: #{id}..."; threads << Thread.new { delete_instance(id) }; logger.info "Finished delete request for #{id}" }
@@ -518,7 +520,9 @@ class IBMSmartCloud
   # display_instances(:order => "Name") or :order => "LaunchTime"
   #
 
-  args :display_instances, [:filters => :opt], %{example: smartcloud "display_instances(:name=>'matchMe')"}
+  args :display_instances, [:filters => :opt], %{
+    Example: smartcloud "display_instances(:name=>'matchMe')"
+  }
   def display_instances(filters={})
     instances = describe_instances(filters)
 
@@ -683,4 +687,4 @@ class IBMSmartCloud
 end
 
 # predefine an instance for convenience
-@smartcloud = IBMSmartCloud.new(ENV['SMARTCLOUD_USERNAME'], ENV['SMARTCLOUD_PASSWORD']) if ENV['SMARTCLOUD_USERNAME'] && ENV['SMARTCLOUD_PASSWORD']
+@smartcloud = IBMSmartCloud.new

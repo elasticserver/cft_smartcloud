@@ -2,18 +2,42 @@
 
 require File.join(File.dirname(__FILE__), '../lib/smartcloud')
 require 'pp'
+require 'slop'
 
 if !ENV['SMARTCLOUD_USERNAME'] || !ENV['SMARTCLOUD_PASSWORD']
   puts "Please set environment variables SMARTCLOUD_PASSWORD and SMARTCLOUD_USERNAME in your environment."
   exit(1)
 end
 
-if ARGV.size == 1
-  @cmd=ARGV[0]
-elsif ARGV.size == 2
-  @cmd="#{ARGV[0]}('#{ARGV[1]}')"
-elsif ARGV.size == 0 
+# These are the options we can pass in
+opts = Slop.new do
+  on :u, :username, :optional => true
+  on :p, :password, :optional => true
+  on :r, :retries, :optional => true
+  on :s, :sleep_interval, :optional => true
+  on :U, :api_url, :optional => true
+end
+
+# These are the actual commands appearing after the script name,
+# such as "smartcloud display_instances ... "
+commands = []
+opts.parse do |nonarg|
+  commands << nonarg
+end
+
+@smartcloud = IBMSmartCloud.new(opts)
+
+if commands.size == 1
+  if commands[0] == 'help'
+    puts "#{opts.help}\n\nFunctions:\n"
+  end
+  @cmd=commands[0]
+elsif commands.size == 2
+  @cmd="#{commands[0]}('#{commands[1]}')"
+elsif commands.size == 0 
   puts %{
+  #{opts.help}
+  
   Usage: 
   smartcloud help
   smartcloud help [command]
@@ -29,7 +53,7 @@ elsif ARGV.size == 0
 }
   exit(0)
 else
-  @cmd="#{ARGV[0]}(#{ARGV[1..-1].map {|item| "'#{item}'"}.join(',')})"
+  @cmd="#{commands[0]}(#{commands[1..-1].map {|item| "'#{item}'"}.join(',')})"
 end
 
   # allows us to send arbitrary commands like

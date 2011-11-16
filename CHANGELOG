@@ -1,3 +1,8 @@
+2011-11-16 0.2.2: 
+ * Better help display
+ * Support for -u, -p, -U (username, password, api url)
+ * Removed delete_unused_keys method (was not working correctly / not needed)
+
 2011-09-21 0.2.1:
  * Added sleep/retry logic for intermittent 500 errors returned by cloud
 
