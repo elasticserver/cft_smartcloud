@@ -5,23 +5,23 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cft_smartcloud}
-  s.version = "0.2.4"
+  s.version = "0.2.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["yan", "cohesive"]
-  s.date = %q{2011-11-07}
+  s.date = %q{2011-11-16}
   s.description = %q{CohesiveFT Ruby Interface for IBM SmartCloud and 'smartcloud' command line helper.}
   s.email = %q{yan.pritzker@cohesiveft.com}
   s.executables = ["cft_smartcloud", "smartcloud"]
   s.extra_rdoc_files = [
     "LICENSE",
-     "README.rdoc"
+     "README.md"
   ]
   s.files = [
     ".gitignore",
      "CHANGELOG",
      "LICENSE",
-     "README.rdoc",
+     "README.md",
      "Rakefile",
      "VERSION",
      "bin/cft_smartcloud",
@@ -59,6 +59,19 @@ Gem::Specification.new do |s|
      "lib/rest-client-1.6.3/lib/restclient/resource.rb",
      "lib/rest-client-1.6.3/lib/restclient/response.rb",
      "lib/restclient_fix.rb",
+     "lib/slop-2.3.1/.gemtest",
+     "lib/slop-2.3.1/.gitignore",
+     "lib/slop-2.3.1/.yardopts",
+     "lib/slop-2.3.1/CHANGES.md",
+     "lib/slop-2.3.1/LICENSE",
+     "lib/slop-2.3.1/README.md",
+     "lib/slop-2.3.1/Rakefile",
+     "lib/slop-2.3.1/lib/slop.rb",
+     "lib/slop-2.3.1/slop.gemspec",
+     "lib/slop-2.3.1/test/commands_test.rb",
+     "lib/slop-2.3.1/test/helper.rb",
+     "lib/slop-2.3.1/test/option_test.rb",
+     "lib/slop-2.3.1/test/slop_test.rb",
      "lib/smartcloud.rb",
      "lib/smartcloud_logger.rb",
      "lib/xml-simple-1.0.12/lib/xmlsimple.rb",

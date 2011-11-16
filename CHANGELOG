@@ -1,4 +1,4 @@
-2011-11-16 0.2.2: 
+2011-11-16 0.2.5: 
  * Better help display
  * Support for -u, -p, -U (username, password, api url)
  * Removed delete_unused_keys method (was not working correctly / not needed)

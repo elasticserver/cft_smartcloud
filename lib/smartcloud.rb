@@ -32,8 +32,8 @@ class IBMSmartCloud
 
   def initialize(opts={})
     # For handling errors
-    @retries = opts[:retries] || 120
-    @sleep_interval = opts[:sleep_interval] || 30
+    @retries = (opts[:retries] || 120).to_i
+    @sleep_interval = (opts[:sleep_interval] || 30).to_i
     
     @username = opts[:username] || ENV['SMARTCLOUD_USERNAME'] || raise(RuntimeError, "Please specify username in an option or as ENV variable SMARTCLOUD_USERNAME")
     @password = opts[:password]|| ENV['SMARTCLOUD_PASSWORD'] || raise(RuntimeError, "Please specify password in an option or as ENV variable SMARTCLOUD_PASSWORD")
