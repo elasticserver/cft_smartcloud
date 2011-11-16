@@ -20,7 +20,7 @@ module RestClient
   # * :raw_response return a low-level RawResponse instead of a Response
   # * :max_redirects maximum number of redirections (default to 10)
   # * :verify_ssl enable ssl verification, possible values are constants from OpenSSL::SSL
-  # * :timeout and :open_timeout
+  # * :timeout and :open_timeout passing in -1 will disable the timeout by setting the corresponding net timeout values to nil
   # * :ssl_client_cert, :ssl_client_key, :ssl_ca_file
   class Request
 
@@ -37,7 +37,7 @@ module RestClient
       @method = args[:method] or raise ArgumentError, "must pass :method"
       @headers = args[:headers] || {}
       if args[:url]
-        @url = process_get_params(args[:url], headers)
+        @url = process_url_params(args[:url], headers)
       else
         raise ArgumentError, "must pass :url"
       end
@@ -62,26 +62,24 @@ module RestClient
     def execute & block
       uri = parse_url_with_auth(url)
       transmit uri, net_http_request_class(method).new(uri.request_uri, processed_headers), payload, & block
+    ensure
+      payload.close if payload
     end
 
-    # Extract the query parameters for get request and append them to the url
-    def process_get_params url, headers
-      if [:get, :head, :delete].include? method
-        get_params = {}
-        headers.delete_if do |key, value|
-          if 'params' == key.to_s.downcase && value.is_a?(Hash)
-            get_params.merge! value
-            true
-          else
-            false
-          end
-        end
-        unless get_params.empty?
-          query_string = get_params.collect { |k, v| "#{k.to_s}=#{CGI::escape(v.to_s)}" }.join('&')
-          url + "?#{query_string}"
+    # Extract the query parameters and append them to the url
+    def process_url_params url, headers
+      url_params = {}
+      headers.delete_if do |key, value|
+        if 'params' == key.to_s.downcase && value.is_a?(Hash)
+          url_params.merge! value
+          true
         else
-          url
+          false
         end
+      end
+      unless url_params.empty?
+        query_string = url_params.collect { |k, v| "#{k.to_s}=#{CGI::escape(v.to_s)}" }.join('&')
+        url + "?#{query_string}"
       else
         url
       end
@@ -89,7 +87,7 @@ module RestClient
 
     def make_headers user_headers
       unless @cookies.empty?
-        user_headers[:cookie] = @cookies.map { |(key, val)| "#{key.to_s}=#{CGI::unescape(val)}" }.sort.join(';')
+        user_headers[:cookie] = @cookies.map { |(key, val)| "#{key.to_s}=#{CGI::unescape(val.to_s)}" }.sort.join('; ')
       end
       headers = stringify_headers(default_headers).merge(stringify_headers(user_headers))
       headers.merge!(@payload.headers) if @payload
@@ -160,6 +158,10 @@ module RestClient
       net.ca_file = @ssl_ca_file if @ssl_ca_file
       net.read_timeout = @timeout if @timeout
       net.open_timeout = @open_timeout if @open_timeout
+
+      # disable the timeout if the timeout value is -1
+      net.read_timeout = nil if @timeout == -1
+      net.out_timeout = nil if @open_timeout == -1
 
       RestClient.before_execution_procs.each do |before_proc|
         before_proc.call(req, args)

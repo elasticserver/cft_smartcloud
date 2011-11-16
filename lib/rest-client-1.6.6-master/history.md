@@ -1,4 +1,26 @@
+# 1.6.7
+
+- rebuild with 1.8.7 to avoid https://github.com/rubygems/rubygems/pull/57
+
+# 1.6.6
+
+- 1.6.5 was yanked
+
+# 1.6.5
+
+- RFC6265 requires single SP after ';' for separating parameters pairs in the 'Cookie:' header (patch provided by Hiroshi Nakamura)
+- enable url parameters for all actions
+- detect file parameters in arrays
+- allow disabling the timeouts by passing -1 (patch provided by Sven Böhm)
+
+# 1.6.4
+
+- fix restclient script compatibility with 1.9.2
+- fix unlinking temp file (patch provided by Evan Smith)
+- monkeypatching ruby for http patch method (patch provided by Syl Turner)
+
 # 1.6.3
+
 - 1.6.2 was yanked
 
 # 1.6.2

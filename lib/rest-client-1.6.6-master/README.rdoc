@@ -57,7 +57,7 @@ This does two things for you:
 
 If you are sending params that do not contain a File object but the payload needs to be multipart then:
 
-  RestClient.post '/data', :foo => 'bar', :multipart => true
+  RestClient.post '/data', {:foo => 'bar', :multipart => true}
 
 == Usage: ActiveResource-Style
 
@@ -216,6 +216,15 @@ Often the proxy url is set in an environment variable, so you can do this to
 use whatever proxy the system is configured to use:
 
   RestClient.proxy = ENV['http_proxy']
+
+== Query parameters
+
+Request objects know about query parameters and will automatically add them to
+the url for GET, HEAD and DELETE requests and escape the keys and values as 
+needed:
+
+  RestClient.get 'http://example.com/resource', :params => {:foo => 'bar', :baz => 'qux'}
+  # will GET http://example.com/resource?foo=bar&baz=qux
 
 == Cookies
 

@@ -1,0 +1,6 @@
+.idea
+doc
+rdoc
+pkg
+*.gem
+scratchpad.rb
