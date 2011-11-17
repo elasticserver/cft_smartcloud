@@ -64,7 +64,7 @@ class IBMSmartCloud
     attr_reader :config
   end
 
-  def self.args(method, args, extra_help={})
+  def self.help_for(method, args, extra_help={})
     @method_help||={}
     @method_help_supplemental||={}
     @method_help[method.to_s] = args
@@ -130,7 +130,7 @@ class IBMSmartCloud
   # CLI-style attribute naming. I.e. "image-id" or "data-center"
   # or API-style (imageID, location). If the CLI-style params are
   # provided, they will be remapped to the correct API params.
-  args :create_instance, [:instance_params_hash], %{
+  help_for :create_instance, [:instance_params_hash], %{
     Available hash keys: :name, :imageID, :instanceType, :location, :publicKey, :ip, :volumeID, 
                          :ConfigurationData, :vlanID, :antiCollocationInstance, :isMiniEphemeral
 
@@ -172,7 +172,7 @@ class IBMSmartCloud
   end
 
   # Find a location by its name. Assumes locations have unique names (not verified by ibm docs)
-  args :get_location_by_name, [:name]
+  help_for :get_location_by_name, [:name]
   def get_location_by_name(name)
     locations = describe_locations
     locations.detect {|loc| loc.Name == name}
@@ -180,7 +180,7 @@ class IBMSmartCloud
 
   # find all ip address offerings. If a location is specified, give the offering for the location
   # assumption: only one offering per location. This is assumed, not verified in docs.
-  args :describe_address_offerings, [{:location => :opt}]
+  help_for :describe_address_offerings, [{:location => :opt}]
   def describe_address_offerings(location=nil)
     response=get("/offerings/address").Offerings
     if location
@@ -192,7 +192,7 @@ class IBMSmartCloud
 
   # Allocate IP address. Offering ID is optional. if not specified, will look up offerings
   # for this location and pick one
-  args :allocate_address, [{:location => :req}, {:offering_id => :opt}, {:foo => [:bar, :baz, :quux]}]
+  help_for :allocate_address, [{:location => :req}, {:offering_id => :opt}, {:foo => [:bar, :baz, :quux]}]
   def allocate_address(location, offering_id=nil)
     if offering_id.nil?
       offering_id = describe_address_offerings(location).ID
@@ -201,7 +201,7 @@ class IBMSmartCloud
   end
 
 
-  args :describe_address, [:address_id]
+  help_for :describe_address, [:address_id]
   def describe_address(address_id)
     address = get("/addresses/#{address_id}").Address
     address["State"] = @config.states.ip[address.State]
@@ -209,13 +209,13 @@ class IBMSmartCloud
   end
 
   # Launches a clone image call from CLI
-  args :clone_image, [:name, :description, :image_id]
+  help_for :clone_image, [:name, :description, :image_id]
   def clone_image(name, description, image_id)
     post("/offerings/image/#{image_id}", :name => name, :description => description).ImageID
   end
 
   # Export an image to a volume
-  args :export_image, [{:name=>:req}, {:size => ['Small','Medium','Large']}, {:image_id => :req}, {:location => :req}]
+  help_for :export_image, [{:name=>:req}, {:size => ['Small','Medium','Large']}, {:image_id => :req}, {:location => :req}]
   def export_image(name, size, image_id, location)
     # Note we figure out the correct size based on the name and location
     storage_offering=describe_storage_offerings(location, size)
@@ -226,30 +226,30 @@ class IBMSmartCloud
 
   # Launches a clone request and returns ID of new volume
   # TODO: the API call does not work, we have to use the cli for now
-  args :clone_volume, [:name, :source_disk_id]
+  help_for :clone_volume, [:name, :source_disk_id]
   def clone_volume(name, source_disk_id)
     result = post("/storage", :name => name, :sourceDiskID => source_disk_id, :type => 'clone')
     result.Volume.ID
   end
 
-  args :attach_volume, [:instance_id, :volume_id]
+  help_for :attach_volume, [:instance_id, :volume_id]
   def attach_volume(instance_id, volume_id)
     put("/instances/#{instance_id}", :volumeID => volume_id, :attach => true)
   end
 
-  args :detach_volume, [:instance_id, :volume_id]
+  help_for :detach_volume, [:instance_id, :volume_id]
   def detach_volume(instance_id, volume_id)
     put("/instances/#{instance_id}", :volumeID => volume_id, :detach => true)
   end
 
   # Delete the volume
-  args :delete_volume, [:vol_id]
+  help_for :delete_volume, [:vol_id]
   def delete_volume(vol_id)
     delete("/storage/#{vol_id}")
     true
   end
 
-  args :delete_volumes, [:volume_ids], %{
+  help_for :delete_volumes, [:volume_ids], %{
     Example: smartcloud "delete_volumes(12345,12346,12347)"
   }
   def delete_volumes(*vol_id_list)
@@ -262,7 +262,7 @@ class IBMSmartCloud
   end
 
   # generates a keypair and returns the private key
-  args :generate_keypair, [{:name=>:req}, {:publicKey=>:opt}], %{ 
+  help_for :generate_keypair, [{:name=>:req}, {:publicKey=>:opt}], %{ 
     If publicKey parameter is given, creates a key with that public key, and returns nothing. 
     If public key is omitted, generates a new key and returns the pirvate key.
   }
@@ -277,7 +277,7 @@ class IBMSmartCloud
     end
   end
 
-  args :remove_keypair, [:name]
+  help_for :remove_keypair, [:name]
   def remove_keypair(name)
     delete("/keys/#{name}")
     true
@@ -285,18 +285,18 @@ class IBMSmartCloud
   alias remove_key remove_keypair
   alias delete_key remove_keypair
 
-  args :describe_key, [:name]
+  help_for :describe_key, [:name]
   def describe_key(name)
     get("/keys/#{name}").PublicKey
   end
 
-  args :update_key, [:name, :publicKey]
+  help_for :update_key, [:name, :publicKey]
   def update_key(name, key)
     put("/keys/#{name}", :publicKey => key)
   end
 
   # If address_id is supplied, will return info on that address only
-  args :describe_addresses, [{:address_id=>:opt}]
+  help_for :describe_addresses, [{:address_id=>:opt}]
   def describe_addresses(address_id=nil)
     response = arrayize(get("/addresses").Address)
     response.each do |a|
@@ -324,7 +324,7 @@ class IBMSmartCloud
   # Allows you to poll for a specific storage state
   # ex: storage_state_is?("123456", "UNMOUNTED")
   # storage state string can be given as a string or symbol
-  args :describe_addresses, [{:address_id=>:req}, {:state_string=>%w(new attached etc...)}]
+  help_for :describe_addresses, [{:address_id=>:req}, {:state_string=>%w(new attached etc...)}]
   def address_state_is?(address_id, state_string)
     v = describe_addresses(address_id)
     v.State.to_s == state_string.to_s.upcase
@@ -352,7 +352,7 @@ class IBMSmartCloud
   end
   alias display_keypairs display_keys
 
-  args :supported_instance_types, [:image_id]
+  help_for :supported_instance_types, [:image_id]
   def supported_instance_types(image_id)
     img=describe_image(image_id)
     arrayize(img.SupportedInstanceTypes.InstanceType).map(&:ID)
@@ -364,8 +364,8 @@ class IBMSmartCloud
 
   # Optionally supply a location to get offerings filtered to a particular location
   # Optionally supply a name (Small, Medium, Large) to get the specific offering
-  args :describe_volume_offerings, [{:location => :opt}, {:name => :opt}]
-  args :describe_storage_offerings, [{:location => :opt}, {:name => :opt}]
+  help_for :describe_volume_offerings, [{:location => :opt}, {:name => :opt}]
+  help_for :describe_storage_offerings, [{:location => :opt}, {:name => :opt}]
   def describe_storage_offerings(location=nil, name=nil)
     response = get("/offerings/storage")
     if location
@@ -388,7 +388,7 @@ class IBMSmartCloud
   # ex: create_volume("yan", 61, "Small", "20001208", 61)
   #
   # NOTE: storage area id is not currently supported by IBM (according to docs)
-  args :create_volume, [{:name => :req},{:location_id => :req},{:size => ['Small','Medium','Large']}, {:offering_id => :opt}, {:format => :opt}]
+  help_for :create_volume, [{:name => :req},{:location_id => :req},{:size => ['Small','Medium','Large']}, {:offering_id => :opt}, {:format => :opt}]
   def create_volume(name, location, size, offering_id=nil, format="EXT3")
 
     # figure out the offering ID automatically based on location and size
@@ -408,7 +408,7 @@ class IBMSmartCloud
   end
 
   # Optionally takes a volume id, if none supplied, will show all volumes
-  args :describe_storage, [{:volume_id => :opt}]
+  help_for :describe_storage, [{:volume_id => :opt}]
   def describe_storage(volume_id=nil)
     response = volume_id ? get("/storage/#{volume_id}") : get("/storage")
 
@@ -422,7 +422,7 @@ class IBMSmartCloud
 
   # This does a human-usable version of describe_volumes with the critical info (name, id, state)
   # Optionally takes a filter (currently supports state). i.e. display_volumes(:state => :mounted)
-  args :display_volumes, [{:filters => :opt}], %{
+  help_for :display_volumes, [{:filters => :opt}], %{
     Example filters: {:Name => "match-name", :Location => 101}
   }
   def display_volumes(filter={})
@@ -444,7 +444,7 @@ class IBMSmartCloud
   # Allows you to poll for a specific storage state
   # ex: storage_state_is?("123456", "UNMOUNTED")
   # storage state string can be given as a string or symbol
-  args :storage_state_is?, [{:volume_id => :req}, {:state_string => %w(mounted unmounted etc...)}]
+  help_for :storage_state_is?, [{:volume_id => :req}, {:state_string => %w(mounted unmounted etc...)}]
   def storage_state_is?(volume_id, state_string)
     v = describe_storage(volume_id)
     v = v.first if v.is_a?(Array)
@@ -463,7 +463,7 @@ class IBMSmartCloud
 
   end
 
-  args :instance_state_is?, [{:instance_id=> :req}, {:state_string => %w(active stopping etc...)}]
+  help_for :instance_state_is?, [{:instance_id=> :req}, {:state_string => %w(active stopping etc...)}]
   def instance_state_is?(instance_id, state_string)
     v = describe_instance(instance_id)
 
@@ -481,7 +481,7 @@ class IBMSmartCloud
   end
 
   # Polls until volume state is matched. When it is, returns entire volume descriptor hash.
-  args :poll_for_volume_state, [{:volume_id => :req}, {:state_string => %w(mounted unmounted etc...)}]
+  help_for :poll_for_volume_state, [{:volume_id => :req}, {:state_string => %w(mounted unmounted etc...)}]
   def poll_for_volume_state(volume_id, state_string, polling_interval=5)
     logger.debug "Polling for volume #{volume_id} to acquire state #{state_string} (interval: #{polling_interval})..."
     while(true)
@@ -492,7 +492,7 @@ class IBMSmartCloud
   end
 
   # Polls until instance state is matched. When it is, returns entire instance descriptor hash.
-  args :poll_for_instance_state, [{:instance_id => :req}, {:state_string => %w(active stopped etc...)}]
+  help_for :poll_for_instance_state, [{:instance_id => :req}, {:state_string => %w(active stopped etc...)}]
   def poll_for_instance_state(instance_id, state_string, polling_interval=5)
     logger.debug "Polling for instance #{instance_id} to acquire state #{state_string} (interval: #{polling_interval})..."
     while(true)
@@ -503,7 +503,7 @@ class IBMSmartCloud
   end
 
   # Deletes many instances in a thread
-  args :delete_instances, [:instance_ids], %{
+  help_for :delete_instances, [:instance_ids], %{
     Example: smartcloud "delete_instances(12345,12346,12347)"
   }
   def delete_instances(*instance_ids)
@@ -513,25 +513,25 @@ class IBMSmartCloud
     true
   end
 
-  args :rename_instance, [:instance_id, :new_name]
+  help_for :rename_instance, [:instance_id, :new_name]
   def rename_instance(instance_id, new_name)
     put("/instances/#{instance_id}", :name => new_name)
     true
   end
 
-  args :delete_instance, [:instance_id]
+  help_for :delete_instance, [:instance_id]
   def delete_instance(instance_id)
     delete("/instances/#{instance_id}")
     true
   end
   
-  args :restart_instance, [:instance_id]
+  help_for :restart_instance, [:instance_id]
   def restart_instance(instance_id)
     put("/instances/#{instance_id}", :state => "restart")
     true
   end
 
-  args :describe_instance, [:instance_id]
+  help_for :describe_instance, [:instance_id]
   def describe_instance(instance_id)
     response = get("instances/#{instance_id}").Instance
     response["Status"] = @states["instance"][response.Status.to_i]
@@ -541,7 +541,7 @@ class IBMSmartCloud
   # You can filter by any instance attributes such as
   # describe_instances(:name => "FOO_BAR", :status => 'ACTIVE')
   # in the case of status you can also use symbols like :status => :active
-  args :describe_instances, [:filters => :opt]
+  help_for :describe_instances, [:filters => :opt]
   def describe_instances(filters={})
     instances = arrayize(get("instances").Instance)
     
@@ -558,7 +558,7 @@ class IBMSmartCloud
   # display_instances(:order => "Name") or :order => "LaunchTime"
   #
 
-  args :display_instances, [:filters => :opt], %{
+  help_for :display_instances, [:filters => :opt], %{
     Example: smartcloud "display_instances(:name=>'matchMe')"
   }
   def display_instances(filters={})
@@ -576,14 +576,14 @@ class IBMSmartCloud
   end
 
 
-  args :describe_image, [:image_id]
+  help_for :describe_image, [:image_id]
   def describe_image(image_id)
     image = get("offerings/image/#{image_id}").Image
     image["State"] = @states["image"][image.State.to_i]
     image 
   end
 
-  args :describe_images, [:filters => :opt]
+  help_for :describe_images, [:filters => :opt]
   def describe_images(filters={})
     images = arrayize(get("offerings/image").Image)
     images.each {|img| img["State"] = @states["image"][img.State.to_i]}
@@ -595,7 +595,7 @@ class IBMSmartCloud
     get("offerings/image/#{image_id}/manifest").Manifest
   end
 
-  args :display_images, [:filters => :opt]
+  help_for :display_images, [:filters => :opt]
   def display_images(filters={})
     images = describe_images(filters)
 
