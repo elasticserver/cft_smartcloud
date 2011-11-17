@@ -212,7 +212,7 @@ class IBMSmartCloud
     # Note we figure out the correct size based on the name and location
     storage_offering=describe_storage_offerings(location, size)
 
-    response = post("/storage", :name => name, :description => description, :size => storage_offering.Capacity, :offeringID => storage_offering.ID, :imageID => image_id)
+    response = post("/storage", :name => name, :size => storage_offering.Capacity, :format => 'EXT3', :offeringID => storage_offering.ID, :location => location, :imageID => image_id)
     response.Volume.ID
   end
 
