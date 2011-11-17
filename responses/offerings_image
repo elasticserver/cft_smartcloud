@@ -1,0 +1,3780 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:DescribeImagesResponse xmlns:ns2="http://www.ibm.com/xmlns/b2b/cloud/api/2010-03-31">
+
+  <Image>
+    <ID>10002600</ID>
+    <ProductCodes>
+      <ProductCode>AMDSxdaaQs2x173zeATVaw</ProductCode>
+    </ProductCodes>
+    <Name>Microsoft Windows Server 2008 R2 (64-bit)</Name>
+    <Location>41</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R2</Platform>
+    <Description>Windows2008 R2 64-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.35</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.86</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.18</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-10-12T03:11:57.359Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10002601</ID>
+    <ProductCodes>
+      <ProductCode>lo_jIE3YQqmOqFGfUN3m8A</ProductCode>
+    </ProductCodes>
+    <Name>Microsoft Windows Server 2008 R2 (64 bit)</Name>
+    <Location>81</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R2</Platform>
+    <Description>Microsoft Windows Server 2008 R2
+    (64-bit)</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{DAC5A356-A469-FAAC-D01A-6F8486D5BCD4}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{DAC5A356-A469-FAAC-D01A-6F8486D5BCD4}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.35</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.86</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.18</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-10-12T03:11:57.406Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001002</ID>
+    <ProductCodes>
+      <ProductCode>bfY4lszwRly4uhrERf4wBw</ProductCode>
+    </ProductCodes>
+    <Name>R1.2 Red Hat Enterprise Linux 5.5 (32-bi)</Name>
+    <Location>61</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>Red Hat Enterprise Linux/5.5</Platform>
+    <Description>Red Hat Linux 32 bit - Testing the name
+    changes</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>10.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.15</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.74</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-08-05T07:31:35.784Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001003</ID>
+    <ProductCodes>
+      <ProductCode>AErfSQcTQ7mxWjdOJLguVw</ProductCode>
+    </ProductCodes>
+    <Name>rhel55_x64</Name>
+    <Location>61</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>Red Hat Enterprise Linux/5.5</Platform>
+    <Description>Red Hat Linux 64</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.51</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.69</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.44</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.12</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-08-05T07:31:35.911Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001004</ID>
+    <ProductCodes>
+      <ProductCode>Sr7dKs9ARDmuPy6WPgVDuA</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>61</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>SUSE Linux Enterprise Server/11 SP1</Platform>
+    <Description>Suse linux 32 bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.2</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>16.63</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-08-05T07:31:36.112Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001005</ID>
+    <ProductCodes>
+      <ProductCode>EVxhoI7EQ7Slc2rvN5hVjw</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>61</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>SUSE Linux Enterprise Server/11 SP1</Platform>
+    <Description>SUSE Linux Enterprise Server 11 SP1 for x86 Base
+    OS 32-bit with pay for use licensing</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.53</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.24</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>21.95</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>18.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-08-05T07:31:36.246Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001006</ID>
+    <ProductCodes>
+      <ProductCode>lRa5JVx8SIGGaARFPjTlmw</ProductCode>
+    </ProductCodes>
+    <Name>R1.2 Red Hat Enterprise Linux 5.5 (32-bi)</Name>
+    <Location>41</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 32 bit - Testing the name
+    changes</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>10.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.15</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.74</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.09</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-08-05T19:52:46.430Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001007</ID>
+    <ProductCodes>
+      <ProductCode>zFlJxlXZRguZo9RQZuLxJQ</ProductCode>
+    </ProductCodes>
+    <Name>rhel55_x64</Name>
+    <Location>41</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 64</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>30.88</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.28</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.51</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.69</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.44</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.12</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-08-05T19:52:46.606Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001008</ID>
+    <ProductCodes>
+      <ProductCode>Rf2YYhOwTlmWSreN6vSHbg</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>41</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>Suse linux 32 bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.2</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>16.63</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-08-05T19:52:46.835Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001009</ID>
+    <ProductCodes>
+      <ProductCode>6jlF7qjAQe2xyPTAj7bj0w</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>41</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>SUSE Linux Enterprise Server 11 SP1 for x86 Base
+    OS 32-bit with pay for use licensing</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>43.8</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.36</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.53</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.24</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>21.95</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>18.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-08-05T19:52:47.054Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005358</ID>
+    <ProductCodes>
+      <ProductCode>caondc1lRa5JVx8SIGGaARFPjTlmw</ProductCode>
+    </ProductCodes>
+    <Name>R1.2 Red Hat Enterprise Linux 5.5 (32-bi)</Name>
+    <Location>141</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 32 bit - Testing the name
+    changes</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>10.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.15</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.74</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.09</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-01-11T21:39:57.284Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005359</ID>
+    <ProductCodes>
+      <ProductCode>caondc1zFlJxlXZRguZo9RQZuLxJQ</ProductCode>
+    </ProductCodes>
+    <Name>rhel55_x64</Name>
+    <Location>141</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 64</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>30.88</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.28</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.51</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.69</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.44</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.12</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-01-11T21:39:58.474Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005360</ID>
+    <ProductCodes>
+      <ProductCode>caondc1Rf2YYhOwTlmWSreN6vSHbg</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>141</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>Suse linux 32 bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.2</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>16.63</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-01-11T21:39:59.213Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005361</ID>
+    <ProductCodes>
+      <ProductCode>caondc16jlF7qjAQe2xyPTAj7bj0w</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>141</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>SUSE Linux Enterprise Server 11 SP1 for x86 Base
+    OS 32-bit with pay for use licensing</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.36</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.53</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.24</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>21.95</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>18.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-01-11T21:39:59.652Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005363</ID>
+    <ProductCodes>
+      <ProductCode>caondc1AMDSxdaaQs2x173zeATVaw</ProductCode>
+    </ProductCodes>
+    <Name>Microsoft Windows Server 2008 R2 (64-bit)</Name>
+    <Location>141</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R2</Platform>
+    <Description>Windows2008 R2 64-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.35</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.86</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.18</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-01-11T21:40:01.217Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005364</ID>
+    <ProductCodes>
+      <ProductCode>caondc1DwlSh5PfRRKlUJ5lKH3W3g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x86_update</Name>
+    <Location>141</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 32-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.58</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.54</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-01-11T21:40:02.126Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005365</ID>
+    <ProductCodes>
+      <ProductCode>caondc1Er2sLu8wTT69lszn282q8g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x64bit</Name>
+    <Location>141</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 64-BIT</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>22.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.65</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>24.16</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.48</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-01-11T21:40:02.512Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10009608</ID>
+    <ProductCodes>
+      <ProductCode>apsgdc1lRa5JVx8SIGGaARFPjTlmw</ProductCode>
+    </ProductCodes>
+    <Name>R1.2 Red Hat Enterprise Linux 5.5 (32-bi)</Name>
+    <Location>181</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 32 bit - Testing the name
+    changes</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>10.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.15</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.74</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.09</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-03-31T01:09:00.613Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10009609</ID>
+    <ProductCodes>
+      <ProductCode>apsgdc1zFlJxlXZRguZo9RQZuLxJQ</ProductCode>
+    </ProductCodes>
+    <Name>rhel55_x64</Name>
+    <Location>181</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 64</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>30.88</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.28</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.51</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.69</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.44</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.12</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-03-31T01:09:09.252Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10009610</ID>
+    <ProductCodes>
+      <ProductCode>apsgdc1Rf2YYhOwTlmWSreN6vSHbg</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>181</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>Suse linux 32 bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.2</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>16.63</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-03-31T01:09:20.642Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10009611</ID>
+    <ProductCodes>
+      <ProductCode>apsgdc16jlF7qjAQe2xyPTAj7bj0w</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>181</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>SUSE Linux Enterprise Server 11 SP1 for x86 Base
+    OS 32-bit with pay for use licensing</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.36</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.53</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.24</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>21.95</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>18.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-03-31T01:09:28.143Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10009613</ID>
+    <ProductCodes>
+      <ProductCode>apsgdc1AMDSxdaaQs2x173zeATVaw</ProductCode>
+    </ProductCodes>
+    <Name>Microsoft Windows Server 2008 R2 (64-bit)</Name>
+    <Location>181</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R2</Platform>
+    <Description>Windows2008 R2 64-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.35</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.86</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.18</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-03-31T01:09:45.852Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10009614</ID>
+    <ProductCodes>
+      <ProductCode>apsgdc1DwlSh5PfRRKlUJ5lKH3W3g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x86_update</Name>
+    <Location>181</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 32-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.58</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.54</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-03-31T01:09:54.368Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10009615</ID>
+    <ProductCodes>
+      <ProductCode>apsgdc1Er2sLu8wTT69lszn282q8g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x64bit</Name>
+    <Location>181</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 64-BIT</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>22.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.65</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>24.16</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.48</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-03-31T01:10:00.526Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10003803</ID>
+    <ProductCodes>
+      <ProductCode>DwlSh5PfRRKlUJ5lKH3W3g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x86_update</Name>
+    <Location>41</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 32-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.58</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.54</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-11T04:06:34.055Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10003804</ID>
+    <ProductCodes>
+      <ProductCode>ehnDwlSh5PfRRKlUJ5lKH3W3g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x86_update</Name>
+    <Location>81</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 32-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{AB43B71D-1B4E-3108-DEC0-6E770A7CB5FE}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{AB43B71D-1B4E-3108-DEC0-6E770A7CB5FE}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.58</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.54</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-11T04:06:34.079Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10003805</ID>
+    <ProductCodes>
+      <ProductCode>Er2sLu8wTT69lszn282q8g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x64bit</Name>
+    <Location>41</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 64-BIT</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>22.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.65</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>24.16</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.48</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-11T04:06:34.109Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10003806</ID>
+    <ProductCodes>
+      <ProductCode>ehnEr2sLu8wTT69lszn282q8g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x64bit</Name>
+    <Location>81</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 64-BIT</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{2DD3C589-349A-0CB4-0093-CE74FF7AF4E0}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{2DD3C589-349A-0CB4-0093-CE74FF7AF4E0}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>22.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.65</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>24.16</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.48</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-11T04:06:34.119Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001808</ID>
+    <ProductCodes>
+      <ProductCode>ehnstg10-07-07_rhel55_x86</ProductCode>
+    </ProductCodes>
+    <Name>R1.2 Red Hat Enterprise Linux 5.5 (32-bi)</Name>
+    <Location>81</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 32 bit - Testing the name
+    changes</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>10.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.15</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.74</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.09</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-09-08T20:32:54.073Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001809</ID>
+    <ProductCodes>
+      <ProductCode>ehnstg10-07-07_rhel55_x64</ProductCode>
+    </ProductCodes>
+    <Name>rhel55_x64</Name>
+    <Location>81</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 64</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>30.88</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.28</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.51</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.69</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.44</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.12</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-09-08T20:32:54.213Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001810</ID>
+    <ProductCodes>
+      <ProductCode>ehnstg10-07-14_SLES11SP1_32</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>81</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>Suse linux 32 bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{6D30ED5C-A588-FAA7-4C91-610FCAEE7F0F}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{6D30ED5C-A588-FAA7-4C91-610FCAEE7F0F}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.2</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>16.63</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-09-08T20:32:54.373Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10001811</ID>
+    <ProductCodes>
+      <ProductCode>ehnstg10-07-14_SLES11SP1_64</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>81</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>SUSE Linux Enterprise Server 11 SP1 for x86 Base
+    OS 32-bit with pay for use licensing</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>43.8</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.36</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.53</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.24</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>21.95</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>18.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-09-08T20:32:54.478Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005957</ID>
+    <ProductCodes>
+      <ProductCode>apjpdc1lRa5JVx8SIGGaARFPjTlmw</ProductCode>
+    </ProductCodes>
+    <Name>R1.2 Red Hat Enterprise Linux 5.5 (32-bi)</Name>
+    <Location>161</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 32 bit - Testing the name
+    changes</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>10.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.15</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.74</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.09</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-02-18T02:56:27.681Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005958</ID>
+    <ProductCodes>
+      <ProductCode>apjpdc1zFlJxlXZRguZo9RQZuLxJQ</ProductCode>
+    </ProductCodes>
+    <Name>rhel55_x64</Name>
+    <Location>161</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 64</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>30.88</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.28</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.51</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.69</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.44</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.12</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-02-18T02:56:29.481Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005959</ID>
+    <ProductCodes>
+      <ProductCode>apjpdc1Rf2YYhOwTlmWSreN6vSHbg</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>161</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>Suse linux 32 bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.2</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>16.63</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-02-18T02:56:30.572Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005960</ID>
+    <ProductCodes>
+      <ProductCode>apjpdc16jlF7qjAQe2xyPTAj7bj0w</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>161</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>SUSE Linux Enterprise Server 11 SP1 for x86 Base
+    OS 32-bit with pay for use licensing</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.36</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.53</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.24</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>21.95</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>18.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-02-18T02:56:31.237Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005962</ID>
+    <ProductCodes>
+      <ProductCode>apjpdc1AMDSxdaaQs2x173zeATVaw</ProductCode>
+    </ProductCodes>
+    <Name>Microsoft Windows Server 2008 R2 (64-bit)</Name>
+    <Location>161</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R2</Platform>
+    <Description>Windows2008 R2 64-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.35</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.86</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.18</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-02-18T02:56:33.233Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005963</ID>
+    <ProductCodes>
+      <ProductCode>apjpdc1DwlSh5PfRRKlUJ5lKH3W3g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x86_update</Name>
+    <Location>161</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 32-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.58</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.54</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-02-18T02:56:34.893Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10005964</ID>
+    <ProductCodes>
+      <ProductCode>apjpdc1Er2sLu8wTT69lszn282q8g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x64bit</Name>
+    <Location>161</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 64-BIT</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>22.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.65</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>24.16</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.48</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2011-02-18T02:56:35.451Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10004404</ID>
+    <ProductCodes>
+      <ProductCode>bldlRa5JVx8SIGGaARFPjTlmw</ProductCode>
+    </ProductCodes>
+    <Name>R1.2 Red Hat Enterprise Linux 5.5 (32-bi)</Name>
+    <Location>121</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 32 bit - Testing the name
+    changes</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EF034BC-34E7-38DF-7998-EED50AE2DE59}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>10.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.15</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.74</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>0.09</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-30T20:34:14.417Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10004405</ID>
+    <ProductCodes>
+      <ProductCode>bldzFlJxlXZRguZo9RQZuLxJQ</ProductCode>
+    </ProductCodes>
+    <Name>rhel55_x64</Name>
+    <Location>121</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>RHEL/5.5</Platform>
+    <Description>Red Hat Linux 64</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{3EFC2935-8630-AE44-EE02-476BB81E4385}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>30.88</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.28</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>12.51</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.69</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.44</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>13.12</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-30T20:34:15.063Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10004406</ID>
+    <ProductCodes>
+      <ProductCode>bldRf2YYhOwTlmWSreN6vSHbg</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>121</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>Suse linux 32 bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{36D4DAC2-4BF4-32C0-BF24-1C2B2351588D}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>15.31</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.2</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>16.63</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>14.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-30T20:34:15.497Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10004407</ID>
+    <ProductCodes>
+      <ProductCode>bld6jlF7qjAQe2xyPTAj7bj0w</ProductCode>
+    </ProductCodes>
+    <Name>SUSE Linux Enterprise Server 11 SP1 (32-bit)</Name>
+    <Location>121</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>SUSE/11 SP1</Platform>
+    <Description>SUSE Linux Enterprise Server 11 SP1 for x86 Base
+    OS 32-bit with pay for use licensing</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{1A17A1AB-96C0-4C81-701A-08DB6D2338A2}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>IRD64.32/59392/60*500*500*500*500*500*500*500*500</ID>
+        <Label>Iridium 64 bit</Label>
+        <Detail>Iridium - 64 bit (vCPU: 32, RAM: 58 GiB, Disk: 4060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>43.8</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.36</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>17.53</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.24</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>21.95</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>18.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-30T20:34:15.751Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10004408</ID>
+    <ProductCodes>
+      <ProductCode>bldAMDSxdaaQs2x173zeATVaw</ProductCode>
+    </ProductCodes>
+    <Name>Microsoft Windows Server 2008 R2 (64-bit)</Name>
+    <Location>121</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R2</Platform>
+    <Description>Windows2008 R2 64-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{72672312-361F-7C86-7883-8EB6732CDFC0}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>25.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.35</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.86</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>26.18</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-30T20:34:16.435Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10004409</ID>
+    <ProductCodes>
+      <ProductCode>bldDwlSh5PfRRKlUJ5lKH3W3g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x86_update</Name>
+    <Location>121</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>i386</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 32-bit</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{39B22F13-74C9-4C71-21A7-FDECF62F0331}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>SLV32.2/4096/60*350</ID>
+        <Label>Silver 32 bit</Label>
+        <Detail>Silver - 32 bit (vCPU: 2, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.67</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ32.1/2048/60*175</ID>
+        <Label>Bronze 32 bit</Label>
+        <Detail>Bronze - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 235
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.58</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD32.4/4096/60*350</ID>
+        <Label>Gold 32 bit</Label>
+        <Detail>Gold - 32 bit (vCPU: 4, RAM: 4 GiB, Disk: 410
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.84</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>COP32.1/2048/60</ID>
+        <Label>Copper 32 bit</Label>
+        <Detail>Copper - 32 bit (vCPU: 1, RAM: 2 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>20.54</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-30T20:34:17.013Z</CreatedTime>
+  </Image>
+  <Image>
+    <ID>10004410</ID>
+    <ProductCodes>
+      <ProductCode>bldEr2sLu8wTT69lszn282q8g</ProductCode>
+    </ProductCodes>
+    <Name>Windows2008_R1_x64bit</Name>
+    <Location>121</Location>
+    <State>1</State>
+    <Owner>SYSTEM</Owner>
+    <Visibility>PUBLIC</Visibility>
+    <Architecture>x86_64</Architecture>
+    <Platform>WINDOWS/2008 R1</Platform>
+    <Description>Windows2008 R1 64-BIT</Description>
+    <Manifest>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/parameters.xml</Manifest>
+    <Documentation>
+    https://www-147stage.raleigh.us.sni.ibm.com/cloud/enterprise/ram.ws/RAMSecure/artifact/{EDE2B4FC-EB1F-307E-6FAE-1372A0E9AE19}/1.0/GettingStarted.html</Documentation>
+    <SupportedInstanceTypes>
+      <InstanceType>
+        <ID>COP64.2/4096/60</ID>
+        <Label>Copper 64 bit</Label>
+        <Detail>Copper - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 60
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>22.97</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>BRZ64.2/4096/60*500*350</ID>
+        <Label>Bronze 64 bit</Label>
+        <Detail>Bronze - 64 bit (vCPU: 2, RAM: 4 GiB, Disk: 910
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.14</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>GLD64.8/16384/60*500*500</ID>
+        <Label>Gold 64 bit</Label>
+        <Detail>Gold - 64 bit (vCPU: 8, RAM: 16 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.65</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>PLT64.16/16384/60*500*500*500*500</ID>
+        <Label>Platinum 64 bit</Label>
+        <Detail>Platinum - 64 bit (vCPU: 16, RAM: 16 GiB, Disk:
+        2060 GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>24.16</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+      <InstanceType>
+        <ID>SLV64.4/8192/60*500*500</ID>
+        <Label>Silver 64 bit</Label>
+        <Detail>Silver - 64 bit (vCPU: 4, RAM: 8 GiB, Disk: 1060
+        GiB)</Detail>
+        <Price CountryCode="897">
+          <EffectiveDate>2010-03-22T00:00:00.000Z</EffectiveDate>
+          <CurrencyCode>USD</CurrencyCode>
+          <Rate>23.48</Rate>
+          <PricePerQuantity>1</PricePerQuantity>
+          <UnitOfMeasure>UHR</UnitOfMeasure>
+        </Price>
+      </InstanceType>
+    </SupportedInstanceTypes>
+    <CreatedTime>2010-11-30T20:34:17.233Z</CreatedTime>
+  </Image>
+</ns2:DescribeImagesResponse>

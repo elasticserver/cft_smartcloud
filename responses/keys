@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:DescribeKeysResponse xmlns:ns2="http://www.ibm.com/xmlns/b2b/cloud/api/2010-03-31">
+
+  <PublicKey>
+    <KeyName>test-key</KeyName>
+    <KeyMaterial>
+    AAAAB3NzaC1yc2EAAAADAQABAAABAQDdfm2GzxMPg4rRln90QDXUovgAPi41OuKvhViEcrxUISK4brqkUosgudOsKmCbx4h8TINuC3yznxl+HsNQG+qCkXsMlbS8EemC9HW17FwpUDAByjCSQb1RCE8ynng0VKPaiZkAstLTZtwudBuLMcBNde9sc03zsOD5ukLnQbjwqiJAS0ur/nASj94C/HtymoxWao3Vf2RmRD6G21iTcMN9sij34V6ZIsgHz8un/7JktNAfsEowTAXY8fcro9OC0Eim9juSeJz7cA4dlLSsAgYhu0Ppc0t9+N+Oxb1HYHViyxMfe5btco0Tpqxf1OhTJj5tAQwCdr0frkD0TO7gXn+7</KeyMaterial>
+    <Default>false</Default>
+    <LastModifiedTime>2011-11-16T19:38:05.540Z</LastModifiedTime>
+    <Instances />
+  </PublicKey>
+  <PublicKey>
+    <KeyName>foobar</KeyName>
+    <KeyMaterial>
+    AAAAB3NzaC1yc2EAAAADAQABAAABAQDj3SWgw3YFfAn1PcPtBpMrbp9oBEgdfB1EyT5ksgiiZ3TEM9zctJEFx4ZZ1iNTCXqXYNSd83VCGvFoJAijc2WybuegWNDT/wkvAKWTxEqPNEieebJLv8XPcVU5bRSgpXpmqR29cYki+ztJt3y/fpbzmw+lTGIW0PHdYnstmm2Q4DquDSzO+5Q2xkP1T9FORT21wqw6kxYCLmt8P0eT7KXRoZd/eI/cMoHlTb+tMIsjPCGjIZdYSb0264Zihx6JGkuh8TMhlNaDxxs9G7qtvA7s40u0YMKle9+kB7PCbkVIbWtV6UIfaertoGhHfvz+HgltXVMI0Rm0O+Zb+iZDg1kH</KeyMaterial>
+    <Default>false</Default>
+    <LastModifiedTime>2011-11-16T23:00:36.292Z</LastModifiedTime>
+    <Instances>
+      <InstanceID>12345</InstanceID>
+    </Instances>
+  </PublicKey>
+  <PublicKey>
+    <KeyName>yp-testkey</KeyName>
+    <KeyMaterial>
+    AAAAB3NzaC1yc2EAAAADAQABAAABAQCOr57S//Pu2ScCabzzEVu/LaPh71exKoQ7b9MLBkt0CiOxILoRkEqgnvua88VbCJxfELJcrAwnaYfHyPMHqV1//EZCyyNWptsOFhZe44xUUMClZdJxRwC/nmE1/5e+uJu2eVo1uMhb9Hlv4g0OJ0Aj9ygzOFJlWZoZpKgXNNjobvUTV+uV1xG/V7Iq3Z30HpOGqQDOj8JCjyORK+X3DRZqItoDuzCWlgCT5HN3FWaDmA/gquEOb+2YcXLkz4Voz7b11bWCf4nLFuX0MSRvUNsL8XBTVwaJIdPEi5L+bG2FfmCayxZchfeM/YTF5Z2/Mtq2I3aBoWHGE46DmGDWh6zH</KeyMaterial>
+    <Default>false</Default>
+    <LastModifiedTime>2011-11-17T00:31:13.973Z</LastModifiedTime>
+    <Instances>
+      <InstanceID>22904</InstanceID>
+      <InstanceID>22905</InstanceID>
+    </Instances>
+  </PublicKey>
+</ns2:DescribeKeysResponse>

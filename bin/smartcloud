@@ -11,12 +11,14 @@ end
 
 # These are the options we can pass in
 opts = Slop.new do
-  on :u, :username, :optional => true
-  on :p, :password, :optional => true
-  on :r, :retries, :optional => true
-  on :s, :sleep_interval, :optional => true
-  on :U, :api_url, :optional => true
-  on :d, :debug, :optional => true
+  on :u, :username=, :optional => true
+  on :p, :password=, :optional => true
+  on :r, :retries=,  "How many retries if the server is down"
+  on :s, :sleep_interval=,  "How long to sleep between retries (s)"
+  on :U, :api_url=,  "URL of api endpoint"
+  on :d, :debug,  "Enable debug logging"
+  on :R, :simulated_response_file=, "Pass in a file containing the response (do not hit cloud)"
+  on :S, :save_response, "Save the response in responses/ dir, for later use with -R response file"
 end
 
 # These are the actual commands appearing after the script name,
@@ -25,7 +27,6 @@ commands = []
 opts.parse do |nonarg|
   commands << nonarg
 end
-
 @sc = IBMSmartCloud.new(opts)
 
 if commands.size == 1

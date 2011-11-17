@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:DescribeInstancesResponse xmlns:ns2="http://www.ibm.com/xmlns/b2b/cloud/api/2010-03-31">
+
+  <Instance>
+    <ID>149523</ID>
+    <Location>82</Location>
+    <RequestID name="biginsights-lite-rhel-5.5-64">
+    149823</RequestID>
+    <Name>biginsights-lite-rhel-5.5-64</Name>
+    <Owner>ibmcloud@cohesiveft.com</Owner>
+    <ImageID>20014047</ImageID>
+    <InstanceType>COP64.2/4096/60</InstanceType>
+    <KeyName>biginsights</KeyName>
+    <Hostname>vhost0177.dc1.co.us.compute.ihost.com</Hostname>
+    <IP>170.225.96.177</IP>
+    <PrimaryIP>
+      <Type>DYNAMIC</Type>
+      <IP>170.225.96.177</IP>
+      <Hostname>vhost0177.dc1.co.us.compute.ihost.com</Hostname>
+    </PrimaryIP>
+    <Status>5</Status>
+    <LaunchTime>2011-10-31T18:22:43.475Z</LaunchTime>
+    <ExpirationTime>2013-10-30T18:22:58.887Z</ExpirationTime>
+    <ProductCodes />
+    <Volumes>
+      <Volume>20498</Volume>
+    </Volumes>
+    <Software>
+      <Application>
+        <Name>Red Hat Enterprise Linux</Name>
+        <Version>5.5</Version>
+        <Type>OS</Type>
+      </Application>
+    </Software>
+    <Volume>20498</Volume>
+    <DiskSize>60</DiskSize>
+    <MiniEphemeral>true</MiniEphemeral>
+  </Instance>
+  <Instance>
+    <ID>149524</ID>
+    <Location>82</Location>
+    <RequestID name="biginsights-enterprise-rhel-5.5-64">
+    149824</RequestID>
+    <Name>biginsights-enterprise-rhel-5.5-64</Name>
+    <Owner>ibmcloud@cohesiveft.com</Owner>
+    <ImageID>20014047</ImageID>
+    <InstanceType>COP64.2/4096/60</InstanceType>
+    <KeyName>biginsights</KeyName>
+    <Hostname>vhost0210.dc1.co.us.compute.ihost.com</Hostname>
+    <IP>170.225.96.210</IP>
+    <PrimaryIP>
+      <Type>DYNAMIC</Type>
+      <IP>170.225.96.210</IP>
+      <Hostname>vhost0210.dc1.co.us.compute.ihost.com</Hostname>
+    </PrimaryIP>
+    <Status>5</Status>
+    <LaunchTime>2011-10-31T18:22:49.186Z</LaunchTime>
+    <ExpirationTime>2013-10-30T18:22:58.899Z</ExpirationTime>
+    <ProductCodes />
+    <Volumes>
+      <Volume>20502</Volume>
+    </Volumes>
+    <Software>
+      <Application>
+        <Name>Red Hat Enterprise Linux</Name>
+        <Version>5.5</Version>
+        <Type>OS</Type>
+      </Application>
+    </Software>
+    <Volume>20502</Volume>
+    <DiskSize>60</DiskSize>
+    <MiniEphemeral>true</MiniEphemeral>
+  </Instance>
+</ns2:DescribeInstancesResponse>

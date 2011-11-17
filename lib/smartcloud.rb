@@ -23,6 +23,7 @@ require 'hash_fix'
 require 'xmlsimple'
 require 'smartcloud_logger'
 require 'curl_client'
+require 'terminal-table'
 
 IBM_TOOLS_HOME=File.join(File.dirname(__FILE__), "cli_tools") unless defined?(IBM_TOOLS_HOME)
 
@@ -33,6 +34,8 @@ class IBMSmartCloud
   attr_accessor :logger
 
   def initialize(opts={})
+    @save_response = opts[:save_response]
+    @simulated_response = opts[:simulated_response_file] && File.read(opts[:simulated_response_file])
 
     # For handling errors
     @retries = (opts[:retries] || 120).to_i
@@ -94,10 +97,10 @@ class IBMSmartCloud
 
         extra_help = self.class.method_help_supplemental[method.to_s] || ""
 
-        puts %{=== #{method.to_s}#{'(' + args + ')' if args}#{extra_help + "\n" if extra_help}}
+        puts %{  * #{method.to_s}#{'(' + args + ')' if args}#{extra_help + "\n" if extra_help}}
     else
       methods = public_methods - Object.public_methods - ['post','get','put','delete','logger','logger=','help']
-      methods.each {|m| help(m)}
+      methods.sort.each {|m| help(m)}
       nil
     end
   end
@@ -112,8 +115,15 @@ class IBMSmartCloud
   end
 
   def display_locations
-    log = describe_locations.map {|loc| "#{loc.ID.ljust(4)} | #{loc.Location.ljust(15)} | #{loc.Name}"}.join("\n")
-    logger.info "\n#{log}"
+
+    table = Terminal::Table.new do |t|
+      t.headings = ['ID', 'Loc', 'Name']
+      describe_locations.each do |loc|
+        t.add_row [loc.ID, loc.Location, loc.Name]
+      end
+    end
+
+    logger.info table
   end
 
   # Create an instance. The instance_params hash can follow
@@ -162,7 +172,7 @@ class IBMSmartCloud
   end
 
   # Find a location by its name. Assumes locations have unique names (not verified by ibm docs)
-  args :get_locations_by_name, [:name]
+  args :get_location_by_name, [:name]
   def get_location_by_name(name)
     locations = describe_locations
     locations.detect {|loc| loc.Name == name}
@@ -205,8 +215,6 @@ class IBMSmartCloud
   end
 
   # Export an image to a volume
-  # NOTE: This is THEORETICAL and has not been tested - because the api server throws 500
-  # on all requests
   args :export_image, [{:name=>:req}, {:size => ['Small','Medium','Large']}, {:image_id => :req}]
   def export_image(name, size, image_id, location)
     # Note we figure out the correct size based on the name and location
@@ -303,9 +311,14 @@ class IBMSmartCloud
   def display_addresses
     addresses = describe_addresses
 
-    logger.info "\nID     | Loc  | State      | IP \n" + addresses.map {|a| 
-      a.ID.ljust(6) + " | " + a.Location.ljust(4) + " | " + (a.State[0..9].ljust(10) rescue '?'.ljust(10)) + " | " + (a.IP.to_s || "")
-    }.join("\n")
+    table = Terminal::Table.new do |t|
+      t.headings = ['ID', 'Loc', 'State', 'IP']
+      addresses.each do |a|
+        t.add_row [a.ID, a.Location, a.State, a.IP]
+      end
+    end
+
+    logger.info table
   end
 
   # Allows you to poll for a specific storage state
@@ -326,8 +339,18 @@ class IBMSmartCloud
   end
 
   def display_keys 
-    logger.info "\nKeyName".ljust(50) + "  | Instance ID's\n" +  describe_keys.map {|key| key.KeyName.strip.ljust(50) + " | " + (key.Instances.empty? ? '[]' : key.Instances.InstanceID.inspect  )}.join("\n")
+    keys = describe_keys
+
+    table = Terminal::Table.new do |t|
+      t.headings = ['KeyName', 'Used By Instances', 'Last Modified']
+      keys.each do |k|
+        t.add_row [k.KeyName, (k.Instances.empty? ? '[NONE]' : arrayize(k.Instances.InstanceID).join("\n")), time_format( k.LastModifiedTime )]
+      end
+    end
+    
+    logger.info table
   end
+  alias display_keypairs display_keys
 
   args :supported_instance_types, [:image_id]
   def supported_instance_types(image_id)
@@ -406,11 +429,14 @@ class IBMSmartCloud
     vols = describe_volumes
     vols = filter_and_sort(vols, filter)
 
-    log = "\nVolume | State      | Loc  | Name\n"
-    volsz = vols.map {|vol| vol.ID.ljust(6) + " | " + (vol.State[0..9].ljust(10) rescue '?'.ljust(10)) + " | " + vol.Location.ljust(4) + " | " + vol.Name }.join("\n")
-    log << volsz
-    logger.info log
-    true
+    table = Terminal::Table.new do |t|
+      t.headings = %w(Volume State Loc Name CreatedTime)
+      vols.each do |vol|
+        t.add_row [vol.ID, vol.State, vol.Location, vol.Name, time_format(vol.CreatedTime)]
+      end
+    end
+
+    logger.info table
   end
   
   alias display_storage display_volumes
@@ -538,13 +564,15 @@ class IBMSmartCloud
   def display_instances(filters={})
     instances = describe_instances(filters)
 
-    log = %{#{"Started".ljust(18)} | #{"Instance".ljust(8)} | #{"Image".ljust(9)} | #{"Loc".ljust(3)} | #{"Status".ljust(10)} | #{"KeyName".ljust(15)} | #{"IP".ljust(15)} | #{"Volume".ljust(6)} | Name\n}
-    log << instances.map do |ins|
-      ip = (ins.IP && ins.IP.to_s) || ""
-      ip = (ip.strip == "") ? "[NONE]" : ip.strip
-      "#{DateTime.parse(ins.LaunchTime).strftime("%Y-%m-%d %I:%M%p")} | #{ins.ID.ljust(8)} | #{ins.ImageID.ljust(9)} | #{ins.Location.ljust(3)} | #{ins.Status[0..9].ljust(10)} | #{(ins.KeyName || "").strip[0..14].ljust(15)} | #{ip.ljust(15)} | #{(ins.Volume && ins.Volume || "").ljust(6)} | #{ins.Name}" 
-    end.join("\n")
-    logger.info "\n#{log}"
+    table = Terminal::Table.new do |t|
+      t.headings = ['ID', 'LaunchTime', 'Name', 'Key', 'ID', 'Loc', 'Status', 'IP', 'Volume']
+      instances.each do |ins|
+        launchTime = time_format(ins.LaunchTime)
+        t.add_row [ins.ID, launchTime, ins.Name, ins.KeyName, ins.ImageID, ins.Location, ins.Status, ins.IP && ins.IP.strip, ins.Volume]
+      end
+    end
+    table.style = {:padding_left => 0, :padding_right => 0, :border_y => ' ', :border_x => '-'}
+    logger.info table
   end
 
 
@@ -571,11 +599,16 @@ class IBMSmartCloud
   def display_images(filters={})
     images = describe_images(filters)
 
-    log = images.map do |i|
-      types = arrayize(i.SupportedInstanceTypes.InstanceType).map(&:ID).join(", ") rescue "[INSTANCE TYPE UNKNOWN]"
-      "#{i.ID} | #{i.Location} | #{i.Name} | #{types}" 
-    end.join("\n")
-    logger.info "\n#{log}"
+    table = Terminal::Table.new do |t|
+      t.headings = ['ID', 'Loc', 'Name & Type', 'Platform', 'Arch']
+      images.each do |i|
+        types = arrayize(i.SupportedInstanceTypes.InstanceType).map(&:ID).join("\n") rescue "[INSTANCE TYPE UNKNOWN]"
+        t.add_row [i.ID, i.Location, i.Name + "\n" + types, i.Platform, i.Architecture]
+        t.add_separator unless i == images.last
+      end
+    end
+
+    logger.info table
   end
 
   def delete(path)
@@ -595,8 +628,24 @@ class IBMSmartCloud
 
   def get(path)
     rescue_and_retry_errors do
-      output = @http_client.get File.join(@api_url, path)
-      response = XmlSimple.xml_in(output, {'ForceArray' => nil})
+      output = if @simulated_response
+        @simulated_response
+      else
+        @http_client.get File.join(@api_url, path) 
+      end
+
+      # Save Response for posterity
+      if @save_response && !output.empty? 
+        response_file = "responses/#{path.gsub('/','_').gsub(/^_/,'')}.#{Time.now.to_i}"
+        logger.info "Saving response to: #{response_file}"
+        File.open(response_file,'w') {|f| f.write(output)}
+      end
+
+      if output && !output.empty?
+        XmlSimple.xml_in(output, {'ForceArray' => nil})
+      else
+        raise "Empty response!"
+      end
     end
   end
 
@@ -698,6 +747,9 @@ class IBMSmartCloud
     array_or_object.is_a?(Array) ? array_or_object : [array_or_object]
   end
 
+  def time_format(time)
+    DateTime.parse(time).strftime("%Y-%m-%d %I:%M%p")
+  end
 end
 
 # predefine an instance for convenience

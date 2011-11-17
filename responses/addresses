@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<ns2:DescribeAddressesResponse xmlns:ns2="http://www.ibm.com/xmlns/b2b/cloud/api/2010-03-31">
+
+  <Address>
+    <Type>RESERVED</Type>
+    <IP>129.35.209.233</IP>
+    <Hostname>129.35.209.233</Hostname>
+    <Location>61</Location>
+    <ID>87832</ID>
+    <OfferingID>20001223</OfferingID>
+    <Mode>PRIMARY</Mode>
+    <State>2</State>
+    <owner>ibmcloud@cohesiveft.com</owner>
+  </Address>
+  <Address>
+    <Type>RESERVED</Type>
+    <IP>129.35.211.162</IP>
+    <Hostname>129.35.211.162</Hostname>
+    <Location>61</Location>
+    <ID>92738</ID>
+    <OfferingID>20001223</OfferingID>
+    <Mode>PRIMARY</Mode>
+    <State>2</State>
+    <owner>ibmcloud@cohesiveft.com</owner>
+  </Address>
+</ns2:DescribeAddressesResponse>
