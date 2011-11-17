@@ -215,7 +215,7 @@ class IBMSmartCloud
   end
 
   # Export an image to a volume
-  args :export_image, [{:name=>:req}, {:size => ['Small','Medium','Large']}, {:image_id => :req}]
+  args :export_image, [{:name=>:req}, {:size => ['Small','Medium','Large']}, {:image_id => :req}, {:location => :req}]
   def export_image(name, size, image_id, location)
     # Note we figure out the correct size based on the name and location
     storage_offering=describe_storage_offerings(location, size)
