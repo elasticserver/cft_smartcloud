@@ -26,8 +26,9 @@ class CurlHttpClient
   end
 
   def self.curl(cmd)
-    @log.debug "curl #{cmd}" if @log
-    `curl -s --insecure --connect-timeout #{@timeout} #{cmd} 2>&1`
+    cmd = "curl -s --insecure --connect-timeout #{@timeout} #{cmd} 2>&1"
+    @log.debug cmd if @log
+    `#{cmd}`
   end
 
   def self.handle_output(output)

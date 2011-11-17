@@ -224,6 +224,13 @@ class IBMSmartCloud
     response.Volume.ID
   end
 
+  help_for :import_image, [{:name=>:req, :volume_id => :req}] 
+  def import_image(name, volume_id)
+    # TODO: this is a complete guess as we have no info from IBM as to the URL for this api, only the parameters
+    response = post("/offerings/image", :volumeID => volume_id, :name => name)
+    response.ImageID
+  end
+
   # Launches a clone request and returns ID of new volume
   # TODO: the API call does not work, we have to use the cli for now
   help_for :clone_volume, [:name, :source_disk_id]
