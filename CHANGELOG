@@ -1,4 +1,5 @@
-2011-11-17
+2011-11-21 0.3.0:
+ * Support for smartcloud import/export api
  * Ability to use -S to save responses and -R to play them back 
 	 for offline testing
  * Cleaner output display using ascii tables
