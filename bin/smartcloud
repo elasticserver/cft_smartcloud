@@ -33,9 +33,6 @@ if commands.size == 1
   if commands[0] == 'help'
     puts "#{opts.help}\n\n"
   end
-  @cmd=commands[0]
-elsif commands.size == 2
-  @cmd="#{commands[0]}('#{commands[1]}')"
 elsif commands.size == 0 
   puts %{
   #{opts.help}
@@ -50,18 +47,41 @@ elsif commands.size == 0
   smartcloud "delete_instance(12345)"
   smartcloud delete_instance 12345
   smartcloud delete_instances 12345 12346 12347
-  smartcloud "delete_instances(12345,12346,12347)"
   smartcloud display_instances
+  smartcloud display_images name="Red Hat"
 }
   exit(0)
-else
-  @cmd="#{commands[0]}(#{commands[1..-1].map {|item| "'#{item}'"}.join(',')})"
 end
 
+# parse out foo=bar values and turn them into a hash
+params=[]
+param_hash={}
+commands[1..-1].each do |item| 
+  if item =~ /=/
+    key,val = item.split('=')
+    param_hash[key]=val
+  else
+    params << item
+  end
+end
+params = params.map {|param| "'#{param}'" }.join(',')
+
+method_invocation = if params.empty? && param_hash.empty?
+  commands[0]
+elsif !params.empty? && param_hash.empty?
+  "#{commands[0]}(#{params})"
+elsif params.empty? && !param_hash.empty?
+  "#{commands[0]}(#{param_hash.inspect})"
+else
+  "#{commands[0]}(#{params}, #{param_hash.inspect})"
+end
+
+puts "Invoking: #{method_invocation}"
   # allows us to send arbitrary commands like
   # smartcloud username password describe_instance("122345")
   begin
-    result = eval("@sc.#{@cmd}")
+    result = eval("@sc.#{method_invocation}")
+
   rescue ArgumentError => e
     puts e.message
     puts "\nPlease use the following command for more information:\nsmartcloud help #{commands[0]}\n\n"

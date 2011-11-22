@@ -683,6 +683,7 @@ class IBMSmartCloud
     order_by = filters.delete(:order) 
 
     filters.each do |filter, value|
+      filter = filter.to_sym
       value = value.to_s.upcase if (filter==:status || filter==:state)
       if filter == :name || filter == :Name
         instances = instances.select {|inst| inst.send(filter.to_s.capitalize) =~ /#{value}/}

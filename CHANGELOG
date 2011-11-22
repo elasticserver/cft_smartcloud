@@ -1,3 +1,7 @@
+2011-11-22 0.3.1:
+ * Support for invocation of commands using key=value syntax
+   Such as: smartcloud display_images name='Red Hat'
+
 2011-11-21 0.3.0:
  * Support for smartcloud import/export api
  * Ability to use -S to save responses and -R to play them back 
