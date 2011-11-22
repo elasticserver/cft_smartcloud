@@ -31,7 +31,7 @@ end
 
 if commands.size == 1
   if commands[0] == 'help'
-    puts "#{opts.help}\n\nFunctions:\n"
+    puts "#{opts.help}\n\n"
   end
   @cmd=commands[0]
 elsif commands.size == 2
@@ -60,7 +60,12 @@ end
 
   # allows us to send arbitrary commands like
   # smartcloud username password describe_instance("122345")
-  result = eval("@sc.#{@cmd}")
+  begin
+    result = eval("@sc.#{@cmd}")
+  rescue ArgumentError => e
+    puts e.message
+    puts "\nPlease use the following command for more information:\nsmartcloud help #{commands[0]}\n\n"
+  end
 
   if result == true || result.nil?
     # do nothing, the command already logged

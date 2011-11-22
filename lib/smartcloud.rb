@@ -24,13 +24,14 @@ require 'xmlsimple'
 require 'smartcloud_logger'
 require 'curl_client'
 require 'terminal-table'
+require "dynamic_help_generator"
 
 IBM_TOOLS_HOME=File.join(File.dirname(__FILE__), "cli_tools") unless defined?(IBM_TOOLS_HOME)
 
 # Encapsulates communications with IBM SmartCloud via REST
 
 class IBMSmartCloud
- 
+  include DynamicHelpGenerator
   attr_accessor :logger
 
   def initialize(opts={})
@@ -59,55 +60,20 @@ class IBMSmartCloud
 
   class << self
     @config = YAML.load_file(File.join(File.dirname(__FILE__), "config/config.yml"))
-    attr_reader :method_help
-    attr_reader :method_help_supplemental
     attr_reader :config
   end
 
-  def self.help_for(method, args, extra_help={})
-    @method_help||={}
-    @method_help_supplemental||={}
-    @method_help[method.to_s] = args
-    @method_help_supplemental[method.to_s] = extra_help
-  end
-
-  def help(method=nil)
-    if method
-      args = (self.class.method_help[method.to_s]) 
-      if !(self.respond_to?(method))
-        return "Sorry, I don't know method: #{method}"
-      end
-
-        args = args && args.map do |arg|
-          if arg.is_a?(Hash)
-            # If an argument is required, just list it
-            if arg.values.first==:req
-              arg.keys.first.to_s 
-            # If it's optional, list it in brackets
-            elsif arg.values.first==:opt
-              "[#{arg.keys.first.to_s}]"
-            # If there is an array of options, list them
-            else 
-              "#{arg.keys.first.to_s}=>#{arg.values.first.inspect}"
-            end
-          else
-            arg
-          end
-        end.join(", ")
-
-        extra_help = self.class.method_help_supplemental[method.to_s] || ""
-
-        puts %{  * #{method.to_s}#{'(' + args + ')' if args}#{extra_help + "\n" if extra_help}}
-    else
-      methods = public_methods - Object.public_methods - ['post','get','put','delete','logger','logger=','help']
-      methods.sort.each {|m| help(m)}
-      nil
-    end
-  end
-
   # Get a list of data centers
-  def describe_locations
-    get("/locations").Location
+  help_for :describe_locations, [{:name => :opt}], %{
+    If name is given, will find the location by name
+  }
+  def describe_locations(name=nil)
+    locations = get("/locations").Location
+    if name
+      locations.detect {|loc| loc.Name =~ /#{name}/}
+    else
+      locations
+    end
   end
 
   def describe_location(location_id)
@@ -289,8 +255,6 @@ class IBMSmartCloud
     delete("/keys/#{name}")
     true
   end
-  alias remove_key remove_keypair
-  alias delete_key remove_keypair
 
   help_for :describe_key, [:name]
   def describe_key(name)
@@ -339,10 +303,6 @@ class IBMSmartCloud
 
   def describe_keys
     arrayize(get("/keys").PublicKey)
-  end
-
-  def describe_unused_keys
-    describe_keys.select {|key| key.Instances == {}}
   end
 
   def display_keys 
