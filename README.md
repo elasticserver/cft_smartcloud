@@ -3,7 +3,7 @@ smartcloud
 
 Provides support for interacting with IBM SmartCloud API and CLI tools
 
-installation
+Installation
 ===
 
 from rubygems.org:
@@ -15,7 +15,7 @@ locally:
     rake build
     gem install pkg/[name of generated gem]
 
-setup
+Setup
 ===
 
 Please set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile
@@ -26,12 +26,8 @@ Please set up SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD in your .bash_profile
 You can now also supply the username and password on the command line using -u and -p
 Use `smartcloud help` to get a list of all optoins.
 
-screencast
-===
 
-http://www.youtube.com/cohesiveft#p/u/0/-WdSHP2iwDM (somewhat outdated)
-
-using the console
+Using the console
 == 
 
     script/console
@@ -44,43 +40,36 @@ using the console
   from the environment variables SMARTCLOUD_USERNAME and SMARTCLOUD_PASSWORD
   automatically (it's created at the bottom of smartcloud.rb)
 
-using the commandline helper
+Using the commandline 
 == 
 
-    smartcloud [method of smartcloud.rb]
-
-to see a list of methods:
+To see a list of methods:
 
     smartcloud help
 
-examples:
+Examples:
 
       smartcloud display_volumes
+      smartcloud display_volumes Location=82 State=MOUNTED
       smartcloud display_instances
-      smartcloud display_instance 12345
       smartcloud delete_instances 12345 12346 12347
-      smartcloud "describe_instance('12345')"
-      smartcloud "display_instances(:Location => 82, :Name => 'match_this')"
+      smartcloud display_images Name="Red Hat"
+      smartcloud display_instances Name="Red Hat" Location=82
 
-      smartcloud delete_unused_keys # this one will prompt for every key
+The 'display_*' methods are intended to generate pretty human readable 
+displays, while the describe methods will return pretty-formatted hashes,
+or singular values.
 
-The 'display_*' methods are intended to generate pretty human readable displays, while the describe methods
-will return pretty-formatted hashes, or singular values.
+To save time when dealing with large responses, such as the describe_images
+call, you can save a response in its native XML format:
 
-      smartcloud display_volumes
+      smartcloud display_images -S /tmp/images.xml
 
-get a list of all available methods
-===
+You can then replay the response, using filters on it
 
-console:
+      smartcloud display_images Name='Red Hat' -R /tmp/images.xml
 
-      >> @smartcloud.help
 
-commandline
-
-      > smartcloud help
-
-These won't tell you the arguments, you have to look at smartcloud.rb for the args.
 
 RestClient vs CurlHttpClient
 ===
@@ -99,6 +88,11 @@ This project uses the jeweler gem for packaging. See the tasks:
 
     rake version:bump:...
     rake build
+
+Screencast
+===
+
+http://www.youtube.com/cohesiveft#p/u/0/-WdSHP2iwDM (somewhat outdated)
 
 Copyright
 == 
