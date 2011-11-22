@@ -18,7 +18,7 @@ opts = Slop.new do
   on :U, :api_url=,  "URL of api endpoint"
   on :d, :debug,  "Enable debug logging"
   on :R, :simulated_response_file=, "Pass in a file containing the response (do not hit cloud)"
-  on :S, :save_response, "Save the response in responses/ dir, for later use with -R response file"
+  on :S, :save_response=, "Save the response (supply filename) as xml, for later use with -R response file"
 end
 
 # These are the actual commands appearing after the script name,

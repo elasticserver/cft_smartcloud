@@ -603,9 +603,8 @@ class IBMSmartCloud
 
       # Save Response for posterity
       if @save_response && !output.empty? 
-        response_file = "responses/#{path.gsub('/','_').gsub(/^_/,'')}.#{Time.now.to_i}"
-        logger.info "Saving response to: #{response_file}"
-        File.open(response_file,'w') {|f| f.write(output)}
+        logger.info "Saving response to: #{@save_response}"
+        File.open(@save_response,'w') {|f| f.write(output)}
       end
 
       if output && !output.empty?

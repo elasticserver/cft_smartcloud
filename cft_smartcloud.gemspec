@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{cft_smartcloud}
-  s.version = "0.3.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["yan", "cohesive"]
-  s.date = %q{2011-11-21}
+  s.date = %q{2011-11-22}
   s.description = %q{CohesiveFT Ruby Interface for IBM SmartCloud and 'smartcloud' command line helper.}
   s.email = %q{yan.pritzker@cohesiveft.com}
   s.executables = ["cft_smartcloud", "smartcloud"]
@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
      "cft_smartcloud.gemspec",
      "lib/config/config.yml",
      "lib/curl_client.rb",
+     "lib/dynamic_help_generator.rb",
      "lib/hash_fix.rb",
      "lib/mime-types-1.16/History.txt",
      "lib/mime-types-1.16/Install.txt",
