@@ -194,7 +194,7 @@ class IBMSmartCloud
   def import_image(name, volume_id)
     # TODO: this is a complete guess as we have no info from IBM as to the URL for this api, only the parameters
     response = post("/offerings/image", :volumeId => volume_id, :name => name)
-    response.ImageID
+    response.Image.ID
   end
 
   # Launches a clone request and returns ID of new volume
