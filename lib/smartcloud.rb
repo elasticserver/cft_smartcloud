@@ -193,7 +193,7 @@ class IBMSmartCloud
   help_for :import_image, [{:name=>:req, :volume_id => :req}] 
   def import_image(name, volume_id)
     # TODO: this is a complete guess as we have no info from IBM as to the URL for this api, only the parameters
-    response = post("/offerings/image", :volumeID => volume_id, :name => name)
+    response = post("/offerings/image", :volumeId => volume_id, :name => name)
     response.ImageID
   end
 
