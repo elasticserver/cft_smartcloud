@@ -1,6 +1,6 @@
 api_url: https://www-147.ibm.com/computecloud/enterprise/api/rest/20100331/
-http_client: CurlHttpClient
-# http_client: RestClient
+# http_client: CurlHttpClient
+http_client: RestClient
 states:
   instance: 
     0: NEW
