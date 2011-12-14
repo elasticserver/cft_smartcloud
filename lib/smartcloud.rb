@@ -180,13 +180,18 @@ class IBMSmartCloud
     post("/offerings/image/#{image_id}", :name => name, :description => description).ImageID
   end
 
-  # Export an image to a volume
+  # Export an image to a volume - create the volume first
   help_for :export_image, [{:name=>:req}, {:size => ['Small','Medium','Large']}, {:image_id => :req}, {:location => :req}]
   def export_image(name, size, image_id, location)
     # Note we figure out the correct size based on the name and location
     storage_offering=describe_storage_offerings(location, size)
 
-    response = post("/storage", :name => name, :size => storage_offering.Capacity, :format => 'EXT3', :offeringID => storage_offering.ID, :location => location, :imageID => image_id)
+    response = post("/storage", :name => name, :size => storage_offering.Capacity, :format => 'EXT3', :offeringID => storage_offering.ID, :location => location)
+    volumeID = response.Volume.ID
+
+    poll_for_volume_state(volumeID, :unmounted)
+
+    response = put("/storage/#{volumeID}", :imageId => image_id)
     response.Volume.ID
   end
 
