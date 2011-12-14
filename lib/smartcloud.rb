@@ -603,7 +603,7 @@ class IBMSmartCloud
       output = if @simulated_response
         @simulated_response
       else
-        @http_client.get File.join(@api_url, path) 
+        @http_client.get File.join(@api_url, path), :accept => :response, :headers => "User-Agent: cloudapi"
       end
 
       # Save Response for posterity
