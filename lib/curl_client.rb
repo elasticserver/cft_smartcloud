@@ -9,7 +9,9 @@ class CurlHttpClient
 
   def self.logger; @logger ||= Logger.new(STDOUT); end
 
-  def self.get(url)
+  # Even though we don't need the options, the REST client does.
+  # So we have this for consistency.
+  def self.get(url, options={})
     handle_output(curl(url))
   end
 
