@@ -202,6 +202,24 @@ class IBMSmartCloud
     response.Image.ID
   end
 
+  help_for :delete_image, [:image_id => :req],  
+  def delete_image(image_id)
+    delete("/offerings/image/#{image_id}")
+    true
+  end
+
+  help_for :delete_images, [:image_ids], %{
+    Example: smartcloud "delete_images(12345,12346,12347)"
+  }
+  def delete_images(*image_id_list)
+    threads=[]
+    image_id_list.each {|image| 
+      threads << Thread.new { logger.info "Sending delete request for: #{image}..."; delete_image(image); logger.info "Finished delete request for #{image}" }
+    }
+    threads.each(&:join)
+    true
+  end
+
   # Launches a clone request and returns ID of new volume
   # TODO: the API call does not work, we have to use the cli for now
   help_for :clone_volume, [:name, :source_disk_id]
