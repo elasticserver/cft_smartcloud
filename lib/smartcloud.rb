@@ -520,6 +520,12 @@ class IBMSmartCloud
     put("/instances/#{instance_id}", :state => "restart")
     true
   end
+  
+  help_for :save_instance, [:instance_id, :name, :desc]
+  def save_instance(instance_id, name, desc = "")
+    put("/instances/#{instance_id}", :state => "save", :name => name, :description => desc)
+    true
+  end
 
   help_for :describe_instance, [:instance_id]
   def describe_instance(instance_id)

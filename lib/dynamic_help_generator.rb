@@ -46,7 +46,7 @@ module DynamicHelpGenerator
         puts %{  * #{method.to_s}#{'(' + args + ')' if args}#{extra_help}}
     else
       # These verbs help us figure out what 'group' the method belongs to
-      verbs = %w(describe display create get allocate clone export attach detach delete generate update remove restart rename)
+      verbs = %w(describe display create get allocate clone export attach detach delete generate update remove restart rename save)
       verb_noun = /(#{verbs.join('|')})_(.*)(s|es)?/ # we're going to remove the verb and trailing 's'
 
       methods = public_methods - Object.public_methods - ['post','get','put','delete','logger','logger=','help']
