@@ -378,15 +378,26 @@ class IBMSmartCloud
   # ex: create_volume("yan", 61, "Small", "20001208", 61)
   #
   # NOTE: storage area id is not currently supported by IBM (according to docs)
-  help_for :create_volume, [{:name => :req},{:location_id => :req},{:size => ['Small','Medium','Large']}, {:offering_id => :opt}, {:format => :opt}]
+  # NOTE: At one point sizes were only handled by "Name". Now they seem to support
+  #       the numbers 60, 256, 512, 1024, 2048, 4112, 8224 and 10240.
+  #       The original names were:
+  #         Small  ==  256 GB
+  #         Medium ==  512 GB
+  #         Large  == 2048 GB
+  #
+  help_for :create_volume, [{:name => :req},{:location_id => :req},
+                            {:size => ['Small','Medium','Large','60','256','512','1024','2048','4112','8224','10240']}, 
+                            {:offering_id => :opt}, {:format => :opt}]
   def create_volume(name, location, size, offering_id=nil, format="EXT3")
 
     # figure out the offering ID automatically based on location and size
     if offering_id.nil?
       logger.debug "Looking up volume offerings based on location: #{location} and size: #{size}"
-      offering = describe_volume_offerings(location, size)
-      offering_id = if offering
-        offering.ID
+
+      filter_size = ( ["Small", "Medium", "Large"].include?( size )) ? size: "Storage" 
+      offering = describe_volume_offerings(location, filter_size)
+      if( offering && offering.SupportedSizes.split(",").include?(size) || ["Small", "Medium", "Large"].include?( size ))
+        offering_id = offering.ID
       else
         raise "Unable to locate offering with location #{location}, size #{size}."
       end
