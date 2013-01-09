@@ -2,11 +2,11 @@
 #####################################################################################
 # Copyright (c) 2011, Cohesive Flexible Technologies, Inc.
 # This copyrighted material is the property of Cohesive Flexible Technologies and
-# is subject to the license terms of the product it is contained within, whether 
-# in text or compiled form.  It is licensed under the terms expressed in the 
+# is subject to the license terms of the product it is contained within, whether
+# in text or compiled form.  It is licensed under the terms expressed in the
 # accompanying README and LICENSE files.
-# 
-# This program is AS IS and WITHOUT ANY WARRANTY; without even the implied warranty 
+#
+# This program is AS IS and WITHOUT ANY WARRANTY; without even the implied warranty
 # of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 #####################################################################################
 
@@ -41,7 +41,7 @@ class IBMSmartCloud
     # For handling errors
     @retries = (opts[:retries] || 120).to_i
     @sleep_interval = (opts[:sleep_interval] || 30).to_i
-    
+
     @username = opts[:username] || ENV['SMARTCLOUD_USERNAME'] || raise(RuntimeError, "Please specify username in an option or as ENV variable SMARTCLOUD_USERNAME")
     @password = opts[:password]|| ENV['SMARTCLOUD_PASSWORD'] || raise(RuntimeError, "Please specify password in an option or as ENV variable SMARTCLOUD_PASSWORD")
     @logger = opts[:logger] || SmartcloudLogger.new(STDOUT)
@@ -52,8 +52,8 @@ class IBMSmartCloud
 
     @api_url = (opts[:api_url] || @config["api_url"]).to_s.dup # gotta dup it because the option string is frozen
     @api_url.gsub!("https://", "https://#{CGI::escape(@username)}:#{CGI::escape(@password)}@")
-    
-    @http_client = Kernel.const_get(@config["http_client"]) 
+
+    @http_client = Kernel.const_get(@config["http_client"])
     @http_client.timeout = 120 # ibm requests can be very slow
     @http_client.log = @logger if @debug
   end
@@ -97,7 +97,7 @@ class IBMSmartCloud
   # or API-style (imageID, location). If the CLI-style params are
   # provided, they will be remapped to the correct API params.
   help_for :create_instance, [:instance_params_hash], %{
-    Available hash keys: :name, :imageID, :instanceType, :location, :publicKey, :ip, :volumeID, 
+    Available hash keys: :name, :imageID, :instanceType, :location, :publicKey, :ip, :volumeID,
                          :ConfigurationData, :vlanID, :antiCollocationInstance, :isMiniEphemeral
 
     Example: smartcloud "create_instance(:name => 'MyTest', :instanceType=>'COP32.1/2048/60', ...)"
@@ -120,10 +120,10 @@ class IBMSmartCloud
     instance_params.delete("description")
 
     # configuration data has to be changed from a string like
-    # <configuration>{contextmanager:test-c3-master.cohesiveft.com,clustername:TEST_poc_pk0515,role:[nfs-client-setup|newyork_master_refdata_member|install-luci|rhel-openlikewise-client-setup|join-domain],hostname:r550n107}</configuration> 
+    # <configuration>{contextmanager:test-c3-master.cohesiveft.com,clustername:TEST_poc_pk0515,role:[nfs-client-setup|newyork_master_refdata_member|install-luci|rhel-openlikewise-client-setup|join-domain],hostname:r550n107}</configuration>
     # to a standard list of POST params like
     # contextmanager=test-c3-mager&clustername=TEST...
-    configuration_data = instance_params.delete("configuration") || instance_params.delete("ConfigurationData") 
+    configuration_data = instance_params.delete("configuration") || instance_params.delete("ConfigurationData")
     if configuration_data
       if configuration_data =~ /\s+/
         logger.warn "<configuration> tag should not contain spaces! Correct format looks like: <configuration>{foo:bar,baz:quux}</configuration>. Spaces will be removed."
@@ -195,14 +195,14 @@ class IBMSmartCloud
     response.Volume.ID
   end
 
-  help_for :import_image, [{:name=>:req, :volume_id => :req}] 
+  help_for :import_image, [{:name=>:req, :volume_id => :req}]
   def import_image(name, volume_id)
     # TODO: this is a complete guess as we have no info from IBM as to the URL for this api, only the parameters
     response = post("/offerings/image", :volumeId => volume_id, :name => name)
     response.Image.ID
   end
 
-  help_for :delete_image, [:image_id => :req],  
+  help_for :delete_image, [:image_id => :req],
   def delete_image(image_id)
     delete("/offerings/image/#{image_id}")
     true
@@ -213,7 +213,7 @@ class IBMSmartCloud
   }
   def delete_images(*image_id_list)
     threads=[]
-    image_id_list.each {|image| 
+    image_id_list.each {|image|
       threads << Thread.new { logger.info "Sending delete request for: #{image}..."; delete_image(image); logger.info "Finished delete request for #{image}" }
     }
     threads.each(&:join)
@@ -230,12 +230,12 @@ class IBMSmartCloud
 
   help_for :attach_volume, [:instance_id, :volume_id]
   def attach_volume(instance_id, volume_id)
-    put("/instances/#{instance_id}", :volumeID => volume_id, :attach => true)
+    put("/instances/#{instance_id}", :storageID => volume_id, :type => 'attach')
   end
 
   help_for :detach_volume, [:instance_id, :volume_id]
   def detach_volume(instance_id, volume_id)
-    put("/instances/#{instance_id}", :volumeID => volume_id, :detach => true)
+    put("/instances/#{instance_id}", :storageID => volume_id, :type => 'detach')
   end
 
   # Delete the volume
@@ -250,7 +250,7 @@ class IBMSmartCloud
   }
   def delete_volumes(*vol_id_list)
     threads=[]
-    vol_id_list.each {|vol| 
+    vol_id_list.each {|vol|
       threads << Thread.new { logger.info "Sending delete request for: #{vol}..."; delete_volume(vol); logger.info "Finished delete request for #{vol}" }
     }
     threads.each(&:join)
@@ -258,8 +258,8 @@ class IBMSmartCloud
   end
 
   # generates a keypair and returns the private key
-  help_for :generate_keypair, [{:name=>:req}, {:publicKey=>:opt}], %{ 
-    If publicKey parameter is given, creates a key with that public key, and returns nothing. 
+  help_for :generate_keypair, [{:name=>:req}, {:publicKey=>:opt}], %{
+    If publicKey parameter is given, creates a key with that public key, and returns nothing.
     If public key is omitted, generates a new key and returns the pirvate key.
   }
   def generate_keypair(name, publicKey=nil)
@@ -328,7 +328,7 @@ class IBMSmartCloud
     arrayize(get("/keys").PublicKey)
   end
 
-  def display_keys 
+  def display_keys
     keys = describe_keys
 
     table = Terminal::Table.new do |t|
@@ -337,7 +337,7 @@ class IBMSmartCloud
         t.add_row [k.KeyName, (k.Instances.empty? ? '[NONE]' : arrayize(k.Instances.InstanceID).join("\n")), time_format( k.LastModifiedTime )]
       end
     end
-    
+
     logger.info table
   end
   alias display_keypairs display_keys
@@ -386,7 +386,7 @@ class IBMSmartCloud
   #         Large  == 2048 GB
   #
   help_for :create_volume, [{:name => :req},{:location_id => :req},
-                            {:size => ['Small','Medium','Large','60','256','512','1024','2048','4112','8224','10240']}, 
+                            {:size => ['Small','Medium','Large','60','256','512','1024','2048','4112','8224','10240']},
                             {:offering_id => :opt}, {:format => :opt}]
   def create_volume(name, location, size, offering_id=nil, format="EXT3")
 
@@ -394,7 +394,7 @@ class IBMSmartCloud
     if offering_id.nil?
       logger.debug "Looking up volume offerings based on location: #{location} and size: #{size}"
 
-      filter_size = ( ["Small", "Medium", "Large"].include?( size )) ? size: "Storage" 
+      filter_size = ( ["Small", "Medium", "Large"].include?( size )) ? size: "Storage"
       offering = describe_volume_offerings(location, filter_size)
       if( offering && offering.SupportedSizes.split(",").include?(size) || ["Small", "Medium", "Large"].include?( size ))
         offering_id = offering.ID
@@ -439,7 +439,7 @@ class IBMSmartCloud
 
     logger.info table
   end
-  
+
   alias display_storage display_volumes
 
   # Allows you to poll for a specific storage state
@@ -525,13 +525,13 @@ class IBMSmartCloud
     delete("/instances/#{instance_id}")
     true
   end
-  
+
   help_for :restart_instance, [:instance_id]
   def restart_instance(instance_id)
     put("/instances/#{instance_id}", :state => "restart")
     true
   end
-  
+
   help_for :save_instance, [:instance_id, :name, :desc]
   def save_instance(instance_id, name, desc = "")
     put("/instances/#{instance_id}", :state => "save", :name => name, :description => desc)
@@ -551,7 +551,7 @@ class IBMSmartCloud
   help_for :describe_instances, [:filters => :opt]
   def describe_instances(filters={})
     instances = arrayize(get("instances").Instance)
-    
+
     instances.each do |instance|
       instance["Status"] = @states["instance"][instance.Status.to_i]
     end
@@ -587,7 +587,7 @@ class IBMSmartCloud
   def describe_image(image_id)
     image = get("offerings/image/#{image_id}").Image
     image["State"] = @states["image"][image.State.to_i]
-    image 
+    image
   end
 
   help_for :describe_images, [:filters => :opt]
@@ -642,7 +642,7 @@ class IBMSmartCloud
       end
 
       # Save Response for posterity
-      if @save_response && !output.empty? 
+      if @save_response && !output.empty?
         logger.info "Saving response to: #{@save_response}"
         File.open(@save_response,'w') {|f| f.write(output)}
       end
@@ -667,16 +667,16 @@ class IBMSmartCloud
 
   # Custom exception matcher
   def timeouts_and_500s
-    m = Module.new 
+    m = Module.new
     (class << m; self; end).instance_eval do
       define_method(:===) do |e|
-        [RestClient::RequestTimeout, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, Errno::ETIMEDOUT, 
+        [RestClient::RequestTimeout, Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, Errno::ETIMEDOUT,
         EOFError, Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError].include?(e.class)|| e.message =~ /500/
       end
     end
     m
   end
-  
+
   # rest client error details are in the response so we want to
   # display that as the error, otherwise we lose that info
   def rescue_and_retry_errors(&block)
@@ -697,15 +697,15 @@ class IBMSmartCloud
         raise e
       end
   rescue => e
-    if e.respond_to?(:response) 
-      raise "#{e.message} - #{e.response}" 
+    if e.respond_to?(:response)
+      raise "#{e.message} - #{e.response}"
     else
       raise e
     end
   end
 
-  def make_param_string(params, param_remap) 
-    param_string = params.map do |k,v| 
+  def make_param_string(params, param_remap)
+    param_string = params.map do |k,v|
       k=k.to_s # symbol keys turn to string
 
       # logger.debug "Removing all spaces from parameters, smartcloud API does not allow spaces."
@@ -719,7 +719,7 @@ class IBMSmartCloud
   end
 
   def filter_and_sort(instances=[], filters={})
-    order_by = filters.delete(:order) 
+    order_by = filters.delete(:order)
 
     filters.each do |filter, value|
       filter = filter.to_sym
@@ -731,21 +731,21 @@ class IBMSmartCloud
       end
     end
 
-    instances = instances.sort_by{|ins| 
-      if ins.has_key?(order_by) 
-        order_by_value = ins.send(order_by) 
+    instances = instances.sort_by{|ins|
+      if ins.has_key?(order_by)
+        order_by_value = ins.send(order_by)
         integer_sort = order_by_value.to_i
         # If we are trying to sort by an integer field, i.e. 41.to_s=="41" then sort by the integer
         # version of it, otherwise sort by the original string
         order_by_value = (order_by_value == integer_sort.to_s) ? integer_sort : order_by_value
       else
-        0 
+        0
       end
     }
     if order_by == "LaunchTime"
       instances = instances.reverse
     end
-    
+
     instances
   end
 
